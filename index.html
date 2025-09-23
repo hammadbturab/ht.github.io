@@ -5,23 +5,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    html, body {
+      height: 100%;        /* ensure full height */
+      margin: 0;           /* remove default margin */
+    }
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 100px;
-      margin: 0;
+      display: flex;               /* centers content */
+      flex-direction: column;
+      justify-content: center;     /* vertical center */
+      align-items: center;         /* horizontal center */
       background-image: url('images/pexels-bubi-3111438.jpg');
-      background-size: cover;        /* makes it cover the whole screen */
-      background-position: center;   /* centers the image */
-      background-repeat: no-repeat;  /* prevents tiling */
-      color: white;                  /* makes text readable */
+      background-size: cover;      /* fill screen */
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      text-align: center;
     }
     h1 {
       color: #fff;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* adds glow for readability */
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      font-size: 3em;
     }
     p {
       text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+      font-size: 1.5em;
     }
   </style>
 </head>
