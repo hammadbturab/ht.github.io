@@ -103,6 +103,29 @@
     @media (max-width: 850px) {
         .video-grid { grid-template-columns: 1fr; }
     }
+
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(8px);
+        border-top: 1px solid rgba(255,255,255,0.2);
+        font-size: 1rem;
+        opacity: 0.9;
+        color: #fff;
+        letter-spacing: 0.5px;
+    }
+
+    footer span {
+        display: block;
+        margin: 3px 0;
+        font-weight: 500;
+    }
+
+    footer span.acn {
+        font-style: italic;
+        opacity: 0.8;
+    }
 </style>
 </head>
 <body>
@@ -229,9 +252,9 @@
 </div>
 
 <footer>
-    Contact: +61 451 853 457<br>
-    HT Evolution<br>
-    ACN 691 704 926 PTY LTD
+    <span>Contact: +61 451 853 457</span>
+    <span>HT Evolution | Midland WA 6056 | Australia</span>
+    <span class="acn">ACN 691 704 926 PTY LTD</span>
 </footer>
 
 </body>
