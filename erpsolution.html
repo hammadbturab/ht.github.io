@@ -1,82 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERP Software Marketing Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERP Software Marketing Page</title>
 
-        header {
-            background-color: #1a73e8;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+<style>
+    /* ====== GLOBAL LOOK ====== */
+    body {
+        margin: 0;
+        background: linear-gradient(135deg, #0f1b33, #1e3c72, #2a5298);
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #fff;
+        overflow-x: hidden;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
+    /* ====== HEADER SECTION ====== */
+    header {
+        text-align: center;
+        padding: 80px 20px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        animation: fadeDown 1.2s ease;
+    }
 
-        header p {
-            margin-top: 10px;
-            font-size: 1.2em;
-        }
+    header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
 
+    header p {
+        font-size: 1.3rem;
+        opacity: 0.85;
+    }
+
+    @keyframes fadeDown {
+        0% { opacity: 0; transform: translateY(-40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ====== VIDEO GRID ====== */
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 1300px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    /* ====== VIDEO CARD ====== */
+    .video-card {
+        background: rgba(255,255,255,0.08);
+        border-radius: 18px;
+        padding: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(6px);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        animation: fadeUp 1.2s ease forwards;
+        opacity: 0;
+    }
+
+    .video-card:nth-child(odd) { animation-delay: 0.2s; }
+    .video-card:nth-child(even) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+        0% { opacity: 0; transform: translateY(40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .video-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    }
+
+    /* ====== VIDEO PLAYER ====== */
+    video {
+        width: 100%;
+        border-radius: 12px;
+        display: block;
+        outline: none;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 850px) {
         .video-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            grid-template-columns: 1fr;
         }
+    }
 
-        .video-grid video {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        @media (max-width: 768px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+</style>
 </head>
 <body>
 
-    <header>
-        <h1>Experience Our ERP Software</h1>
-        <p>16 Features Demonstrated Through Videos</p>
-    </header>
+<header>
+    <h1>Experience Our ERP Software</h1>
+    <p>Explore 16 Core Features — Fully Explained Through Video</p>
+</header>
 
-    <div class="video-grid">
-        <video controls src="videos/Step1overview.mp4"></video>
-        <video controls src="videos/Step2accounting.mp4"></video>
-        <video controls src="videos/Step3crm.mp4"></video>
-        <video controls src="videos/Step4purchasing.mp4"></video>
-        <video controls src="videos/Step5stock.mp4"></video>
-        <video controls src="videos/Step6manufacturing.mp4"></video>
-        <video controls src="videos/Step7aemployeeonboarding.mp4"></video>
-        <video controls src="videos/Step7battendance&Leaves.mp4"></video>
-        <video controls src="videos/Step7cpayroll.mp4"></video>
-        <video controls src="videos/Step8aproject.mp4"></video>
-        <video controls src="videos/Step8btaskdetails.mp4"></video>
-        <video controls src="videos/Step9customisation.mp4"></video>
-        <video controls src="videos/Step10adashboards.mp4"></video>
-        <video controls src="videos/Step10breports.mp4"></video>
-        <video controls src="videos/Step11arolepermissions.mp4"></video>
-        <video controls src="videos/Step11brolepermissionsmanager.mp4"></video>
-    </div>
+<div class="video-grid">
+
+    <div class="video-card"><video controls src="videos/Step1overview.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step2accounting.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step3crm.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step4purchasing.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step5stock.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step6manufacturing.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step7aemployeeonboarding.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step7battendanceandleaves.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step7cpayroll.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step8aproject.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step8btaskdetails.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step9customisation.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step10adashboards.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step10breports.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step11arolepermissions.mp4"></video></div>
+    <div class="video-card"><video controls src="videos/Step11brolepermissionsmanager.mp4"></video></div>
+
+</div>
 
 </body>
 </html>
