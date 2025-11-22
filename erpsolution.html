@@ -1,125 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ERP Software Marketing Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HT ERP - Feature Showcase</title>
 
-<style>
-    /* ====== GLOBAL LOOK ====== */
-    body {
-        margin: 0;
-        background: linear-gradient(135deg, #0f1b33, #1e3c72, #2a5298);
-        font-family: 'Segoe UI', Arial, sans-serif;
-        color: #fff;
-        overflow-x: hidden;
-    }
-
-    /* ====== HEADER SECTION ====== */
-    header {
-        text-align: center;
-        padding: 80px 20px;
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-        animation: fadeDown 1.2s ease;
-    }
-
-    header h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-    }
-
-    header p {
-        font-size: 1.3rem;
-        opacity: 0.85;
-    }
-
-    @keyframes fadeDown {
-        0% { opacity: 0; transform: translateY(-40px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ====== VIDEO GRID ====== */
-    .video-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        max-width: 1300px;
-        margin: 60px auto;
-        padding: 0 20px;
-    }
-
-    /* ====== VIDEO CARD ====== */
-    .video-card {
-        background: rgba(255,255,255,0.08);
-        border-radius: 18px;
-        padding: 15px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(6px);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        animation: fadeUp 1.2s ease forwards;
-        opacity: 0;
-    }
-
-    .video-card:nth-child(odd) { animation-delay: 0.2s; }
-    .video-card:nth-child(even) { animation-delay: 0.4s; }
-
-    @keyframes fadeUp {
-        0% { opacity: 0; transform: translateY(40px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .video-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-    }
-
-    /* ====== VIDEO PLAYER ====== */
-    video {
-        width: 100%;
-        border-radius: 12px;
-        display: block;
-        outline: none;
-    }
-
-    /* ====== RESPONSIVE ====== */
-    @media (max-width: 850px) {
-        .video-grid {
-            grid-template-columns: 1fr;
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0f1f, #1b2b4b);
+            color: #fff;
         }
-    }
 
-</style>
+        /* ----- Header ----- */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
+            animation: fadeDown 1s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ----- Grid ----- */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            padding: 60px 30px;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .video-card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transition: transform .3s ease, box-shadow .3s ease;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .video-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .video-caption {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 12px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        @media(max-width: 900px) {
+            .video-grid { grid-template-columns: 1fr; }
+        }
+
+    </style>
 </head>
+
 <body>
 
 <header>
-    <h1>Experience Our ERP Software</h1>
-    <p>Explore 16 Core Features — Fully Explained Through Video</p>
+    <h1>HT ERP Feature Showcase</h1>
+    <p>Watch 16 guided walkthrough videos demonstrating our complete business workflow.</p>
 </header>
 
 <div class="video-grid">
 
-    <div class="video-card"><video controls src="videos/Step1overview.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step2accounting.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step3crm.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step4purchasing.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step5stock.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step6manufacturing.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step7aemployeeonboarding.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step7battendanceandleaves.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step7cpayroll.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step8aproject.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step8btaskdetails.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step9customisation.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step10adashboards.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step10breports.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step11arolepermissions.mp4"></video></div>
-    <div class="video-card"><video controls src="videos/Step11brolepermissionsmanager.mp4"></video></div>
+    <!-- 1 -->
+    <div class="video-card">
+        <div class="video-title">1. ERP Overview</div>
+        <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
+        <video controls src="videos/Step1overview.mp4"></video>
+    </div>
+
+    <!-- 2 -->
+    <div class="video-card">
+        <div class="video-title">2. Accounting</div>
+        <div class="video-caption">Chart of accounts, financial reports, journals, and automation.</div>
+        <video controls src="videos/Step2accounting.mp4"></video>
+    </div>
+
+    <!-- 3 -->
+    <div class="video-card">
+        <div class="video-title">3. CRM</div>
+        <div class="video-caption">Leads, opportunities, pipelines, and customer relationship tools.</div>
+        <video controls src="videos/Step3crm.mp4"></video>
+    </div>
+
+    <!-- 4 -->
+    <div class="video-card">
+        <div class="video-title">4. Purchasing</div>
+        <div class="video-caption">Smooth procurement with automated POs and supplier tracking.</div>
+        <video controls src="videos/Step4purchasing.mp4"></video>
+    </div>
+
+    <!-- 5 -->
+    <div class="video-card">
+        <div class="video-title">5. Stock</div>
+        <div class="video-caption">Real-time inventory with stock movements and warehouse control.</div>
+        <video controls src="videos/Step5stock.mp4"></video>
+    </div>
+
+    <!-- 6 -->
+    <div class="video-card">
+        <div class="video-title">6. Manufacturing</div>
+        <div class="video-caption">BOMs, work orders, operations, and production planning.</div>
+        <video controls src="videos/Step6manufacturing.mp4"></video>
+    </div>
+
+    <!-- 7a -->
+    <div class="video-card">
+        <div class="video-title">7a. Employee Onboarding</div>
+        <div class="video-caption">Hiring, documentation, and joining workflows.</div>
+        <video controls src="videos/Step7aemployeeonboarding.mp4"></video>
+    </div>
+
+    <!-- 7b -->
+    <div class="video-card">
+        <div class="video-title">7b. Attendance & Leaves</div>
+        <div class="video-caption">Attendance tracking, rosters, and leave management.</div>
+        <video controls src="videos/Step7battendance&Leaves.mp4"></video>
+    </div>
+
+    <!-- 7c -->
+    <div class="video-card">
+        <div class="video-title">7c. Payroll</div>
+        <div class="video-caption">Payroll cycles, salary structures, payouts, and compliance.</div>
+        <video controls src="videos/Step7cpayroll.mp4"></video>
+    </div>
+
+    <!-- 8a -->
+    <div class="video-card">
+        <div class="video-title">8a. Project Management</div>
+        <div class="video-caption">Plan and monitor all your projects and milestones.</div>
+        <video controls src="videos/Step8aproject.mp4"></video>
+    </div>
+
+    <!-- 8b -->
+    <div class="video-card">
+        <div class="video-title">8b. Task Details</div>
+        <div class="video-caption">Deep dive into task assignments and collaboration.</div>
+        <video controls src="videos/Step8btaskdetails.mp4"></video>
+    </div>
+
+    <!-- 9 -->
+    <div class="video-card">
+        <div class="video-title">9. Customisation</div>
+        <div class="video-caption">Doctype editing, forms, workflows, and automations.</div>
+        <video controls src="videos/Step9customisation.mp4"></video>
+    </div>
+
+    <!-- 10a -->
+    <div class="video-card">
+        <div class="video-title">10a. Dashboards</div>
+        <div class="video-caption">Build beautiful dashboards with KPIs and charts.</div>
+        <video controls src="videos/Step10adashboards.mp4"></video>
+    </div>
+
+    <!-- 10b -->
+    <div class="video-card">
+        <div class="video-title">10b. Reports</div>
+        <div class="video-caption">Explore powerful reporting tools and custom reports.</div>
+        <video controls src="videos/Step10breports.mp4"></video>
+    </div>
+
+    <!-- 11a -->
+    <div class="video-card">
+        <div class="video-title">11a. Role Permissions</div>
+        <div class="video-caption">Role-based access control and security permissions.</div>
+        <video controls src="videos/Step11arolepermissions.mp4"></video>
+    </div>
+
+    <!-- 11b -->
+    <div class="video-card">
+        <div class="video-title">11b. Permissions Manager</div>
+        <div class="video-caption">Advanced permission mapping for full system control.</div>
+        <video controls src="videos/Step11brolepermissionsmanager.mp4"></video>
+    </div>
 
 </div>
 
