@@ -9,8 +9,8 @@
     body {
         margin: 0;
         font-family: 'Segoe UI', Arial, sans-serif;
-        background: linear-gradient(135deg, #0f1b33, #1e3c72, #2a5298);
-        color: #fff;
+        background: #f7f9fc;
+        color: #000;
     }
 
     header {
@@ -28,6 +28,7 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         margin-bottom: 10px;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
     }
 
     header p {
@@ -50,14 +51,15 @@
     }
 
     .video-card {
-        background: rgba(255,255,255,0.08);
+        background: rgba(255, 255, 255, 0.03);
         border-radius: 18px;
         padding: 15px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(6px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        backdrop-filter: blur(8px);
         transition: transform 0.4s ease, box-shadow 0.4s ease;
         animation: fadeUp 1.2s ease forwards;
         opacity: 0;
+        overflow: hidden;
     }
 
     .video-card:nth-child(odd) { animation-delay: 0.2s; }
@@ -69,15 +71,18 @@
     }
 
     .video-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+        transform: scale(1.03);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.25);
     }
 
     video {
         width: 100%;
-        border-radius: 12px;
         display: block;
         outline: none;
+        border-radius: 0;
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+        background: rgba(255,255,255,0.05);
+        margin-bottom: 10px;
     }
 
     .video-title {
@@ -131,128 +136,128 @@
 <body>
 
 <header>
-    <h1>Experience Our AI-Powered ERP Next Software</h1>
-    <p>Explore 16 Core Features — Explained Through Videos</p>
+    <h1>Experience Our AI-Powered ERPNext Software</h1>
+    <p>Explore 16 Core Modules — Fully Customisable to Your Business Needs</p>
 </header>
 
 <div class="video-grid">
-
     <div class="video-card">
         <div class="video-title">ERP Overview</div>
         <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
         <video controls src="videos/Step1overview.mp4"></video>
-        <div class="video-custom">Available Customizations: Customize dashboards, themes, and user interface layouts.</div>
+        <div class="video-custom">Available Customisations: Dashboards, themes, and user interface layouts.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Accounting</div>
         <div class="video-caption">Manage your accounts, financial reports, and journals easily.</div>
         <video controls src="videos/Step2accounting.mp4"></video>
-        <div class="video-custom">Available Customizations: Multi-currency support, automated reconciliation, and tax reporting.</div>
+        <div class="video-custom">Available Customisations: Multi-currency support, automated reconciliation, and tax reporting.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">CRM</div>
         <div class="video-caption">Leads, opportunities, and customer management simplified.</div>
         <video controls src="videos/Step3crm.mp4"></video>
-        <div class="video-custom">Available Customizations: Automated follow-ups, email templates, and custom pipelines.</div>
+        <div class="video-custom">Available Customisations: Automated follow-ups, email templates, and custom pipelines.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Purchasing</div>
         <div class="video-caption">Automated procurement with supplier tracking and POs.</div>
         <video controls src="videos/Step4purchasing.mp4"></video>
-        <div class="video-custom">Available Customizations: Approval workflows, supplier rating, and bulk purchase rules.</div>
+        <div class="video-custom">Available Customisations: Approval workflows, supplier rating, and bulk purchase rules.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Stock Management</div>
         <div class="video-caption">Real-time inventory and warehouse control at your fingertips.</div>
         <video controls src="videos/Step5stock.mp4"></video>
-        <div class="video-custom">Available Customizations: Batch tracking, barcode scanning, and reorder alerts.</div>
+        <div class="video-custom">Available Customisations: Batch tracking, barcode scanning, and reorder alerts.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Manufacturing</div>
         <div class="video-caption">BOMs, work orders, operations, and production planning made easy.</div>
         <video controls src="videos/Step6manufacturing.mp4"></video>
-        <div class="video-custom">Available Customizations: Custom workflows, material cost calculations, and scheduling.</div>
+        <div class="video-custom">Available Customisations: Custom workflows, material cost calculations, and scheduling.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Employee Onboarding</div>
         <div class="video-caption">Streamline hiring, documentation, and joining workflows.</div>
         <video controls src="videos/Step7aemployeeonboarding.mp4"></video>
-        <div class="video-custom">Available Customizations: Custom onboarding checklists, welcome emails, and training assignments.</div>
+        <div class="video-custom">Available Customisations: Custom onboarding checklists, welcome emails, and training assignments.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Attendance & Leaves</div>
         <div class="video-caption">Monitor attendance, rosters, and leave requests effortlessly.</div>
         <video controls src="videos/Step7battendanceandleaves.mp4"></video>
-        <div class="video-custom">Available Customizations: Automatic leave allocation based on days worked, shift scheduling, and approval workflows.</div>
+        <div class="video-custom">Available Customisations: Automatic leave allocation, shift scheduling, and approval workflows.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Payroll</div>
         <div class="video-caption">Manage payroll cycles, salaries, and compliance automatically.</div>
         <video controls src="videos/Step7cpayroll.mp4"></video>
-        <div class="video-custom">Available Customizations: Payroll based on timesheets and Australian taxation rules, pay slips, and deductions.</div>
+        <div class="video-custom">Available Customisations: Payroll based on timesheets and Australian taxation rules, pay slips, and deductions.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Project Management</div>
         <div class="video-caption">Plan and monitor projects and milestones efficiently.</div>
         <video controls src="videos/Step8aproject.mp4"></video>
-        <div class="video-custom">Available Customizations: Track hours spent on projects, milestones, and custom project statuses.</div>
+        <div class="video-custom">Available Customisations: Track hours spent on projects, milestones, and custom project statuses.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Task Details</div>
         <div class="video-caption">Track individual tasks and collaborate seamlessly.</div>
         <video controls src="videos/Step8btaskdetails.mp4"></video>
-        <div class="video-custom">Available Customizations: Sub-tasks, reminders, and task priority settings.</div>
+        <div class="video-custom">Available Customisations: Sub-tasks, reminders, and task priority settings.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Customisation</div>
         <div class="video-caption">Edit forms, workflows, and automate processes as needed.</div>
         <video controls src="videos/Step9customisation.mp4"></video>
-        <div class="video-custom">Available Customizations: Custom fields, automated scripts, and role-based permissions.</div>
+        <div class="video-custom">Available Customisations: Custom fields, automated scripts, and role-based permissions.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Dashboards</div>
         <div class="video-caption">Visualize KPIs and metrics with customizable dashboards.</div>
         <video controls src="videos/Step10adashboards.mp4"></video>
-        <div class="video-custom">Available Customizations: Drag-and-drop widgets, charts, and real-time data updates.</div>
+        <div class="video-custom">Available Customisations: Drag-and-drop widgets, charts, and real-time data updates.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Reports</div>
         <div class="video-caption">Generate insightful reports for every part of your business.</div>
         <video controls src="videos/Step10breports.mp4"></video>
-        <div class="video-custom">Available Customizations: Custom filters, scheduled reports, and export options.</div>
+        <div class="video-custom">Available Customisations: Custom filters, scheduled reports, and export options.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Role Permissions</div>
         <div class="video-caption">Control access and security for all users in the system.</div>
         <video controls src="videos/Step11arolepermissions.mp4"></video>
-        <div class="video-custom">Available Customizations: Custom roles, field-level permissions, and approval chains.</div>
+        <div class="video-custom">Available Customisations: Custom roles, field-level permissions, and approval chains.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Permissions Manager</div>
         <div class="video-caption">Advanced role-based access and permission management.</div>
         <video controls src="videos/Step11brolepermissionsmanager.mp4"></video>
-        <div class="video-custom">Available Customizations: Batch role assignment, permission templates, and audit logs.</div>
+        <div class="video-custom">Available Customisations: Batch role assignment, permission templates, and audit logs.</div>
     </div>
 
 </div>
 
 <footer>
-    <span>Contact: +61 451 853 457</span>
+    <span>Phone: +61 451 853 457</span>
+    <span>E-mail: ﻿support@htevolution.com</span>
     <span>HT Evolution | Midland WA 6056 | Australia</span>
     <span class="acn">ACN 691 704 926 PTY LTD</span>
 </footer>
