@@ -27,11 +27,19 @@
 
     header {
         text-align: center;
-        padding: 80px 20px;
+        padding: 80px 20px 60px;
         background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(10px);
         border-bottom: 1px solid rgba(0,0,0,0.1);
         animation: fadeDown 1.2s ease;
+    }
+
+    /* Logo added here */
+    .logo {
+        width: 120px;
+        height: auto;
+        margin-bottom: 20px;
+        animation: fadeDown 1.4s ease;
     }
 
     header h1 {
@@ -101,6 +109,7 @@
 
     @media (max-width: 850px) {
         .card-grid { grid-template-columns: 1fr; }
+        .logo { width: 100px; }
     }
 
     footer {
@@ -130,19 +139,20 @@
 <body>
 
 <header>
+    <!-- LOGO ADDED HERE -->
+    <img src="https://ht.github.io/videos/logo.gif" class="logo" alt="HT Evolution Logo">
+
     <h1>Solution Catalogue</h1>
     <p>Explore our powerful digital solutions</p>
 </header>
 
 <div class="card-grid">
 
-    <!-- Card #1 -->
     <div class="solution-card">
         <div class="solution-title">NexaERP</div>
         <div class="solution-desc">A modular, AI-powered ERP designed for fast-growing businesses.</div>
     </div>
 
-    <!-- Placeholder Cards -->
     <div class="solution-card">
         <div class="solution-title">Coming Soon</div>
         <div class="solution-desc">New enterprise solutions will appear here.</div>
