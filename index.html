@@ -1,53 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Welcome to HT Evolution</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HT Evolution – Solution Catalogue</title>
 
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRZJM7ZEQ0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-MRZJM7ZEQ0');
 </script>
-  
-  <style>
-    html, body {
-      height: 100%;        /* ensure full height */
-      margin: 0;           /* remove default margin */
-    }
+
+<!-- Canary Token Image -->
+<img src="http://canarytokens.com/tags/h4z254qh9xwpnhr7weeetmqaw/index.html" style="display:none;" alt="">
+
+<style>
     body {
-      font-family: Arial, sans-serif;
-      display: flex;               /* centers content */
-      flex-direction: column;
-      justify-content: center;     /* vertical center */
-      align-items: center;         /* horizontal center */
-      background-image: url('images/pexels-bubi-3111438.jpg');
-      background-size: cover;      /* fill screen */
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      text-align: center;
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #f7f9fc;
+        color: #000;
     }
-    h1 {
-      color: #fff;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-      font-size: 3em;
+
+    header {
+        text-align: center;
+        padding: 80px 20px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        animation: fadeDown 1.2s ease;
     }
-    p {
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-      font-size: 1.5em;
+
+    header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
     }
-  </style>
+
+    header p {
+        font-size: 1.3rem;
+        opacity: 0.85;
+    }
+
+    @keyframes fadeDown {
+        0% { opacity: 0; transform: translateY(-40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    .solution-card {
+        background: rgba(255,255,255,0.6);
+        border-radius: 18px;
+        padding: 40px 20px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        backdrop-filter: blur(8px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeUp 1.2s ease forwards;
+        opacity: 0;
+    }
+
+    .solution-card:nth-child(odd) { animation-delay: 0.2s; }
+    .solution-card:nth-child(even) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+        0% { opacity: 0; transform: translateY(40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .solution-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .solution-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .solution-desc {
+        font-size: 1rem;
+        opacity: 0.75;
+    }
+
+    @media (max-width: 850px) {
+        .card-grid { grid-template-columns: 1fr; }
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        background: rgba(255,255,255,0.4);
+        backdrop-filter: blur(8px);
+        border-top: 1px solid rgba(0,0,0,0.1);
+        font-size: 1rem;
+        color: #000;
+        letter-spacing: 0.5px;
+        margin-top: 80px;
+    }
+
+    footer span {
+        display: block;
+        margin: 3px 0;
+        font-weight: 500;
+    }
+
+    footer span.acn {
+        font-style: italic;
+        opacity: 0.8;
+    }
+</style>
 </head>
 <body>
-  <h1>HT Evolution</h1>
-  <p>Coming soon.</p>
+
+<header>
+    <h1>Solution Catalogue</h1>
+    <p>Explore our powerful digital solutions</p>
+</header>
+
+<div class="card-grid">
+
+    <!-- Card #1 -->
+    <div class="solution-card">
+        <div class="solution-title">NexaERP</div>
+        <div class="solution-desc">A modular, AI-powered ERP designed for fast-growing businesses.</div>
+    </div>
+
+    <!-- Placeholder Cards -->
+    <div class="solution-card">
+        <div class="solution-title">Coming Soon</div>
+        <div class="solution-desc">New enterprise solutions will appear here.</div>
+    </div>
+
+    <div class="solution-card">
+        <div class="solution-title">Coming Soon</div>
+        <div class="solution-desc">New enterprise solutions will appear here.</div>
+    </div>
+
+    <div class="solution-card">
+        <div class="solution-title">Coming Soon</div>
+        <div class="solution-desc">New enterprise solutions will appear here.</div>
+    </div>
+
+    <div class="solution-card">
+        <div class="solution-title">Coming Soon</div>
+        <div class="solution-desc">New enterprise solutions will appear here.</div>
+    </div>
+
+    <div class="solution-card">
+        <div class="solution-title">Coming Soon</div>
+        <div class="solution-desc">New enterprise solutions will appear here.</div>
+    </div>
+
+</div>
+
+<footer>
+    <span>Phone: +61 451 853 457</span>
+    <span>E-mail: support@htevolution.com</span>
+    <span>HT Evolution | Midland WA 6056 | Australia</span>
+    <span class="acn">ACN 691 704 926 PTY LTD</span>
+</footer>
+
 </body>
 </html>
-
-<!-- <p>Marketing<br>Search Engine Optimisation (SEO)<br>Customer Satisfaction<br><br>Process Optimization<br>Software (Application/Website) Development<br>Hardware Development<br>Organisational Structure<br><br>Supply Chain Optimisation<br><br>Coming soon.</p> -->
