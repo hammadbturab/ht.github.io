@@ -11,13 +11,12 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-MRZJM7ZEQ0');
 </script>
 
 <!-- Canary Token Image -->
 <img src="http://canarytokens.com/tags/h4z254qh9xwpnhr7weeetmqaw/index.html" style="display:none;" alt="">
-    
+
 <style>
     body {
         margin: 0;
@@ -54,6 +53,7 @@
         100% { opacity: 1; transform: translateY(0); }
     }
 
+    /* GRID */
     .video-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -63,6 +63,7 @@
         padding: 0 20px;
     }
 
+    /* VIDEO CARDS */
     .video-card {
         background: rgba(255,255,255,0.08);
         border-radius: 18px;
@@ -72,8 +73,7 @@
         transition: transform 0.4s ease, box-shadow 0.4s ease;
         animation: fadeUp 1.2s ease forwards;
         opacity: 0;
-        overflow: hidden;
-        text-align: center; /* Center all text inside card */
+        text-align: center;
     }
 
     .video-card:nth-child(odd) { animation-delay: 0.2s; }
@@ -93,9 +93,6 @@
         width: 100%;
         display: block;
         outline: none;
-        border-radius: 0;
-        box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
-        background: rgba(255,255,255,0.05);
         margin-bottom: 10px;
     }
 
@@ -112,26 +109,30 @@
         margin-bottom: 6px;
     }
 
-    .video-custom {
-        font-size: 0.9rem;
-        opacity: 0.75;
-        margin-bottom: 10px;
-        text-align: center; /* Center "Available Customisations" */
-        font-style: normal;
+    /* DIVIDERS (Static, Black) */
+    .divider {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 800;
+        margin: 20px 0 0 0;
+        color: #000;
     }
 
     @media (max-width: 850px) {
         .video-grid { grid-template-columns: 1fr; }
+        .divider { font-size: 1.5rem; }
     }
+
+    /* Fix last row disappearing */
+    .video-card { display: block !important; }
 
     footer {
         text-align: center;
         padding: 40px 20px;
         background: rgba(255,255,255,0.05);
-        backdrop-filter: blur(8px);
         border-top: 1px solid rgba(255,255,255,0.2);
         font-size: 1rem;
-        color: #000;
         letter-spacing: 0.5px;
     }
 
@@ -139,11 +140,6 @@
         display: block;
         margin: 3px 0;
         font-weight: 500;
-    }
-
-    footer span.acn {
-        font-style: italic;
-        opacity: 0.8;
     }
 </style>
 </head>
@@ -156,117 +152,110 @@
 
 <div class="video-grid">
 
+    <!-- ROW 1 -->
     <div class="video-card">
         <div class="video-title">ERP Overview</div>
-        <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
+        <div class="video-caption">A quick tour of the HT ERP ecosystem.</div>
         <video controls src="videos/Step1overview.mp4"></video>
-        <div class="video-custom">Available Customisations: Dashboards, themes, and user interface layouts.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Accounting</div>
-        <div class="video-caption">Manage your accounts, financial reports, and journals easily.</div>
+        <div class="video-caption">Manage accounts and financial reports easily.</div>
         <video controls src="videos/Step2accounting.mp4"></video>
-        <div class="video-custom">Available Customisations: Multi-currency support, automated reconciliation, and tax reporting.</div>
     </div>
 
+    <div class="divider">AB</div>
+
+    <!-- ROW 2 -->
     <div class="video-card">
         <div class="video-title">CRM</div>
-        <div class="video-caption">Leads, opportunities, and customer management simplified.</div>
+        <div class="video-caption">Leads, opportunities, and customers.</div>
         <video controls src="videos/Step3crm.mp4"></video>
-        <div class="video-custom">Available Customisations: Automated follow-ups, email templates, and custom pipelines.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Purchasing</div>
-        <div class="video-caption">Automated procurement with supplier tracking and POs.</div>
+        <div class="video-caption">Automated procurement & supplier tracking.</div>
         <video controls src="videos/Step4purchasing.mp4"></video>
-        <div class="video-custom">Available Customisations: Approval workflows, supplier rating, and bulk purchase rules.</div>
     </div>
 
+    <div class="divider">CD</div>
+
+    <!-- ROW 3 -->
     <div class="video-card">
         <div class="video-title">Stock Management</div>
-        <div class="video-caption">Real-time inventory and warehouse control at your fingertips.</div>
+        <div class="video-caption">Real-time inventory & warehouse control.</div>
         <video controls src="videos/Step5stock.mp4"></video>
-        <div class="video-custom">Available Customisations: Batch tracking, barcode scanning, and reorder alerts.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Manufacturing</div>
-        <div class="video-caption">BOMs, work orders, operations, and production planning made easy.</div>
+        <div class="video-caption">BOMs, work orders, and production.</div>
         <video controls src="videos/Step6manufacturing.mp4"></video>
-        <div class="video-custom">Available Customisations: Custom workflows, material cost calculations, and scheduling.</div>
     </div>
 
+    <div class="divider">EF</div>
+
+    <!-- ROW 4 -->
     <div class="video-card">
         <div class="video-title">Employee Onboarding</div>
-        <div class="video-caption">Streamline hiring, documentation, and joining workflows.</div>
+        <div class="video-caption">Hiring, documentation & joining workflows.</div>
         <video controls src="videos/Step7aemployeeonboarding.mp4"></video>
-        <div class="video-custom">Available Customisations: Custom onboarding checklists, welcome emails, and training assignments.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Attendance & Leaves</div>
-        <div class="video-caption">Monitor attendance, rosters, and leave requests effortlessly.</div>
+        <div class="video-caption">Attendance, rosters & leave management.</div>
         <video controls src="videos/Step7battendanceandleaves.mp4"></video>
-        <div class="video-custom">Available Customisations: Biometric devices, automatic leave allocation, shift scheduling, and approval workflows.</div>
     </div>
 
+    <div class="divider">GH</div>
+
+    <!-- ROW 5 -->
     <div class="video-card">
         <div class="video-title">Payroll</div>
-        <div class="video-caption">Manage payroll cycles, salaries, and compliance automatically.</div>
+        <div class="video-caption">Salary processing & compliance.</div>
         <video controls src="videos/Step7cpayroll.mp4"></video>
-        <div class="video-custom">Available Customisations: Payroll based on timesheets and Australian taxation rules, pay slips, and deductions.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Project Management</div>
-        <div class="video-caption">Plan and monitor projects and milestones efficiently.</div>
+        <div class="video-caption">Plan and track project milestones.</div>
         <video controls src="videos/Step8aproject.mp4"></video>
-        <div class="video-custom">Available Customisations: Track hours spent on projects, milestones, and custom project statuses.</div>
     </div>
 
+    <div class="divider">IJ</div>
+
+    <!-- ROW 6 -->
     <div class="video-card">
         <div class="video-title">Task Details</div>
-        <div class="video-caption">Track individual tasks and collaborate seamlessly.</div>
+        <div class="video-caption">Track tasks and collaborate easily.</div>
         <video controls src="videos/Step8btaskdetails.mp4"></video>
-        <div class="video-custom">Available Customisations: Sub-tasks, reminders, and task priority settings.</div>
     </div>
 
     <div class="video-card">
         <div class="video-title">Customisation</div>
-        <div class="video-caption">Edit forms, workflows, and automate processes as needed.</div>
+        <div class="video-caption">Modify forms, workflows & automations.</div>
         <video controls src="videos/Step9customisation.mp4"></video>
-        <div class="video-custom">Available Customisations: Custom fields, automated scripts, and role-based permissions.</div>
     </div>
 
-    <div class="video-card">
-        <div class="video-title">Dashboards</div>
-        <div class="video-caption">Visualize KPIs and metrics with customizable dashboards.</div>
-        <video controls src="videos/Step10adashboards.mp4"></video>
-        <div class="video-custom">Available Customisations: Drag-and-drop widgets, charts, and real-time data updates.</div>
-    </div>
+    <div class="divider">KL</div>
 
-    <div class="video-card">
-        <div class="video-title">Reports</div>
-        <div class="video-caption">Generate insightful reports for every part of your business.</div>
-        <video controls src="videos/Step10breports.mp4"></video>
-        <div class="video-custom">Available Customisations: Custom filters, scheduled reports, BAS, ABA files for payment and export options.</div>
-    </div>
-
+    <!-- ROW 7 (FINAL) -->
     <div class="video-card">
         <div class="video-title">Role Permissions</div>
-        <div class="video-caption">Control access and security for all users in the system.</div>
-        <video controls src="videos/Step11arolepermissions.mp4"></video>
-        <div class="video-custom">Available Customisations: Custom roles, field-level permissions, and approval chains.</div>
+        <div class="video-caption">Assign roles and configure permission levels.</div>
+        <video controls src="videos/Step11rolepermissions.mp4"></video>
     </div>
 
     <div class="video-card">
         <div class="video-title">Permissions Manager</div>
-        <div class="video-caption">Advanced role-based access and permission management.</div>
-        <video controls src="videos/Step11brolepermissionsmanager.mp4"></video>
-        <div class="video-custom">Available Customisations: Batch role assignment, permission templates, and audit logs.</div>
+        <div class="video-caption">Advanced access control for specific doctypes.</div>
+        <video controls src="videos/Step12permissionsmanager.mp4"></video>
     </div>
+
+    <div class="divider">MN</div>
 
 </div>
 
