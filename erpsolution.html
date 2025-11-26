@@ -3,268 +3,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ERP Software Marketing Page</title>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRZJM7ZEQ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MRZJM7ZEQ0');
-</script>
-
-<!-- Canary Token Image -->
-<img src="http://canarytokens.com/tags/h4z254qh9xwpnhr7weeetmqaw/index.html" style="display:none;" alt="">
+<title>NexaERP Feature Showcase</title>
 
 <style>
     body {
         margin: 0;
+        padding: 0;
         font-family: 'Segoe UI', Arial, sans-serif;
-        background: #f7f9fc;
-        color: #000;
+        background: #f5f5f5;
+        color: black;
     }
 
-    header {
+    .section-divider {
         text-align: center;
-        padding: 80px 20px;
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-        animation: fadeDown 1.2s ease;
+        margin: 50px 0 20px;
+        font-size: 18px; /* smaller divider text */
+        font-weight: normal;
+        color: #444;
     }
 
-    header h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    }
-
-    header p {
-        font-size: 1.3rem;
-        opacity: 0.85;
-    }
-
-    @keyframes fadeDown {
-        0% { opacity: 0; transform: translateY(-40px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-
-    /* GRID */
     .video-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        max-width: 1300px;
-        margin: 60px auto;
-        padding: 0 20px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+        padding: 20px;
+        max-width: 1400px;
+        margin: auto;
     }
 
-    /* VIDEO CARDS */
     .video-card {
-        background: rgba(255,255,255,0.08);
-        border-radius: 18px;
-        padding: 15px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(6px);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        animation: fadeUp 1.2s ease forwards;
-        opacity: 0;
-        text-align: center;
-    }
-
-    .video-card:nth-child(odd) { animation-delay: 0.2s; }
-    .video-card:nth-child(even) { animation-delay: 0.4s; }
-
-    @keyframes fadeUp {
-        0% { opacity: 0; transform: translateY(40px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .video-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-    }
-
-    video {
-        width: 100%;
-        display: block;
-        outline: none;
-        margin-bottom: 10px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        padding: 18px;
+        border-radius: 20px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     }
 
     .video-title {
-        font-size: 1.2rem;
+        font-size: 22px; /* original size */
         font-weight: 600;
-        margin-bottom: 6px;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        margin-bottom: 5px;
     }
 
-    .video-caption {
-        font-size: 0.95rem;
-        opacity: 0.8;
-        margin-bottom: 6px;
+    .video-desc {
+        font-size: 14px; /* original size */
+        margin-bottom: 12px;
+        color: #333;
     }
 
-    /* DIVIDERS (Static, Black) */
-    .divider {
-        grid-column: 1 / -1;
-        text-align: center;
-        font-size: 2rem;
-        font-weight: 800;
-        margin: 20px 0 0 0;
-        color: #000;
+    .video-card video {
+        width: 100%;
+        border-radius: 16px;
+        margin-bottom: 12px;
     }
 
-    @media (max-width: 850px) {
-        .video-grid { grid-template-columns: 1fr; }
-        .divider { font-size: 1.5rem; }
-    }
-
-    /* Fix last row disappearing */
-    .video-card { display: block !important; }
-
-    footer {
-        text-align: center;
-        padding: 40px 20px;
-        background: rgba(255,255,255,0.05);
-        border-top: 1px solid rgba(255,255,255,0.2);
-        font-size: 1rem;
-        letter-spacing: 0.5px;
-    }
-
-    footer span {
-        display: block;
-        margin: 3px 0;
+    .video-custom {
+        font-size: 14px;
         font-weight: 500;
+        color: #333;
     }
 </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Experience Our AI-Powered ERPNext Software</h1>
-    <p>Explore 16 Core Modules — Fully Customisable to Your Business Needs</p>
-</header>
+<!-- --------------------------- SECTION 1 --------------------------- -->
+<h2 class="section-divider">Centralise your financial data and streamline accounting workflows with real-time accuracy across your business.</h2>
 
 <div class="video-grid">
 
-    <!-- ROW 1 -->
+    <!-- ERP Overview -->
     <div class="video-card">
         <div class="video-title">ERP Overview</div>
-        <div class="video-caption">A quick tour of the HT ERP ecosystem.</div>
-        <video controls src="videos/Step1overview.mp4"></video>
+        <div class="video-desc">A quick tour of the NexaERP ecosystem, showing how your entire business operates from one unified platform.</div>
+        <video src="videos/Step1overview.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Dashboards, themes, and user interface layouts.</div>
     </div>
 
+    <!-- Accounting -->
     <div class="video-card">
         <div class="video-title">Accounting</div>
-        <div class="video-caption">Manage accounts and financial reports easily.</div>
-        <video controls src="videos/Step2accounting.mp4"></video>
+        <div class="video-desc">Manage finances, automate reconciliation, track taxes, generate reports, and centralise your entire accounting workflow.</div>
+        <video src="videos/Step2accounting.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Multi-currency support, automated reconciliation, and tax reporting.</div>
     </div>
-
-    <div class="divider">AB</div>
-
-    <!-- ROW 2 -->
-    <div class="video-card">
-        <div class="video-title">CRM</div>
-        <div class="video-caption">Leads, opportunities, and customers.</div>
-        <video controls src="videos/Step3crm.mp4"></video>
-    </div>
-
-    <div class="video-card">
-        <div class="video-title">Purchasing</div>
-        <div class="video-caption">Automated procurement & supplier tracking.</div>
-        <video controls src="videos/Step4purchasing.mp4"></video>
-    </div>
-
-    <div class="divider">CD</div>
-
-    <!-- ROW 3 -->
-    <div class="video-card">
-        <div class="video-title">Stock Management</div>
-        <div class="video-caption">Real-time inventory & warehouse control.</div>
-        <video controls src="videos/Step5stock.mp4"></video>
-    </div>
-
-    <div class="video-card">
-        <div class="video-title">Manufacturing</div>
-        <div class="video-caption">BOMs, work orders, and production.</div>
-        <video controls src="videos/Step6manufacturing.mp4"></video>
-    </div>
-
-    <div class="divider">EF</div>
-
-    <!-- ROW 4 -->
-    <div class="video-card">
-        <div class="video-title">Employee Onboarding</div>
-        <div class="video-caption">Hiring, documentation & joining workflows.</div>
-        <video controls src="videos/Step7aemployeeonboarding.mp4"></video>
-    </div>
-
-    <div class="video-card">
-        <div class="video-title">Attendance & Leaves</div>
-        <div class="video-caption">Attendance, rosters & leave management.</div>
-        <video controls src="videos/Step7battendanceandleaves.mp4"></video>
-    </div>
-
-    <div class="divider">GH</div>
-
-    <!-- ROW 5 -->
-    <div class="video-card">
-        <div class="video-title">Payroll</div>
-        <div class="video-caption">Salary processing & compliance.</div>
-        <video controls src="videos/Step7cpayroll.mp4"></video>
-    </div>
-
-    <div class="video-card">
-        <div class="video-title">Project Management</div>
-        <div class="video-caption">Plan and track project milestones.</div>
-        <video controls src="videos/Step8aproject.mp4"></video>
-    </div>
-
-    <div class="divider">IJ</div>
-
-    <!-- ROW 6 -->
-    <div class="video-card">
-        <div class="video-title">Task Details</div>
-        <div class="video-caption">Track tasks and collaborate easily.</div>
-        <video controls src="videos/Step8btaskdetails.mp4"></video>
-    </div>
-
-    <div class="video-card">
-        <div class="video-title">Customisation</div>
-        <div class="video-caption">Modify forms, workflows & automations.</div>
-        <video controls src="videos/Step9customisation.mp4"></video>
-    </div>
-
-    <div class="divider">KL</div>
-
-    <!-- ROW 7 (FINAL) -->
-    <div class="video-card">
-        <div class="video-title">Role Permissions</div>
-        <div class="video-caption">Assign roles and configure permission levels.</div>
-        <video controls src="videos/Step11rolepermissions.mp4"></video>
-    </div>
-
-    <div class="video-card">
-        <div class="video-title">Permissions Manager</div>
-        <div class="video-caption">Advanced access control for specific doctypes.</div>
-        <video controls src="videos/Step12permissionsmanager.mp4"></video>
-    </div>
-
-    <div class="divider">MN</div>
 
 </div>
 
-<footer>
-    <span>Phone: +61 451 853 457</span>
-    <span>E-mail: support@htevolution.com</span>
-    <span>HT Evolution | Midland WA 6056 | Australia</span>
-    <span class="acn">ACN 691 704 926 PTY LTD</span>
-</footer>
+<!-- --------------------------- SECTION 2 --------------------------- -->
+<h2 class="section-divider">Boost customer relationships and streamline procurement with connected CRM and purchasing processes.</h2>
+
+<div class="video-grid">
+
+    <!-- CRM -->
+    <div class="video-card">
+        <div class="video-title">CRM</div>
+        <div class="video-desc">Track leads, convert opportunities, automate follow-ups, and keep customer relationships centralised in one system.</div>
+        <video src="videos/Step3crm.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Automated follow-ups, email templates, and custom pipelines.</div>
+    </div>
+
+    <!-- Purchasing -->
+    <div class="video-card">
+        <div class="video-title">Purchasing</div>
+        <div class="video-desc">Automate procurement, manage suppliers, control purchase orders, and ensure smooth, centralised purchasing operations.</div>
+        <video src="videos/Step4purchasing.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Approval workflows, supplier rating, and bulk purchase rules.</div>
+    </div>
+
+</div>
+
+<!-- --------------------------- SECTION 3 --------------------------- -->
+<h2 class="section-divider">Gain complete visibility across inventory and manufacturing for faster, more predictable operations.</h2>
+
+<div class="video-grid">
+
+    <!-- Stock Management -->
+    <div class="video-card">
+        <div class="video-title">Stock Management</div>
+        <div class="video-desc">Control inventory in real time, track stock movement, manage warehouses, and prevent shortages with centralised visibility.</div>
+        <video src="videos/Step5stock.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Batch tracking, barcode scanning, and reorder alerts.</div>
+    </div>
+
+    <!-- Manufacturing -->
+    <div class="video-card">
+        <div class="video-title">Manufacturing</div>
+        <div class="video-desc">Manage BOMs, plan production, automate work orders, and coordinate manufacturing from one connected system.</div>
+        <video src="videos/Step6manufacturing.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Custom workflows, material cost calculations, and scheduling.</div>
+    </div>
+
+</div>
+
+<!-- --------------------------- SECTION 4 --------------------------- -->
+<h2 class="section-divider">Empower your HR team with streamlined onboarding, attendance, payroll, and workforce management.</h2>
+
+<div class="video-grid">
+
+    <!-- Employee Onboarding -->
+    <div class="video-card">
+        <div class="video-title">Employee Onboarding</div>
+        <div class="video-desc">Digitise the onboarding journey, manage documentation, and automate employee setup from a single place.</div>
+        <video src="videos/Step7onboarding.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Custom onboarding checklists, welcome emails, and training assignments.</div>
+    </div>
+
+    <!-- Attendance & Leaves -->
+    <div class="video-card">
+        <div class="video-title">Attendance & Leaves</div>
+        <div class="video-desc">Track attendance, manage shifts, automate leave allocation, and streamline approval workflows.</div>
+        <video src="videos/Step8attendance.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Biometric devices, automatic leave allocation, shift scheduling, and approval workflows.</div>
+    </div>
+
+    <!-- Payroll -->
+    <div class="video-card">
+        <div class="video-title">Payroll</div>
+        <div class="video-desc">Generate payroll automatically, ensure compliance, and centralise salary processing with accuracy.</div>
+        <video src="videos/Step9payroll.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Payroll based on timesheets and Australian taxation rules, pay slips, and deductions.</div>
+    </div>
+
+</div>
+
+<!-- --------------------------- SECTION 5 --------------------------- -->
+<h2 class="section-divider">Plan, track, and deliver projects with full clarity from high-level milestones to detailed tasks.</h2>
+
+<div class="video-grid">
+
+    <!-- Project Management -->
+    <div class="video-card">
+        <div class="video-title">Project Management</div>
+        <div class="video-desc">Organise projects, schedule milestones, track progress, and centralise all project execution in one platform.</div>
+        <video src="videos/Step10projects.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Track hours spent on projects, milestones, and custom project statuses.</div>
+    </div>
+
+    <!-- Task Details -->
+    <div class="video-card">
+        <div class="video-title">Task Details</div>
+        <div class="video-desc">Manage tasks, collaborate in real time, track dependencies, and keep work flowing efficiently.</div>
+        <video src="videos/Step11tasks.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Sub-tasks, reminders, and task priority settings.</div>
+    </div>
+
+</div>
+
+<!-- --------------------------- SECTION 6 --------------------------- -->
+<h2 class="section-divider">Customise your system, automate workflows, and gain insights with dashboards and advanced reporting.</h2>
+
+<div class="video-grid">
+
+    <!-- Customisation -->
+    <div class="video-card">
+        <div class="video-title">Customisation</div>
+        <div class="video-desc">Modify forms, create workflows, automate processes, and tailor NexaERP to your exact operations.</div>
+        <video src="videos/Step12customisation.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Custom fields, automated scripts, and role-based permissions.</div>
+    </div>
+
+    <!-- Dashboards -->
+    <div class="video-card">
+        <div class="video-title">Dashboards</div>
+        <div class="video-desc">Visualise KPIs, monitor performance, and track real-time business insights from custom dashboards.</div>
+        <video src="videos/Step13dashboards.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Drag-and-drop widgets, charts, and real-time data updates.</div>
+    </div>
+
+    <!-- Reports -->
+    <div class="video-card">
+        <div class="video-title">Reports</div>
+        <div class="video-desc">Generate comprehensive reports across finance, HR, sales, stock, and operations — all centralised.</div>
+        <video src="videos/Step14reports.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Custom filters, scheduled reports, BAS, ABA files for payment and export options.</div>
+    </div>
+
+</div>
+
+<!-- --------------------------- SECTION 7 --------------------------- -->
+<h2 class="section-divider">Control access and security with powerful permission tools for every user and department.</h2>
+
+<div class="video-grid">
+
+    <!-- Role Permissions -->
+    <div class="video-card">
+        <div class="video-title">Role Permissions</div>
+        <div class="video-desc">Define who can access what, apply rules across teams, and strengthen system security effortlessly.</div>
+        <video src="videos/Step11arolepermissions.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Custom roles, field-level permissions, and approval chains.</div>
+    </div>
+
+    <!-- Permissions Manager -->
+    <div class="video-card">
+        <div class="video-title">Permissions Manager</div>
+        <div class="video-desc">Manage advanced user access, automate permission templates, and maintain a secure audit trail.</div>
+        <video src="videos/Step11brolepermissionsmanager.mp4" controls></video>
+        <div class="video-custom">Available Customisations: Batch role assignment, permission templates, and audit logs.</div>
+    </div>
+
+</div>
 
 </body>
 </html>
