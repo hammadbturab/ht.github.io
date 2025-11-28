@@ -209,6 +209,9 @@
 </head>
   
   <script>
+    console.log("Lazy-load script running");
+    document.querySelectorAll("video[data-src]").forEach(v => console.log(v));
+    
     document.addEventListener("DOMContentLoaded", function() {
       const videos = document.querySelectorAll("video[data-src]");
   
