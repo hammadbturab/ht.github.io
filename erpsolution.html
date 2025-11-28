@@ -124,7 +124,7 @@
     .divider {
         grid-column: 1 / -1;
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 1rem;
         opacity: 0.85;
         padding: 30px 20px 40px 20px;
         margin: 20px 0 0 0;
@@ -133,6 +133,15 @@
 
     @media (max-width: 850px) {
         .video-grid { grid-template-columns: 1fr; }
+    }
+  
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 20px;
     }
 
     footer {
@@ -164,10 +173,11 @@
     <img src="https://raw.githubusercontent.com/hammadbturab/ht.github.io/main/images/erplogo.gif" 
          alt="Logo animation" style="width: 150px; height: auto;">
     <h1>Experience Our AI-Powered ERPNext Software</h1>
-    <p>NexaERP centralises your operations, streamlines your workflows, and reduces costs by bringing every core function of your business into one powerful, affordable platform.</p>
+    <p>NexaERP centralises your operations, streamlines your workflows, and reduces costs</p>
+    <p>by bringing every core function of your business into one powerful, affordable platform.</p>
 </header>
 
-<div class="video-grid">
+<div class="card-grid">
 
     <div class="video-card">
         <div class="video-title">ERP Overview</div>
