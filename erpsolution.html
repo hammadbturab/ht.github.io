@@ -207,6 +207,37 @@
 
 </style>
 </head>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const videos = document.querySelectorAll("video[data-src]");
+  
+      const options = {
+        root: null, // viewport
+        rootMargin: "0px",
+        threshold: 0.25 // trigger when 25% of video is visible
+      };
+  
+      const loadVideo = (video) => {
+        if (video.dataset.src) {
+          video.src = video.dataset.src;
+          video.removeAttribute('data-src');
+        }
+      };
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadVideo(entry.target);
+            observer.unobserve(entry.target); // stop observing after load
+          }
+        });
+      }, options);
+  
+      videos.forEach(video => observer.observe(video));
+    });
+  </script>
+
 <body>
 
 <header>
@@ -224,7 +255,7 @@
     <div class="video-card">
         <div class="video-title">ERP Overview</div>
         <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
-        <video controls src="videos/Step1overview.mp4"></video>
+        <video controls data-src="videos/Step1overview.mp4"></video>
         <div class="video-custom">Available Customisations: Dashboards, themes, and user interface layouts.</div>
     </div>
 
