@@ -206,53 +206,43 @@
 </style>
 </head>
   
-  <script>  
-    document.addEventListener("DOMContentLoaded", function() {
-      const videos = document.querySelectorAll("video[data-src]");
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const videos = document.querySelectorAll("video[data-src-desktop], video[data-src-mobile]");
   
-      const options = {
-        root: null, // viewport
-        rootMargin: "0px",
-        threshold: 0.25 // trigger when 25% of video is visible
-      };
+      const options = { root: null, rootMargin: "0px", threshold: 0.25 };
   
       const loadVideo = (video, isFullscreen = false) => {
-          let src;
-          if (window.innerWidth <= 600) { // Mobile
+          let src = "";
+          if (window.innerWidth <= 600) { // mobile
               src = isFullscreen ? video.dataset.srcMobileFull : video.dataset.srcMobile;
-          } else { // Desktop
+          } else { // desktop
               src = isFullscreen ? video.dataset.srcDesktopFull : video.dataset.srcDesktop;
           }
           if (src) {
               video.src = src;
-              video.removeAttribute('data-src-desktop');
-              video.removeAttribute('data-src-desktop-full');
-              video.removeAttribute('data-src-mobile');
-              video.removeAttribute('data-src-mobile-full');
+              video.load(); // make sure the video reloads
           }
       };
-
   
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            loadVideo(entry.target, !!document.fullscreenElement);
-            observer.unobserve(entry.target);
-          }
-        });
-
-      }, options);
-      document.addEventListener("fullscreenchange", () => {
-          const isFullscreen = !!document.fullscreenElement;
-          document.querySelectorAll("video").forEach(video => {
-              // only update source if video is already loaded
-              if (video.src) loadVideo(video, isFullscreen);
+      const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  loadVideo(entry.target, !!document.fullscreenElement);
+                  obs.unobserve(entry.target);
+              }
           });
-      });
+      }, options);
   
       videos.forEach(video => observer.observe(video));
-    });
+  
+      document.addEventListener("fullscreenchange", () => {
+          const isFullscreen = !!document.fullscreenElement;
+          videos.forEach(video => loadVideo(video, isFullscreen));
+      });
+  });
   </script>
+
 
 <body>
 
