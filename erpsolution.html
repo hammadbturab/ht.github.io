@@ -216,21 +216,39 @@
         threshold: 0.25 // trigger when 25% of video is visible
       };
   
-      const loadVideo = (video) => {
-        if (video.dataset.src) {
-          video.src = video.dataset.src;
-          video.removeAttribute('data-src');
-        }
+      const loadVideo = (video, isFullscreen = false) => {
+          let src;
+          if (window.innerWidth <= 600) { // Mobile
+              src = isFullscreen ? video.dataset.srcMobileFull : video.dataset.srcMobile;
+          } else { // Desktop
+              src = isFullscreen ? video.dataset.srcDesktopFull : video.dataset.srcDesktop;
+          }
+          if (src) {
+              video.src = src;
+              video.removeAttribute('data-src-desktop');
+              video.removeAttribute('data-src-desktop-full');
+              video.removeAttribute('data-src-mobile');
+              video.removeAttribute('data-src-mobile-full');
+          }
       };
+
   
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            loadVideo(entry.target);
-            observer.unobserve(entry.target); // stop observing after load
+            loadVideo(entry.target, !!document.fullscreenElement);
+            observer.unobserve(entry.target);
           }
         });
+
       }, options);
+      document.addEventListener("fullscreenchange", () => {
+          const isFullscreen = !!document.fullscreenElement;
+          document.querySelectorAll("video").forEach(video => {
+              // only update source if video is already loaded
+              if (video.src) loadVideo(video, isFullscreen);
+          });
+      });
   
       videos.forEach(video => observer.observe(video));
     });
@@ -250,135 +268,198 @@
 </header>
 
 <div class="video-grid">
-
     <div class="video-card">
         <div class="video-title">ERP Overview</div>
         <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step1overview.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step1overview.mp4"
+            data-src-desktop-full="videos/Step1overview-ultra.mp4"
+            data-src-mobile="videos/Step1overview-low.mp4"
+            data-src-mobile-full="videos/Step1overview-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Dashboards, themes, and user interface layouts.</div>
     </div>
-
+    
     <div class="video-card">
         <div class="video-title">Dashboards</div>
         <div class="video-caption">Visualize KPIs and metrics with customizable dashboards.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step10adashboards.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step10adashboards.mp4"
+            data-src-desktop-full="videos/Step10adashboards-ultra.mp4"
+            data-src-mobile="videos/Step10adashboards-low.mp4"
+            data-src-mobile-full="videos/Step10adashboards-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Drag-and-drop widgets, charts, and real-time data updates.</div>
     </div>
-
+    
     <div class="divider">Nexa ERP unifies all business operations into one smart, centralized platform that boosts efficiency, clarity, and decision-making. With live dashboards, automated reports, and AI-driven recommendations, get a customizable hub that delivers real-time insights, key metrics, and alerts at a glance. You can track performance instantly across finance, sales, operations, and customer service — enabling faster, more confident decisions at every level of your organisation.</div>
-  
+    
     <div class="video-card">
         <div class="video-title">Customer Management</div>
         <div class="video-caption">Leads, opportunities, and customer management simplified.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step3crm.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step3crm.mp4"
+            data-src-desktop-full="videos/Step3crm-ultra.mp4"
+            data-src-mobile="videos/Step3crm-low.mp4"
+            data-src-mobile-full="videos/Step3crm-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Automated follow-ups, email templates, and custom pipelines.</div>
     </div>
-
+    
     <div class="video-card">
         <div class="video-title">Accounting</div>
         <div class="video-caption">Manage your accounts, financial reports, and journals easily.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step2accounting.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step2accounting.mp4"
+            data-src-desktop-full="videos/Step2accounting-ultra.mp4"
+            data-src-mobile="videos/Step2accounting-low.mp4"
+            data-src-mobile-full="videos/Step2accounting-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Multi-currency support, automated reconciliation, and tax reporting.</div>
     </div>
-
+    
     <div class="divider">Nurture leads, personalize service, and respond faster with complete customer visibility. From tracking inquiries to forecasting opportunities, transform customer engagement into a smooth, data-driven experience that boosts satisfaction and loyalty. Bring clarity and confidence to your finances with automated workflows, real-time reporting, and error-free record-keeping through Accounting. Unify billing, invoices, expenses, and financial statements into a single, easy-to-navigate system, giving you instant insights into cash flow and profitability.</div>
-
+    
     <div class="video-card">
         <div class="video-title">Employee Onboarding</div>
         <div class="video-caption">Streamline hiring, documentation, and joining workflows.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step7aemployeeonboarding.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step7aemployeeonboarding.mp4"
+            data-src-desktop-full="videos/Step7aemployeeonboarding-ultra.mp4"
+            data-src-mobile="videos/Step7aemployeeonboarding-low.mp4"
+            data-src-mobile-full="videos/Step7aemployeeonboarding-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Custom onboarding checklists, welcome emails, and training assignments.</div>
     </div>
-
+    
     <div class="video-card">
         <div class="video-title">Attendance & Leaves</div>
         <div class="video-caption">Monitor attendance, rosters, and leave requests effortlessly.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step7battendanceandleaves.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step7battendanceandleaves.mp4"
+            data-src-desktop-full="videos/Step7battendanceandleaves-ultra.mp4"
+            data-src-mobile="videos/Step7battendanceandleaves-low.mp4"
+            data-src-mobile-full="videos/Step7battendanceandleaves-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Biometric devices, automatic leave allocation, shift scheduling, and approval workflows.</div>
     </div>
-
-    <div class="divider">NexaERP’s clean interface and intuitive design mean your team can adopt the system quickly, without the long onboarding times typical of legacy ERPs. Plus, with custom automation, guided workflows, and smart suggestions built in, even non-technical staff can operate advanced functions with ease. </div>
-  
+    
+    <div class="divider">NexaERP’s clean interface and intuitive design mean your team can adopt the system quickly, without the long onboarding times typical of legacy ERPs. Plus, with custom automation, guided workflows, and smart suggestions built in, even non-technical staff can operate advanced functions with ease.</div>
+    
     <div class="video-card">
         <div class="video-title">Role Permissions</div>
         <div class="video-caption">Control access and security for all users in the system.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step11arolepermissions.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step11arolepermissions.mp4"
+            data-src-desktop-full="videos/Step11arolepermissions-ultra.mp4"
+            data-src-mobile="videos/Step11arolepermissions-low.mp4"
+            data-src-mobile-full="videos/Step11arolepermissions-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Custom roles, field-level permissions, and approval chains.</div>
     </div>
-
+    
     <div class="video-card">
         <div class="video-title">Permissions Manager</div>
         <div class="video-caption">Advanced role-based access and permission management.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step11brolepermissionsmanager.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step11brolepermissionsmanager.mp4"
+            data-src-desktop-full="videos/Step11brolepermissionsmanager-ultra.mp4"
+            data-src-mobile="videos/Step11brolepermissionsmanager-low.mp4"
+            data-src-mobile-full="videos/Step11brolepermissionsmanager-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Batch role assignment, permission templates, and audit logs.</div>
     </div>
-
+    
     <div class="divider">Role Permissions let you control who can see and do what, keeping the system secure and organized. With Permission Manager assigning, editing, and tracking access becomes effortless, ensuring the right people have the right access at the right time.</div>
-  
+    
     <div class="video-card">
         <div class="video-title">Project Management</div>
         <div class="video-caption">Plan and monitor projects and milestones efficiently.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step8aproject.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step8aproject.mp4"
+            data-src-desktop-full="videos/Step8aproject-ultra.mp4"
+            data-src-mobile="videos/Step8aproject-low.mp4"
+            data-src-mobile-full="videos/Step8aproject-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Track hours spent on projects, milestones, and custom project statuses.</div>
     </div>
-
+    
     <div class="video-card">
         <div class="video-title">Task Details</div>
         <div class="video-caption">Track individual tasks and collaborate seamlessly.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step8btaskdetails.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step8btaskdetails.mp4"
+            data-src-desktop-full="videos/Step8btaskdetails-ultra.mp4"
+            data-src-mobile="videos/Step8btaskdetails-low.mp4"
+            data-src-mobile-full="videos/Step8btaskdetails-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Sub-tasks, reminders, and task priority settings.</div>
     </div>
-
+    
     <div class="divider">Organize your projects from start to finish, giving teams clear timelines, priorities, and progress tracking. Task Details break down work into actionable items, assign responsibilities, set deadlines, and monitor completion, making collaboration seamless and ensuring every project stays on track.</div>
-  
+    
     <div class="video-card">
         <div class="video-title">Purchasing</div>
         <div class="video-caption">Automated procurement with supplier tracking and POs.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step4purchasing.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step4purchasing.mp4"
+            data-src-desktop-full="videos/Step4purchasing-ultra.mp4"
+            data-src-mobile="videos/Step4purchasing-low.mp4"
+            data-src-mobile-full="videos/Step4purchasing-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Approval workflows, supplier rating, and bulk purchase rules.</div>
     </div>
-
+    
     <div class="video-card">
         <div class="video-title">Manufacturing</div>
         <div class="video-caption">BOMs, work orders, operations, and production planning made easy.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step6manufacturing.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step6manufacturing.mp4"
+            data-src-desktop-full="videos/Step6manufacturing-ultra.mp4"
+            data-src-mobile="videos/Step6manufacturing-low.mp4"
+            data-src-mobile-full="videos/Step6manufacturing-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Custom workflows, material cost calculations, and scheduling.</div>
     </div>
-
+    
     <div class="divider">Streamline the procurement process by managing suppliers, tracking orders, and controlling costs, ensuring your business always has the right materials at the right time. Manufacturing organizes production workflows, monitors resources, and tracks output, turning raw materials into finished products efficiently and accurately.</div>
-  
+    
     <div class="video-card">
         <div class="video-title">Stock Management</div>
         <div class="video-caption">Real-time inventory and warehouse control at your fingertips.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step5stock.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step5stock.mp4"
+            data-src-desktop-full="videos/Step5stock-ultra.mp4"
+            data-src-mobile="videos/Step5stock-low.mp4"
+            data-src-mobile-full="videos/Step5stock-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Batch tracking, barcode scanning, and reorder alerts.</div>
     </div>
-
+    
     <div class="video-card">
         <div class="video-title">Reports</div>
         <div class="video-caption">Generate insightful reports for every part of your business.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step10breports.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step10breports.mp4"
+            data-src-desktop-full="videos/Step10breports-ultra.mp4"
+            data-src-mobile="videos/Step10breports-low.mp4"
+            data-src-mobile-full="videos/Step10breports-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Custom filters, scheduled reports, BAS, ABA files for payment and export options.</div>
     </div>
-
+    
     <div class="divider">Whether you’re dealing with audits, tax rules, industry regulations, or internal governance, NexaERP keeps your processes compliant by design. Automated logs, permission control, and accurate record-keeping minimise human error and make compliance simpler, safer, and stress-free.</div>
-  
+    
     <div class="video-card">
         <div class="video-title">Payroll</div>
         <div class="video-caption">Manage payroll cycles, salaries, and compliance automatically.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step7cpayroll.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step7cpayroll.mp4"
+            data-src-desktop-full="videos/Step7cpayroll-ultra.mp4"
+            data-src-mobile="videos/Step7cpayroll-low.mp4"
+            data-src-mobile-full="videos/Step7cpayroll-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Payroll based on timesheets and Australian taxation rules, pay slips, and deductions.</div>
     </div>
-
+    
     <div class="video-card">
         <div class="video-title">Customisation</div>
         <div class="video-caption">Edit forms, workflows, and automate processes as needed.</div>
-        <video controls autoplay muted loop playsinline data-src="videos/Step9customisation.mp4"></video>
+        <video controls autoplay muted loop playsinline
+            data-src-desktop="videos/Step9customisation.mp4"
+            data-src-desktop-full="videos/Step9customisation-ultra.mp4"
+            data-src-mobile="videos/Step9customisation-low.mp4"
+            data-src-mobile-full="videos/Step9customisation-medium.mp4"></video>
         <div class="video-custom">Available Customisations: Custom fields, automated scripts, and role-based permissions.</div>
     </div>
-
+    
     <div class="divider">Payroll automates salary calculations, deductions, and disbursements, ensuring employees are paid accurately and on time. It also simplifies compliance and record-keeping for the organization. With modern design, AI-powered insights, automation and customisable modules, NexaERP adapts to your business, scales with your growth, and gives you full visibility across every department — without the high price tag of traditional ERP systems.</div>
-  
+      
 </div>
 
 <div class="benefit-cards">
