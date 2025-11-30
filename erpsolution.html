@@ -204,7 +204,8 @@
     }
     /* Center container on page */
     .dropdown-container {
-      position: absolute;
+      position: relative;
+      display: inline-block;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -319,14 +320,14 @@
 </header>
 
 <div class="dropdown-container">
-  <button class="dropbtn" onclick="toggleDropdown()">Menu</button>
+    <button class="dropbtn" onclick="toggleDropdown()">Menu</button>
   
-  <div id="dropdownList" class="dropdown-list">
-    <a href="#section1">Section 1</a>
-    <a href="#section2">Section 2</a>
-    <a href="#section3">Section 3</a>
-    <a href="#section4">Section 4</a>
-  </div>
+    <div id="dropdownList" class="dropdown-list">
+      <a href="#section1">Section 1</a>
+      <a href="#section2">Section 2</a>
+      <a href="#section3">Section 3</a>
+      <a href="#section4">Section 4</a>
+    </div>
 </div>
   
 <div class="video-grid">
