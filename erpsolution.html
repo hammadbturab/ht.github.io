@@ -203,88 +203,72 @@
         }
     }
 
-    /* Navigation Bar Base */
-    .navbar {
-    width: 100%;
-    background: #1f1f1f;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Segoe UI", sans-serif;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    .center-dropdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     }
 
-    /* Logo */
-    .navbar .logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-    }
-
-    /* Navigation Items */
-    .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    }
-
-    .nav-links a {
-    color: #ddd;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.2s ease;
-    }
-
-    .nav-links a:hover {
-   color: #fff;
-   }
-
-   /* Dropdown */
-   .dropdown {
-   position: relative;
-   }
-
+    /* Dropdown button */
    .dropbtn {
-   cursor: pointer;
-   }
-
-   /* Dropdown Menu */
-   .dropdown-menu {
-   display: none;
-   position: absolute;
-   background: #2a2a2a;
-   padding: 10px 0;
-   min-width: 160px;
-   border-radius: 6px;
-   box-shadow: 0px 8px 20px rgba(0,0,0,0.25);
-   }
-
-   .dropdown-menu li {
-   padding: 8px 20px;
-   }
-
-   .dropdown-menu li a {
-   color: #ddd;
-   display: block;
-   }
-
-   .dropdown-menu li a:hover {
+   background-color: #1f75ff;
    color: white;
-   background: #3a3a3a;
-   border-radius: 4px;
+   padding: 12px 20px;
+   font-size: 18px;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: 0.2s;
    }
 
-   /* Show Menu on Hover */
-   .dropdown:hover .dropdown-menu {
-   display: block;
+   .dropbtn:hover {
+   background-color: #155ecf;
    }
 
+   /* Dropdown content (hidden by default) */
+  .dropdown-content {
+  display: none;
+  margin-top: 10px;
+  min-width: 200px;
+  background-color: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  }
+
+  /* Dropdown links */
+  .dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  transition: 0.2s;
+  }
+
+  .dropdown-content a:hover {
+  background-color: #f0f0f0;
+  }
+    
 </style>
 </head>
-  
+  <script>
+  function toggleDropdown() {
+    document.getElementById("dropdownContent").classList.toggle("show");
+  }
+
+  // Close the dropdown if clicked outside
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      const dropdowns = document.getElementsByClassName("dropdown-content");
+      for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].classList.remove('show');
+      }
+    }
+  }
+  </script>
   <script>  
     document.addEventListener("DOMContentLoaded", function() {
       const videos = document.querySelectorAll("video[data-src]");
@@ -328,25 +312,16 @@
     </p>
 </header>
 
-<nav class="navbar">
-  <div class="logo">MySite</div>
-
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-
-    <li class="dropdown">
-      <a href="#" class="dropbtn">Sections ▼</a>
-      <ul class="dropdown-menu">
-        <li><a href="#section1">Section One</a></li>
-        <li><a href="#section2">Section Two</a></li>
-        <li><a href="#section3">Section Three</a></li>
-      </ul>
-    </li>
-
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
+<div class="center-dropdown">
+  <button class="dropbtn" onclick="toggleDropdown()">Select Section ▼</button>
+  <div id="dropdownContent" class="dropdown-content">
+    <a href="#section1">Section 1</a>
+    <a href="#section2">Section 2</a>
+    <a href="#section3">Section 3</a>
+    <a href="#section4">Section 4</a>
+  </div>
+</div>
+  
 <div class="video-grid">
 
     <div class="video-card">
