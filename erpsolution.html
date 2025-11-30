@@ -203,6 +203,85 @@
         }
     }
 
+    /* Navigation Bar Base */
+    .navbar {
+    width: 100%;
+    background: #1f1f1f;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Segoe UI", sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+
+    /* Logo */
+    .navbar .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    }
+
+    /* Navigation Items */
+    .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    }
+
+    .nav-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+   color: #fff;
+   }
+
+   /* Dropdown */
+   .dropdown {
+   position: relative;
+   }
+
+   .dropbtn {
+   cursor: pointer;
+   }
+
+   /* Dropdown Menu */
+   .dropdown-menu {
+   display: none;
+   position: absolute;
+   background: #2a2a2a;
+   padding: 10px 0;
+   min-width: 160px;
+   border-radius: 6px;
+   box-shadow: 0px 8px 20px rgba(0,0,0,0.25);
+   }
+
+   .dropdown-menu li {
+   padding: 8px 20px;
+   }
+
+   .dropdown-menu li a {
+   color: #ddd;
+   display: block;
+   }
+
+   .dropdown-menu li a:hover {
+   color: white;
+   background: #3a3a3a;
+   border-radius: 4px;
+   }
+
+   /* Show Menu on Hover */
+   .dropdown:hover .dropdown-menu {
+   display: block;
+   }
+
 </style>
 </head>
   
@@ -249,19 +328,27 @@
     </p>
 </header>
 
-<div class="dropdown">
-  <label for="sectionMenu">Jump to section:</label>
-  <select id="sectionMenu" onchange="location.hash=this.value;">
-    <option value="">-- Select --</option>
-    <option value="#section1">Preview</option>
-    <option value="#section2">Why us?</option>
-    <option value="#section3">Contact</option>
-    <option value="#section4">Services</option>
-  </select>
-</div>
+<nav class="navbar">
+  <div class="logo">MySite</div>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+
+    <li class="dropdown">
+      <a href="#" class="dropbtn">Sections ▼</a>
+      <ul class="dropdown-menu">
+        <li><a href="#section1">Section One</a></li>
+        <li><a href="#section2">Section Two</a></li>
+        <li><a href="#section3">Section Three</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
 <div class="video-grid">
-<h2 id="section1"></h2>
+
     <div class="video-card">
         <div class="video-title">ERP Overview</div>
         <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
@@ -393,7 +480,7 @@
 </div>
 
 <div class="benefit-cards">
-<h2 id="section2">Why us?</h2>
+
     <div class="benefit-card">
         <p>
             <strong>Unified system for all business operations</strong><br>
@@ -429,7 +516,6 @@
 </div>
 
 <footer>
-<h2 id="section3">Contact</h2>
     <span>Phone: +61 451 853 457</span>
     <span>E-mail: support@htevolution.com</span>
     <span>HT Evolution | Midland WA 6056 | Australia</span>
