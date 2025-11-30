@@ -259,6 +259,29 @@
       color: white;
     }
 
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 cards side by side */
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto; /* center on page */
+    }
+
+    .section-card {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
 </style>
 </head>
 
@@ -500,6 +523,32 @@
     </div>
 </div>
 </section> 
+
+<section id="section4">   
+<div class="section-grid">
+
+  <div class="section-card" id="sec1">
+    <h2>Section 1</h2>
+    <p>This is section one content.</p>
+  </div>
+
+  <div class="section-card" id="sec2">
+    <h2>Section 2</h2>
+    <p>This is section two content.</p>
+  </div>
+
+  <div class="section-card" id="sec3">
+    <h2>Section 3</h2>
+    <p>This is section three content.</p>
+  </div>
+
+  <div class="section-card" id="sec4">
+    <h2>Section 4</h2>
+    <p>This is section four content.</p>
+  </div>
+
+</div>
+  
 
 <section id="section3">  
 <footer>
