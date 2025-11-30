@@ -261,49 +261,50 @@
 
 </style>
 </head>
-  
-  <script>  
-    document.addEventListener("DOMContentLoaded", function() {
-      const videos = document.querySelectorAll("video[data-src]");
-  
-      const options = {
-        root: null, // viewport
-        rootMargin: "0px",
-        threshold: 0.25 // trigger when 25% of video is visible
-      };
-  
-      const loadVideo = (video) => {
-        if (video.dataset.src) {
-          video.src = video.dataset.src;
-          video.removeAttribute('data-src');
-        }
-      };
-  
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            loadVideo(entry.target);
-            observer.unobserve(entry.target); // stop observing after load
-          }
-        });
-      }, options);
-  
-      videos.forEach(video => observer.observe(video));
- 
-    function toggleDropdown() {
-      const dropdown = document.getElementById("dropdownList");
-      dropdown.classList.toggle("show");
-    }
 
-    // Close dropdown if clicked outside
-    window.addEventListener("click", function(event) {
-      const dropdown = document.getElementById("dropdownList");
-      const btn = document.querySelector(".dropbtn");
-      if (!btn.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.classList.remove("show");
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // ----- Video Lazy-Loading -----
+    const videos = document.querySelectorAll("video[data-src]");
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.25
+    };
+
+    const loadVideo = (video) => {
+      if (video.dataset.src) {
+        video.src = video.dataset.src;
+        video.removeAttribute('data-src');
       }
-     }); 
-  });  
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadVideo(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    videos.forEach(video => observer.observe(video));
+
+    // ----- Dropdown Menu -----
+    const dropdown = document.getElementById("dropdownList");
+    const btn = document.querySelector(".dropbtn");
+
+    // Toggle dropdown on button click
+    btn.addEventListener("click", function(e) {
+      e.stopPropagation(); // prevent immediate close
+      dropdown.classList.toggle("show");
+    });
+
+    // Close dropdown when clicking outside
+    window.addEventListener("click", function() {
+      dropdown.classList.remove("show");
+    });
+  });
   </script>
 
 <body>
