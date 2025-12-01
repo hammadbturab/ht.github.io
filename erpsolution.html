@@ -132,6 +132,17 @@
         color: #000;
     }
 
+     .dividerbigtext {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 1rem;
+        opacity: 0.85;
+        padding: 30px 20px 40px 20px;
+        margin: 20px 0 0 0;
+        color: #000;
+        font-size: 30px;
+    }
+
     @media (max-width: 850px) {
         .video-grid { grid-template-columns: 1fr; }
     }
@@ -202,38 +213,132 @@
             grid-template-columns: 1fr;
         }
     }
+    /* Center container on page */
+    .dropdown-container {
+      position: relative;
+      display: inline-block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    /* Dropdown button */
+   .dropbtn {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: grey;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .dropbtn:hover {
+      background-color: grey;
+    }
+
+    /* Dropdown list (hidden by default) */
+    .dropdown-list {
+      max-height: 0; /* hidden */
+      overflow: hidden;
+      margin-top: 10px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      min-width: 180px;
+      transition: max-height 0.3s ease-out;
+    }
+
+    /* Show dropdown */
+    .dropdown-list.show {
+      max-height: 500px; /* enough to show all links */
+    }
+
+    /* Dropdown links */
+    .dropdown-list a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #111;
+      transition: 0.2s;
+    }
+
+    .dropdown-list a:hover {
+      background-color: darkgrey;
+      color: white;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 cards side by side */
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto; /* center on page */
+    }
+
+    .section-card {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
 
 </style>
 </head>
-  
-  <script>  
-    document.addEventListener("DOMContentLoaded", function() {
-      const videos = document.querySelectorAll("video[data-src]");
-  
-      const options = {
-        root: null, // viewport
-        rootMargin: "0px",
-        threshold: 0.25 // trigger when 25% of video is visible
-      };
-  
-      const loadVideo = (video) => {
-        if (video.dataset.src) {
-          video.src = video.dataset.src;
-          video.removeAttribute('data-src');
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // ----- Video Lazy-Loading -----
+    const videos = document.querySelectorAll("video[data-src]");
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.25
+    };
+
+    const loadVideo = (video) => {
+      if (video.dataset.src) {
+        video.src = video.dataset.src;
+        video.removeAttribute('data-src');
+      }
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadVideo(entry.target);
+          observer.unobserve(entry.target);
         }
-      };
-  
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            loadVideo(entry.target);
-            observer.unobserve(entry.target); // stop observing after load
-          }
-        });
-      }, options);
-  
-      videos.forEach(video => observer.observe(video));
+      });
+    }, options);
+
+    videos.forEach(video => observer.observe(video));
+
+    // ----- Dropdown Menu -----
+    const dropdown = document.getElementById("dropdownList");
+    const btn = document.querySelector(".dropbtn");
+
+    // Toggle dropdown on button click
+    btn.addEventListener("click", function(e) {
+      e.stopPropagation(); // prevent immediate close
+      dropdown.classList.toggle("show");
     });
+
+    // Close dropdown when clicking outside
+    window.addEventListener("click", function() {
+      dropdown.classList.remove("show");
+    });
+  });
   </script>
 
 <body>
@@ -249,9 +354,20 @@
     </p>
 </header>
 
-<div class="video-grid">
+<div class="dropdown-container">
+    <button class="dropbtn" onclick="toggleDropdown()">Menu</button>
+    <div id="dropdownList" class="dropdown-list">
+      <a href="#section1">Preview</a>
+      <a href="#section2">Why us</a>
+      <a href="#section3">Contact</a>
+      <a href="#section4">Services</a>
+    </div>
+</div>
 
+  
+<div class="video-grid">
     <div class="video-card">
+        <a href="#section1"></a>
         <div class="video-title">ERP Overview</div>
         <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
         <video controls autoplay muted loop playsinline data-src="videos/Step1overview.mp4"></video>
@@ -381,7 +497,9 @@
   
 </div>
 
+<section id="section2">  
 <div class="benefit-cards">
+ 
     <div class="benefit-card">
         <p>
             <strong>Unified system for all business operations</strong><br>
@@ -415,13 +533,44 @@
         NexaERP’s clean interface and intuitive design mean your team can adopt the system quickly, without the long onboarding times typical of legacy ERPs. Plus, with custom automation, guided workflows, and smart suggestions built in, even non-technical staff can operate advanced functions with ease.</p>
     </div>
 </div>
+</section> 
 
+<div class="dividerbigtext">We have got custom tailored solutions to all your software needs.</div>  
+
+<section id="section4">   
+<div class="section-grid">
+
+  <div class="section-card" id="sec1">
+    <h2>Design Solution</h2>
+    <p>In the solution design stage we custom design your software in a way that perfectly aligns with the primary functions of your organization’s specific operational needs.</p>
+  </div>
+
+  <div class="section-card" id="sec2">
+    <h2>Build Solution</h2>
+    <p>Start exploring your new software with the prototype in hand. Together, we'll walk through how it simplifies your workflows and fits seamlessly into your business.</p>
+  </div>
+
+  <div class="section-card" id="sec3">
+    <h2>Test Readiness</h2>
+    <p>This phase involves comprehensive testing across all functions, including payroll and invoicing. We’ll validate all migrated data and collaborate with you to train key personnel, ensuring a confident and successful deployment.</p>
+  </div>
+
+  <div class="section-card" id="sec4">
+    <h2>Go Live!</h2>
+    <p>It’s go time! Begin training your team across the business and start reclaiming hours in your day. NexaERP's scalable design means your software will evolve with your business every step of the way.</p>
+  </div>
+
+</div>
+</section>  
+
+<section id="section3">  
 <footer>
     <span>Phone: +61 451 853 457</span>
     <span>E-mail: support@htevolution.com</span>
     <span>HT Evolution | Midland WA 6056 | Australia</span>
     <span class="acn">ACN 691 704 926 PTY LTD</span>
 </footer>
-
+</section>
+  
 </body>
 </html>
