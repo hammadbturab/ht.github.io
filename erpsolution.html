@@ -259,7 +259,35 @@
         scroll-behavior: smooth;
         scroll-padding-top: 150px; /* same as header height */
     }
-  
+
+    .horizontal-scroll {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .scroll-page {
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        scroll-snap-align: start;
+    }
+    
+    .scroll-page .video-card {
+        margin-bottom: 10px;
+    }
+    
+    /* Optional: hide scrollbar for cleaner look */
+    .horizontal-scroll::-webkit-scrollbar {
+        display: none;
+    }
+    .horizontal-scroll {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
 </style>  
 </head>
 
@@ -327,7 +355,7 @@
   <h2 style="text-align:center; font-size:2.2rem; margin-bottom:25px;">
     Preview
   </h2>
-  <div class="video-grid">
+  <div class="scroll-page">
     <div class="video-card">
         <div class="video-title">ERP Overview</div>
         <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
@@ -343,7 +371,9 @@
     </div>
 
     <div class="divider">Nexa ERP unifies all business operations into one smart, centralized platform that boosts efficiency, clarity, and decision-making. With live dashboards, automated reports, and AI-driven recommendations, get a customizable hub that delivers real-time insights, key metrics, and alerts at a glance. You can track performance instantly across finance, sales, operations, and customer service — enabling faster, more confident decisions at every level of your organisation.</div>
-  
+  </div>
+
+  <div class="scroll-page">
     <div class="video-card">
         <div class="video-title">Customer Management</div>
         <div class="video-caption">Leads, opportunities, and customer management simplified.</div>
@@ -359,7 +389,9 @@
     </div>
 
     <div class="divider">Nurture leads, personalize service, and respond faster with complete customer visibility. From tracking inquiries to forecasting opportunities, transform customer engagement into a smooth, data-driven experience that boosts satisfaction and loyalty. Bring clarity and confidence to your finances with automated workflows, real-time reporting, and error-free record-keeping through Accounting. Unify billing, invoices, expenses, and financial statements into a single, easy-to-navigate system, giving you instant insights into cash flow and profitability.</div>
-
+  </div>
+  
+  <div class="scroll-page">
     <div class="video-card">
         <div class="video-title">Employee Onboarding</div>
         <div class="video-caption">Streamline hiring, documentation, and joining workflows.</div>
@@ -375,7 +407,9 @@
     </div>
 
     <div class="divider">NexaERP’s clean interface and intuitive design mean your team can adopt the system quickly, without the long onboarding times typical of legacy ERPs. Plus, with custom automation, guided workflows, and smart suggestions built in, even non-technical staff can operate advanced functions with ease. </div>
+  </div>
   
+  <div class="scroll-page">
     <div class="video-card">
         <div class="video-title">Role Permissions</div>
         <div class="video-caption">Control access and security for all users in the system.</div>
@@ -391,7 +425,9 @@
     </div>
 
     <div class="divider">Role Permissions let you control who can see and do what, keeping the system secure and organized. With Permission Manager assigning, editing, and tracking access becomes effortless, ensuring the right people have the right access at the right time.</div>
+  </div>
   
+  <div class="scroll-page">
     <div class="video-card">
         <div class="video-title">Project Management</div>
         <div class="video-caption">Plan and monitor projects and milestones efficiently.</div>
@@ -407,7 +443,9 @@
     </div>
 
     <div class="divider">Organize your projects from start to finish, giving teams clear timelines, priorities, and progress tracking. Task Details break down work into actionable items, assign responsibilities, set deadlines, and monitor completion, making collaboration seamless and ensuring every project stays on track.</div>
+  </div>
   
+  <div class="scroll-page">
     <div class="video-card">
         <div class="video-title">Purchasing</div>
         <div class="video-caption">Automated procurement with supplier tracking and POs.</div>
@@ -423,7 +461,9 @@
     </div>
 
     <div class="divider">Streamline the procurement process by managing suppliers, tracking orders, and controlling costs, ensuring your business always has the right materials at the right time. Manufacturing organizes production workflows, monitors resources, and tracks output, turning raw materials into finished products efficiently and accurately.</div>
+  </div>
   
+  <div class="scroll-page">
     <div class="video-card">
         <div class="video-title">Stock Management</div>
         <div class="video-caption">Real-time inventory and warehouse control at your fingertips.</div>
@@ -439,7 +479,9 @@
     </div>
 
     <div class="divider">Whether you’re dealing with audits, tax rules, industry regulations, or internal governance, NexaERP keeps your processes compliant by design. Automated logs, permission control, and accurate record-keeping minimise human error and make compliance simpler, safer, and stress-free.</div>
-  
+  </div>
+    
+  <div class="scroll-page">
     <div class="video-card">
         <div class="video-title">Payroll</div>
         <div class="video-caption">Manage payroll cycles, salaries, and compliance automatically.</div>
