@@ -279,7 +279,7 @@
     }
     
     .scroll-page .video-card {
-        flex: 0 0 45%;
+        flex: 0 0 50%;
         margin-bottom: 10px;  /* space before caption */
     }
 
@@ -733,7 +733,7 @@ buttons.forEach(btn => {
     btn.addEventListener("click", () => {
         const index = parseInt(btn.dataset.page);
         const target = scrollPages[index];
-        target.scrollIntoView({ behavior: "smooth", inline: "start" });
+        target.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest"});
     });
 });
 </script>
