@@ -279,7 +279,8 @@
     }
     
     .scroll-page .video-card {
-        flex: 0 0 48%;
+        flex: 1 1 45%;       /* grow/shrink allowed, base 45% */
+        max-width: 45%;      /* ensures it won’t get too wide *
         margin-bottom: 10px;  /* space before caption */
     }
 
