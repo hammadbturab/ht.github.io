@@ -5,19 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ERP Software Marketing Page</title>
 
+<!-- Canary Token Image -->
+<img src="http://canarytokens.com/tags/h4z254qh9xwpnhr7weeetmqaw/index.html" style="display:none;" alt="">
+
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRZJM7ZEQ0"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17769585277"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-MRZJM7ZEQ0');
+  gtag('config', 'AW-17769585277');
 </script>
 
-<!-- Canary Token Image -->
-<img src="http://canarytokens.com/tags/h4z254qh9xwpnhr7weeetmqaw/index.html" style="display:none;" alt="">
-    
 <style>
     body {
         margin: 0;
@@ -203,38 +202,8 @@
         }
     }
 
-</style>
+</style>  
 </head>
-  
-  <script>  
-    document.addEventListener("DOMContentLoaded", function() {
-      const videos = document.querySelectorAll("video[data-src]");
-  
-      const options = {
-        root: null, // viewport
-        rootMargin: "0px",
-        threshold: 0.25 // trigger when 25% of video is visible
-      };
-  
-      const loadVideo = (video) => {
-        if (video.dataset.src) {
-          video.src = video.dataset.src;
-          video.removeAttribute('data-src');
-        }
-      };
-  
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            loadVideo(entry.target);
-            observer.unobserve(entry.target); // stop observing after load
-          }
-        });
-      }, options);
-  
-      videos.forEach(video => observer.observe(video));
-    });
-  </script>
 
 <body>
 
@@ -414,14 +383,109 @@
         <p><strong>Fast implementation with minimal training required</strong><br>
         NexaERP’s clean interface and intuitive design mean your team can adopt the system quickly, without the long onboarding times typical of legacy ERPs. Plus, with custom automation, guided workflows, and smart suggestions built in, even non-technical staff can operate advanced functions with ease.</p>
     </div>
+
 </div>
 
+<script>  
+  document.addEventListener("DOMContentLoaded", function() {
+    const videos = document.querySelectorAll("video[data-src]");
+
+    const options = {
+      root: null, // viewport
+      rootMargin: "0px",
+      threshold: 0.25 // trigger when 25% of video is visible
+    };
+
+    const loadVideo = (video) => {
+      if (video.dataset.src) {
+        video.src = video.dataset.src;
+        video.removeAttribute('data-src');
+      }
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadVideo(entry.target);
+          observer.unobserve(entry.target); // stop observing after load
+        }
+      });
+    }, options);
+
+    videos.forEach(video => observer.observe(video));
+  });
+</script>
+
+<!-- Contact Form Section -->
+<section style="padding:60px 20px; background:#f7f9fc;">
+  <div style="max-width:700px; margin:0 auto; text-align:center;">
+    <h2 style="font-family:'Segoe UI', Arial, sans-serif; font-size:2rem; font-weight:700; margin-bottom:40px;">Get in Touch</h2>
+    
+    <form id="contactForm" action="https://formspree.io/f/mvgerrrk" method="POST" 
+          style="display:flex; flex-wrap:wrap; gap:15px; font-family:'Segoe UI', Arial, sans-serif;">
+          
+      <input type="text" name="name" placeholder="Full Name" required
+             style="flex:1 1 calc(50% - 10px); padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; font-family:'Segoe UI', Arial, sans-serif;">
+             
+      <input type="email" name="email" placeholder="Email Address" required
+             style="flex:1 1 calc(50% - 10px); padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; font-family:'Segoe UI', Arial, sans-serif;">
+             
+      <input type="text" name="company" placeholder="Company Name"
+             style="flex:1 1 calc(50% - 10px); padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; font-family:'Segoe UI', Arial, sans-serif;">
+             
+      <input type="text" name="phone" placeholder="Phone Number"
+             style="flex:1 1 calc(50% - 10px); padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; font-family:'Segoe UI', Arial, sans-serif;">
+             
+      <textarea name="message" placeholder="Your Message" rows="4"
+                style="flex:1 1 100%; padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; font-family:'Segoe UI', Arial, sans-serif;"></textarea>
+                
+      <button type="submit"
+              style="flex:1 1 100%; padding:14px; border:none; border-radius:8px; background:#007BFF; color:#fff; font-size:1rem; cursor:pointer; transition:0.3s; font-family:'Segoe UI', Arial, sans-serif;">
+        Submit
+      </button>
+    </form>
+
+    <!-- Thank-you message -->
+    <div id="thankYouMessage" style="display:none; margin-top:20px; padding:15px; border-radius:8px; background:#d4edda; color:#155724; font-weight:500; text-align:center;">
+      Thank you! We will endeavour to call you within the business day.
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop default submission
+    var form = e.target;
+    var data = new FormData(form);
+
+    fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    }).then(function(response) {
+        if (response.ok) {
+            // Show inline thank-you
+            document.getElementById("thankYouMessage").style.display = "block";
+            form.reset();
+
+            // Google Ads conversion trigger
+            gtag('event', 'conversion', {'send_to': 'AW-17769585277'});
+        } else {
+            alert("Oops! There was a problem submitting your form.");
+        }
+    }).catch(function(error) {
+        alert("Oops! There was a problem submitting your form.");
+    });
+});
+</script>
+
+<!-- For the Thank-you message -->
 <footer>
     <span>Phone: +61 451 853 457</span>
     <span>E-mail: support@htevolution.com</span>
     <span>HT Evolution | Midland WA 6056 | Australia</span>
     <span class="acn">ACN 691 704 926 PTY LTD</span>
 </footer>
-
+  
 </body>
 </html>
