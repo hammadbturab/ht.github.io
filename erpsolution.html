@@ -202,6 +202,23 @@
         }
     }
 
+    .fullscreen-section {
+        min-height: 100vh;            /* Fill full screen */
+        padding: 80px 20px;           /* Increased spacing */
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(0,0,0,0.1);     /* Match header/footer */
+        border-bottom: 1px solid rgba(0,0,0,0.1);  /* Match header/footer */
+        display: flex;
+        align-items: center;
+    }
+    
+    .fullscreen-section h2 {
+        font-size: 2.6rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+    }
+
 </style>  
 </head>
 
@@ -386,43 +403,45 @@
 </div>
 
 <!-- Implementation Section -->
-<section style="padding:60px 20px; background:#f7f9fc;">
-  <div style="max-width:1200px; margin:0 auto; text-align:center;">
-    <h2 style="font-family:'Segoe UI', Arial, sans-serif; font-size:2rem; font-weight:700; margin-bottom:40px;">Implementation</h2>
+<section class="fullscreen-section">
+  <div style="max-width:1200px; margin:0 auto; text-align:center; width:100%;">
+
+    <h2>Implementation</h2>
 
     <div class="benefit-cards">
     
         <div class="benefit-card">
             <p>
                 <strong>Discover Your Needs</strong><br>
-                In this stage, we thoroughly analyze your business processes and custom-design your ERP system to perfectly align with your organization’s operational needs, ensuring every function works seamlessly for your team.
+                In this stage, we thoroughly analyze your business processes and custom-design your ERP system to perfectly align with your organization’s operational needs.
             </p>
         </div>
     
         <div class="benefit-card">
             <p>
                 <strong>Build Your Solution</strong><br>
-                With a prototype in hand, you can explore the software firsthand. Together, we ensure it simplifies workflows, integrates smoothly into your operations, and meets your team’s day-to-day requirements.
+                With a prototype in hand, you can explore the software firsthand. We refine workflows and ensure seamless integration.
             </p>
         </div>
     
         <div class="benefit-card">
             <p>
                 <strong>Validate & Test</strong><br>
-                We conduct comprehensive testing across all modules—including payroll, invoicing, inventory, and reporting. Data is validated, and key personnel are trained, ensuring a confident and smooth deployment.
+                Comprehensive testing across payroll, invoicing, inventory, and reporting. Data is validated and key personnel trained.
             </p>
         </div>
     
         <div class="benefit-card">
             <p>
                 <strong>Launch & Optimize</strong><br>
-                Go live with confidence. Train your team, optimize workflows, and start reclaiming valuable time. NexaERP’s scalable design ensures the software evolves with your business every step of the way.
+                Go live with confidence. Your team is trained, workflows optimized, and NexaERP evolves with your business.
             </p>
         </div>
 
     </div>
   </div>
 </section>
+
 
 <script>  
   document.addEventListener("DOMContentLoaded", function() {
