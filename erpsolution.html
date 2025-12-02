@@ -258,6 +258,15 @@
         scroll-behavior: smooth;
     }
 
+    /* Offset scroll for fixed header */
+    :target::before {
+        content: "";
+        display: block;
+        height: 150px;  /* same as header height */
+        margin-top: -150px;
+        visibility: hidden;
+    }
+
   
 </style>  
 </head>
@@ -276,7 +285,7 @@
 </header>
 
 <!-- Benefits Section -->
-<section class="bordered-section">
+<section id="benefits" section class="bordered-section">
   <div style="max-width:1200px; margin:0 auto; text-align:center; width:100%; margin-top:120px;">
 
     <h2 style="font-size:2.6rem; font-weight:700; margin-bottom:40px;">
@@ -458,7 +467,7 @@
 </section>
 
 <!-- Implementation Section -->
-<section class="bordered-section">
+<section id="implementation" class="bordered-section">
   <div style="max-width:1200px; margin:0 auto; text-align:center; width:100%;">
 
     <h2>Implementation</h2>
@@ -529,7 +538,7 @@
 </script>
 
 <!-- Contact Form Section -->
-<section style="padding:60px 20px; background:#f7f9fc;">
+<section id="contact" style="padding:60px 20px; background:#f7f9fc;">
   <div style="max-width:700px; margin:0 auto; text-align:center;">
     <h2 style="font-family:'Segoe UI', Arial, sans-serif; font-size:2rem; font-weight:700; margin-bottom:40px;">Get in Touch</h2>
     
