@@ -279,7 +279,7 @@
     }
     
     .scroll-page .video-card {
-        flex: 0 0 50%;
+        flex: 0 0 48%;
         margin-bottom: 10px;  /* space before caption */
     }
 
@@ -726,6 +726,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 </div>
 
 <script>
+const scrollWrapper = document.querySelector(".horizontal-scroll");
 const scrollPages = document.querySelectorAll(".scroll-page");
 const buttons = document.querySelectorAll(".scroll-nav-buttons button");
 
@@ -733,7 +734,12 @@ buttons.forEach(btn => {
     btn.addEventListener("click", () => {
         const index = parseInt(btn.dataset.page);
         const target = scrollPages[index];
-        target.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest"});
+
+        // Scroll the wrapper horizontally to the target
+        scrollWrapper.scrollTo({
+            left: target.offsetLeft,
+            behavior: "smooth"
+        });
     });
 });
 </script>
