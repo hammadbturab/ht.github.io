@@ -226,6 +226,39 @@
         margin-bottom: 40px;
     }
 
+    .floating-nav {
+        position: fixed;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 9999;
+    }
+    
+    .floating-nav a {
+        background: #0A2540; /* dark blue */
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 14px;
+        font-size: 14px;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        transition: background 0.25s ease, transform 0.2s ease;
+        white-space: nowrap;
+    }
+    
+    .floating-nav a:hover {
+        background: #1b3f66;
+        transform: translateX(3px);
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
+  
 </style>  
 </head>
 
@@ -565,6 +598,13 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     <span>HT Evolution | Midland WA 6056 | Australia</span>
     <span class="acn">ACN 691 704 926 PTY LTD</span>
 </footer>
+
+<div class="floating-nav">
+    <a href="#benefits">Benefits</a>
+    <a href="#preview">Preview</a>
+    <a href="#implementation">Implementation</a>
+    <a href="#contact">Contact</a>
+</div>
   
 </body>
 </html>
