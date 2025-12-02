@@ -282,6 +282,11 @@
         flex: 0 0 40%;
         margin-bottom: 10px;  /* space before caption */
     }
+
+    .scroll-page .video-card video {
+        max-height: 250px; /* optional: restrict video height */
+        object-fit: cover; /* maintain aspect ratio and avoid overflow */
+    }
     
     .scroll-caption {
         width: 90%;           /* make it slightly smaller than container */
@@ -301,10 +306,7 @@
         .scroll-page .video-card {
             flex: 0 0 100%;
         }
-        .scroll-page .video-card video {
-            max-height: 250px; /* optional: restrict video height */
-            object-fit: cover; /* maintain aspect ratio and avoid overflow */
-        }
+
     }
     
     /* Optional: hide scrollbar for cleaner look */
