@@ -287,8 +287,8 @@
     }
     
     .scroll-page .video-card {
-        flex: 1 1 49%;       /* grow/shrink allowed, base 45% */
-        max-width: 49%;      /* ensures it won’t get too wide */
+        flex: 0 0 45%;       /* grow/shrink allowed, base 45% */
+        max-width: 45%;      /* ensures it won’t get too wide */
         margin-bottom: 10px;  /* space before caption */
     }
 
@@ -305,8 +305,8 @@
         opacity: 0.85;
         margin-top: 20px;
         line-height: 1rem;
-        padding-left: 10px;   /* added */
-        padding-right: 10px;  /* added */
+        margin-left: 10px;   /* added */
+        margin-right: 10px;  /* added */
     }
 
     
@@ -415,7 +415,7 @@
   </h2>
   <div class="horizontal-scroll">
     <div class="scroll-page">
-      <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+      <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:none;">
         <div class="video-card">
             <div class="video-title">ERP Overview</div>
             <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
