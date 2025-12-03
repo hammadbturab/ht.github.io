@@ -50,6 +50,11 @@
         margin-bottom: 5px;
         text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
     }
+    @media(max-width: 600px) {
+        header h1 {
+            font-size: 1.5rem;
+        }
+    }
 
     header p {
     font-size: 1rem;
@@ -335,7 +340,7 @@
         background: #0A2540;
         color: #fff;
         border: none;
-        margin: 5 6px;
+        margin: 5px 6px;
         padding: 10px 16px;
         font-size: 16px;
         border-radius: 6px;
@@ -346,6 +351,34 @@
     .scroll-nav-buttons button:hover {
         background: #1b3f66;
     }
+
+    /* Stack vertically on smaller screens */
+    @media (max-width: 850px) {
+        .scroll-page {
+            flex-direction: column;  /* already done */
+            gap: 15px;
+            align-items: center;
+        }
+        .scroll-page .video-card {
+            flex: 0 0 90%;  /* almost full width */
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+        .scroll-caption {
+            width: 90%;
+            font-size: 0.85rem;
+            line-height: 1.2rem;
+            margin-top: 15px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        .scroll-nav-buttons button {
+            padding: 8px 12px;
+            font-size: 14px;
+            margin: 4px 4px;
+        }
+    }
+
 
 </style>  
 </head>
