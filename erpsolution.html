@@ -287,19 +287,20 @@
     }
     
     .scroll-page .video-card {
-        flex: 0 0 45%;       /* grow/shrink allowed, base 45% */
-        max-width: 45%;      /* ensures it won’t get too wide */
-        margin-bottom: 10px;  /* space before caption */
+        flex: 0 0 60%;       /* grow/shrink allowed, base 45% */
+        max-width: 60%;      /* ensures it won’t get too wide */
+        margin-bottom: 15px;  /* space before caption */
     }
 
     .scroll-page .video-card video {
-        max-height: 300px; /* optional: restrict video height */
+        max-height: none; /* optional: restrict video height */
         width: 100%; /* ensure it still fills card */
-        object-fit: cover; /* maintain aspect ratio and avoid overflow */
+        height: auto;
+        object-fit: contain; /* no crapping */
     }
     
     .scroll-caption {
-        width: 90%;           /* make it slightly smaller than container */
+        width: 60%;           /* make it slightly smaller than container */
         text-align: center;
         font-size: 0.9rem;
         opacity: 0.85;
