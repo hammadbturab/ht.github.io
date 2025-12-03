@@ -322,7 +322,7 @@
 
     
     /* Optional: make it responsive */
-    @media (max-width: 850px) {
+    /*@media (max-width: 850px) {
         .scroll-page {
             flex-direction: column;  /* stack vertically on mobile */
         }
@@ -330,7 +330,48 @@
             flex: 0 0 100%;
         }
 
+    }*/
+    @media (max-width: 850px) {
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 20px;
+            align-items: stretch; /* make all scroll pages same height */
+        }
+    
+        .scroll-page {
+            flex: 0 0 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            scroll-snap-align: start;
+            align-items: center;
+            justify-content: flex-start; /* start videos at top */
+            min-height: 500px; /* optional: ensures short pages don't shrink */
+        }
+    
+        .scroll-page .video-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: flex-start; /* videos align at top */
+        }
+    
+        .scroll-page .scroll-caption {
+            width: 90%;
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.85;
+            margin-top: 15px;
+            line-height: 1.2rem;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
     }
+
     
     /* Optional: hide scrollbar for cleaner look */
     .horizontal-scroll::-webkit-scrollbar {
