@@ -23,15 +23,15 @@
         font-family: 'Segoe UI', Arial, sans-serif;
         background: #f7f9fc;
         color: #000;
-        padding-top: 150px;  /* adjust depending on your logo size (150px works well) */
+        /*padding-top: 150px;  /* adjust depending on your logo size (150px works well) */
     }
 
     header {
-        position: fixed;          /* Freeze header */
-        top: 0;
-        left: 0;
+        /*position: fixed;          /* Freeze header */
+        /*top: 0;
+        /*left: 0;*/
         width: 100%;
-        z-index: 9999;
+        /*z-index: 9999;*/
         
         text-align: center;
         padding: 25px 20px;       /* Reduced from 80px → narrower height */
@@ -265,7 +265,7 @@
     
     html {
         scroll-behavior: smooth;
-        scroll-padding-top: 150px; /* same as header height */
+        /*scroll-padding-top: 150px; /* same as header height */
     }
 
     /* Horizontal scroll wrapper for video pages */
@@ -287,24 +287,27 @@
     }
     
     .scroll-page .video-card {
-        flex: 1 1 45%;       /* grow/shrink allowed, base 45% */
-        max-width: 45%;      /* ensures it won’t get too wide *
-        margin-bottom: 10px;  /* space before caption */
+        flex: 0 0 42%;       /* grow/shrink allowed, base 45% */
+        max-width: 42%;      /* ensures it won’t get too wide */
+        margin-bottom: 15px;  /* space before caption */
     }
 
     .scroll-page .video-card video {
-        max-height: 300px; /* optional: restrict video height */
+        max-height: none; /* optional: restrict video height */
         width: 100%; /* ensure it still fills card */
-        object-fit: cover; /* maintain aspect ratio and avoid overflow */
+        height: auto;
+        object-fit: contain; /* no crapping */
     }
     
     .scroll-caption {
-        width: 90%;           /* make it slightly smaller than container */
+        width: 70%;           /* make it slightly smaller than container */
         text-align: center;
         font-size: 0.9rem;
         opacity: 0.85;
-        margin-top: 10px;
+        margin-top: 20px;
         line-height: 1rem;
+        margin-left: 10px;   /* added */
+        margin-right: 10px;  /* added */
     }
 
     
@@ -332,7 +335,7 @@
         background: #0A2540;
         color: #fff;
         border: none;
-        margin: 0 6px;
+        margin: 5 6px;
         padding: 10px 16px;
         font-size: 16px;
         border-radius: 6px;
@@ -362,7 +365,7 @@
 
 <!-- Benefits Section -->
 <section id="benefits" section class="bordered-section">
-  <div style="max-width:1200px; margin:0 auto; text-align:center; width:100%; margin-top:120px;">
+  <div style="max-width:1200px; margin:0 auto; text-align:center; width:100%; /*margin-top:120px;*/">
 
     <h2 style="font-size:2.6rem; font-weight:700; margin-bottom:40px;">
         Benefits
@@ -413,7 +416,7 @@
   </h2>
   <div class="horizontal-scroll">
     <div class="scroll-page">
-      <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+      <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:none;">
         <div class="video-card">
             <div class="video-title">ERP Overview</div>
             <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
@@ -588,7 +591,7 @@
 
 <!-- Implementation Section -->
 <section id="implementation" class="bordered-section">
-  <div style="max-width:1200px; margin:80px auto 0 auto; text-align:center; width:100%;">
+  <div style="max-width:1200px; margin:0 auto 0 auto; text-align:center; width:100%;">
 
     <h2>Implementation</h2>
 
@@ -658,7 +661,7 @@
 </script>
 
 <!-- Contact Form Section -->
-<section id="contact" style="padding:120px 20px 60px 20px; background:#f7f9fc;">
+<section id="contact" style="padding:80px 20px 60px 20px; background:#f7f9fc;">
   <div style="max-width:700px; margin:0 auto; text-align:center;">
     <h2 style="font-family:'Segoe UI', Arial, sans-serif; font-size:2rem; font-weight:700; margin-bottom:40px;">Get in Touch</h2>
     
