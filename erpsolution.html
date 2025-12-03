@@ -347,6 +347,13 @@
         cursor: pointer;
         transition: background 0.25s ease;
     }
+    @media (max-width: 850px) {
+        .scroll-nav-buttons button {
+            padding: 6px 10px;
+            font-size: 14px;
+            margin: 3px 3px;
+        }
+    }
     
     .scroll-nav-buttons button:hover {
         background: #1b3f66;
@@ -449,7 +456,7 @@
   </h2>
   <div class="horizontal-scroll">
     <div class="scroll-page">
-      <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:none;">
+      <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
         <div class="video-card">
             <div class="video-title">ERP Overview</div>
             <div class="video-caption">A quick tour of the HT ERP ecosystem and navigation.</div>
