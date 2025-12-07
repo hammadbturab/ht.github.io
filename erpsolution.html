@@ -51,6 +51,22 @@
         }
     }
 
+    /* Header logo video */
+    header video {
+        width: 150px;        /* normal size on desktop */
+        height: 150px;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;  /* preserve aspect ratio */
+    }
+    
+    /* Reduce header video size on small screens */
+    @media (max-width: 600px) {
+        header video {
+            width: 80px;
+            height: 80px;
+        }
+    }
 
     header h1 {
         font-size: 2.5rem;
@@ -136,6 +152,14 @@
         background: rgba(255,255,255,0.05);
         margin-bottom: 10px;
     }
+
+    .scroll-page .video-card video {
+        width: 100%;        /* fills its card */
+        height: auto;
+        aspect-ratio: 16 / 9; /* keeps height proportional to width */
+        object-fit: contain;
+    }
+
 
     .video-title {
         font-size: 1.2rem;
