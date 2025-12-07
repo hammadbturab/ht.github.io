@@ -15,7 +15,13 @@
 </script>
 
 <!-- Canary Token Image -->
-<img src="/tracking/secret-tracker.php?nocache=<?= time() ?>" style="display:none;" alt="">
+<script>
+var img = document.createElement('img');
+img.src = '/tracking/secret-tracker.php?nocache=' + Date.now();
+img.style.display = 'none';
+document.body.appendChild(img);
+</script>
+
 
 
 <style>
