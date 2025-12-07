@@ -1,5 +1,5 @@
 <?php
-// secret-tracker-erp.php - Simple Canary Token
+// secret-tracker.php - Simple Canary Token
 
 // 1. Where to save the log (CHANGE THIS!)
 $log_file = __DIR__ . '/canary-access.log';  // This saves log in same folder
@@ -25,4 +25,5 @@ $white = imagecolorallocate($img, 255, 255, 255);
 imagefill($img, 0, 0, $white);
 imagejpeg($img);
 imagedestroy($img);
+
 ?>
