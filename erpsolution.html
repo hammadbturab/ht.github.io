@@ -332,22 +332,28 @@
     }
 
     @media (max-width: 850px) {
-        .floating-nav {
-            top: auto;               /* remove vertical centering */
-            left: 50%;               /* center horizontally */
-            transform: translateX(-50%); /* center the buttons */
-            flex-direction: row;     /* horizontal layout */
+            .floating-nav {
+            position: sticky;       /* sticks at top when scrolling */
+            top: 0;                 /* top of viewport */
+            left: 0;
+            right: 0;
+            transform: none;
+            flex-direction: row;
             justify-content: center;
             gap: 10px;
-            padding: 5px 0;          /* optional spacing */
-            position: fixed;         /* keep floating */
-            z-index: 9999;          
+            padding: 8px 0;
+            background: #f7f9fc;    /* match header bg for smooth effect */
+            z-index: 9999;
+            width: 100%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional subtle shadow */
         }
     
         .floating-nav a {
-            font-size: 0.9rem;
+            flex: 1 1 auto;         /* all buttons grow equally */
+            text-align: center;
             padding: 8px 12px;
-            white-space: normal;         /* allow text to wrap */
+            font-size: 0.9rem;
+            white-space: normal;
         }
     }
     
