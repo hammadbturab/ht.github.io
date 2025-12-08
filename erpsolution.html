@@ -319,7 +319,21 @@
     }
     @media (max-width: 850px) {
         .floating-nav {
-            display: none;
+            display: flex;               /* show on mobile */
+            flex-direction: row;         /* horizontal */
+            justify-content: center;     /* center buttons */
+            gap: 10px;                   /* spacing between buttons */
+            position: static;            /* remove fixed position */
+            transform: none;             /* remove translateY */
+            margin: 15px 0;              /* spacing below header */
+            z-index: auto;               /* normal stacking */
+            flex-wrap: wrap;             /* wrap on small screens */
+        }
+    
+        .floating-nav a {
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            white-space: normal;         /* allow text to wrap */
         }
     }
     
