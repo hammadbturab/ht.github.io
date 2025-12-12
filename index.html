@@ -52,7 +52,7 @@
     @media (max-width: 600px) {
         header img {
             width: 80px !important;
-            height: auto !important;
+            : auto !important;
         }
     }
 
@@ -88,9 +88,15 @@
         max-width: 1200px;
         margin: 60px auto;
         padding: 0 20px;
+        align-items: center;
     }
 
     .solution-card {
+        width: 80%;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background: rgba(255,255,255,0.6);
         border-radius: 18px;
         padding: 40px 20px;
@@ -125,6 +131,7 @@
     .solution-desc {
         font-size: 0.8rem;
         opacity: 0.75;
+        overflow: auto; 
     }
 
     @media (max-width: 850px) {
@@ -224,21 +231,31 @@
           </div>
       </a>
 
-      <img src="images/ComingSoon1.jpg" 
+      <div class="solution-card">
+        <img src="images/ComingSoon.jpg" 
            alt="New ERP Solutions Coming Soon" 
            loading="lazy">
-      <img src="images/ComingSoon1.jpg" 
+      </div>
+      <div class="solution-card">
+        <img src="images/ComingSoon.jpg" 
            alt="New ERP Solutions Coming Soon" 
            loading="lazy">
-      <img src="images/ComingSoon1.jpg" 
+      </div>
+      <div class="solution-card">
+        <img src="images/ComingSoon.jpg" 
            alt="New ERP Solutions Coming Soon" 
            loading="lazy">
-      <img src="images/ComingSoon1.jpg" 
+      </div>
+      <div class="solution-card">
+        <img src="images/ComingSoon.jpg" 
            alt="New ERP Solutions Coming Soon" 
            loading="lazy">
-      <img src="images/ComingSoon1.jpg" 
+      </div>
+      <div class="solution-card">
+        <img src="images/ComingSoon.jpg" 
            alt="New ERP Solutions Coming Soon" 
            loading="lazy">
+      </div>
     
 
   
