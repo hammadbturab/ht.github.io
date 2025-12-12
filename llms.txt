@@ -1,0 +1,7 @@
+# llms.txt for HT Evolution
+
+site_name: HT Evolution
+site_url: https://htevolution.com
+description: We are an end-to-end technology partner that provides hardware and software solutions. One of our products is an AI-powered ERPNext software for Australian businesses that streamlines workflows, automates tasks, and provides real-time insights across finance, sales, manufacturing, projects and HR.
+contact_email: support@htevolution.com
+language: en
