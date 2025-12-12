@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description" content="HT Evolution Solution Catalogue – Connect your systems, automate processes, and scale your business with one integrated technology partner.">
-<meta name="keywords" content="ERP, AI, Business Automation, HT Evolution, ERPNext, Solutions">
+<meta name="keywords" content="ERP, AI, Business Automation, HT Evolution, ERPNext, Business Management Software, Business Systems Software, Solutions">
 <meta name="author" content="HT Evolution">
 
 <meta property="og:title" content="HT Evolution – Solution Catalogue">
@@ -21,8 +21,7 @@
 
 <title>End-to-End Technology Partner | HT Evolution Australia</title>
 <link rel="canonical" href="https://htevolution.com">
-<link rel="preload" as="image" href="images/indexlogo.png">
-<link rel="preload" as="video" href="images/indexlogo.mp4" type="video/mp4">
+<link rel="preload" as="image" href="images/indexlogo.png" fetchpriority="high">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRZJM7ZEQ0"></script>
 <script>
@@ -43,7 +42,7 @@
 
     header {
         text-align: center;
-        padding: 80px 20px;
+        padding: 25px 20px;
         background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(10px);
         border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -58,7 +57,7 @@
     }
 
     header h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -66,8 +65,14 @@
         text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
     }
 
+    @media(max-width: 600px) {
+        header h1 {
+            font-size: 1.5rem;
+        }
+    }
+
     header p {
-        font-size: 1.3rem;
+        font-size: 1.rem;
         opacity: 0.85;
     }
 
@@ -118,12 +123,21 @@
     }
 
     .solution-desc {
-        font-size: 1rem;
+        font-size: 0.8rem;
         opacity: 0.75;
     }
 
     @media (max-width: 850px) {
         .card-grid { grid-template-columns: 1fr; }
+    }
+
+    .card-grid img {
+        display: block;
+        margin: auto;
+        max-width: 80%;
+        max-height: 100px;
+        object-fit: contain;
+        border-radius: 12px;
     }
 
     footer {
@@ -176,7 +190,6 @@
 
 </head>
 <body>
-<!-- Canary Token Image -->
 <img
   src="https://node-tracker-production-de95.up.railway.app/secret-tracker?id=homepage"
   style="display:none"
@@ -184,7 +197,18 @@
 />
 
 <header role="banner">
-    <video poster="images/indexlogo.png" autoplay loop muted playsinline width="150" height="150" preload="auto">
+    <img src="images/indexlogo.png" width="150" height="150" alt="HT Evolution Logo" style="display:block; margin:auto;" fetchpriority="high">
+    <video 
+      poster="images/indexlogo.png"
+      autoplay 
+      loop 
+      muted 
+      playsinline 
+      width="150" 
+      height="150"
+      preload="metadata"
+      fetchpriority="high"
+    >
       <source src="images/indexlogo.mp4" type="video/mp4">
     </video>
     <h1>Solution Catalogue</h1>
@@ -194,34 +218,27 @@
 <main role="main">
   <div class="card-grid">
   
-      <!-- Card #1 -->
-  <!-- Card #1 -->
       <a href="https://htevolution.com/erpnext-implementation-perth-australia" title="ERPNext Implementation in Australia" style="text-decoration: none; color: inherit;">
           <div class="solution-card">
               <div class="solution-title">AI-Powered ERPNext Implementation</div>
-              <div class="solution-desc">A modular ERP solution designed for fast-growing businesses.</div>
+              <div class="solution-desc">Complete Enterprise Resource Planning (ERP) & Business Systems Management Software for Australian businesses — featuring Accounting, Customer Relationship Management (CRM), Human Resource Management (HRM), Manufacturing, and Project Management.</div>
           </div>
       </a>
 
-      <img src="/images/ComingSoon.jpg" 
+      <img src="images/ComingSoon1.jpg" 
            alt="New ERP Solutions Coming Soon" 
-           style="width:100%; border-radius:12px;"
            loading="lazy">
-      <img src="/images/ComingSoon.jpg" 
+      <img src="images/ComingSoon1.jpg" 
            alt="New ERP Solutions Coming Soon" 
-           style="width:100%; border-radius:12px;"
            loading="lazy">
-      <img src="/images/ComingSoon.jpg" 
+      <img src="images/ComingSoon1.jpg" 
            alt="New ERP Solutions Coming Soon" 
-           style="width:100%; border-radius:12px;"
            loading="lazy">
-      <img src="/images/ComingSoon.jpg" 
+      <img src="images/ComingSoon1.jpg" 
            alt="New ERP Solutions Coming Soon" 
-           style="width:100%; border-radius:12px;"
            loading="lazy">
-      <img src="/images/ComingSoon.jpg" 
+      <img src="images/ComingSoon1.jpg" 
            alt="New ERP Solutions Coming Soon" 
-           style="width:100%; border-radius:12px;"
            loading="lazy">
     
 
