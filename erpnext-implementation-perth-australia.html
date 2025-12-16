@@ -425,13 +425,11 @@
     
     .scroll-page {
         flex: 0 0 100%;
-        scroll-snap-align: start;
         display: flex;
         flex-direction: column;
-        gap: 15px;
-        align-items: center;
-        justify-content: flex-start;
-        min-height: 500px;
+        justify-content: center;
+        scroll-snap-align: center;
+        padding: 40px 20px;
         box-sizing: border-box;
     }
     
@@ -440,8 +438,6 @@
         max-width: 42%;
         margin-bottom: 15px;
     }
-
-
 
     .scroll-page .video-card video {
         max-height: none;
@@ -473,27 +469,14 @@
             box-sizing: border-box;
             justify-content: center;
         }
-    
+
         .scroll-page {
-            flex: 0 0 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 500px;
-            scroll-snap-align: center;
+          padding: 20px 10px;
+          align-items: center;
+          justify-content: flex-start;
+          min-height: 500px;
         }
-    
-        .scroll-page .video-row {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            width: 100%;
-            box-sizing: border-box;
-        }
+
     
         .scroll-page .scroll-caption {
             width: 90%;
@@ -698,7 +681,7 @@
       <a href="#contact" aria-label="Jump to Contact form">Contact</a>
   </div>
   
-  <section id="benefits" section class="bordered-section">
+  <section id="benefits" class="bordered-section">
     <div style="max-width:1200px; margin:0 auto; text-align:center; width:100%;">
   
       <h2 class="section-title">
