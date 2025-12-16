@@ -20,6 +20,13 @@
 </script>
 
 <style>
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
     body {
         margin: 0;
         font-family: 'Segoe UI', Arial, sans-serif;
@@ -296,6 +303,7 @@
     @media (max-width: 850px) {
         .benefit-cards {
             grid-template-columns: 1fr;
+            padding: 0 15px;
         }
         .benefit-card {
             display: flex;
@@ -389,6 +397,14 @@
         padding: 0;
         margin: 0 auto;
     }
+
+    @media (max-width: 850px) {
+        .scroll-page .video-card {
+            flex: 0 0 90%;
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+    }
     
     .scroll-page {
         flex: 0 0 100%;
@@ -443,7 +459,8 @@
             scroll-snap-type: x mandatory;
             gap: 20px;
             padding: 20px;
-            align-items: stretch;
+            margin: 0 auto;
+            box-sizing: border-box;
         }
     
         .scroll-page {
@@ -463,6 +480,8 @@
             justify-content: center;
             flex-wrap: wrap;
             align-items: flex-start;
+            width: 100%;
+            box-sizing: border-box;
         }
     
         .scroll-page .scroll-caption {
@@ -526,8 +545,8 @@
             font-size: 0.85rem;
             line-height: 1.2rem;
             margin-top: 15px;
-            margin-left: 5%;
-            margin-right: 5%;
+            margin-left: auto;
+            margin-right: auto;
         }
         .scroll-nav-buttons button {
             padding: 8px 12px;
@@ -536,6 +555,46 @@
         }
     }
 
+    .blog-card {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        cursor: pointer;
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        text-align: left;
+    }
+    
+    .blog-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    }
+    
+    .blog-card p {
+        text-align: left;
+        color: #000;
+        opacity: 0.9;
+        font-size: 0.95rem;
+        line-height: 1.5rem;
+    }
+    
+    .blog-card img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+    }
+
+    #blogs .benefit-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
 
 </style>
 
@@ -616,6 +675,7 @@
       <a href="#benefits" aria-label="Jump to Benefits section">Benefits</a>
       <a href="#preview" aria-label="Jump to Preview section with videos">Preview</a>
       <a href="#implementation" aria-label="Jump to Implementation steps">Implementation</a>
+      <a href="#blogs" aria-label="Jump to Blogs section">Blogs</a>
       <a href="#contact" aria-label="Jump to Contact form">Contact</a>
   </div>
   
@@ -674,7 +734,7 @@
         <div class="benefit-card">
             <p>
                 <strong>Transparency</strong><br>
-                Partner with a local, responsive provider in Australia for fast support, clear communication, and timely issue resolution. Explore the <a href="https://htevolution.com/erpnext-implementation-perth-australia.html#preview" target="_blank" rel="noopener">ERPNext user interface</a> in preview and see how intuitive and easy-to-use the system is.
+                Partner with a local, responsive provider in Australia for fast support, clear communication, and timely issue resolution. Explore the <a href="https://htevolution.com/erpnext-implementation-perth-australia.html#preview">ERPNext user interface</a> in preview and see how intuitive and easy-to-use the system is.
             </p>
         </div>
         
@@ -927,7 +987,38 @@
       </div>
     </div>
   </section>
+
+  <section id="blogs" class="bordered-section">
+    <div style="max-width:1200px; margin:0 auto; text-align:center; width:100%;">
+      <h2 class="section-title">Blogs</h2>
+      <h3 class="section-subtitle">Insights on AI in ERP and Enterprise Automation</h3>
   
+      <div class="benefit-cards">
+        <div class="benefit-card blog-card">
+          <img src="images/Hailuo_Image_Image1.jpg" alt="What is AI in ERP?" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin-bottom:12px;">
+          <p><strong>What is AI in ERP?</strong></p>
+          <p>
+            “<strong>AI in ERP systems</strong> is changing how enterprises interpret and act on business data, making workflows smarter, faster, and more reliable. At HT Evolution, our AI-powered ERPNext goes a step further: unlike traditional ERP solutions that rely on rigid reports and manual rules, our platform combines structured data with <strong>Enterprise AI</strong> to deliver <strong>flexible, validated, and actionable insights</strong> — giving companies answers they can trust and act on immediately.”
+            </p><p><strong>Artificial Intelligence (AI)</strong> appears remarkably intelligent when answering broad, public questions — whether through ChatGPT, Gemini, or DeepSeek.
+            That’s because large language models (LLMs) are trained on thousands of overlapping explanations for the same concepts. 
+            When an LLM has seen 2,000 definitions of Quantum Mechanics, explaining it in 10 different ways becomes relatively easy — and often accurate — by converging on what’s consistent across sources.
+            </p><p>
+            Now compare that to a company database with 10 employees. Each person stores information differently. One splits names into "first name" and "last name" fields. Another uses a single “full name” field. An expense may exist as a claim, a general ledger entry, or both. Business rules are implicit, inconsistent, or undocumented.
+            </p><p>
+            When someone asks <strong>AI in an ERP</strong> a question like “What are our total expenses?”, the <strong>Enterprise AI</strong> must interpret intent, resolve semantic ambiguity, decide which fields in the database to trust, and infer missing rules — all without ground truth.
+            </p><p>
+            This is why most ERP vendors for <strong>Enterprise AI</strong> prioritise safety and predictability: predefined reports, rigid filters, or chatbots that merely explain already-surfaced data.
+            And this is exactly where we see the opportunity in <strong>AI-Powered ERPs</strong>. By breaking <strong>AI</strong> tasks into deterministic sub-steps, enforcing validation at each stage, and layering meaning on structured data, HT Evolution’s <strong>AI-powered ERPNext</strong> ensures accurate results — not guesses. That’s the key differentiator that sets us apart from traditional ERP solutions.
+            </p><p>
+            Enterprise AI isn’t about free-form querying. It’s about 'guided' intelligence.
+            </p><p>
+            See AI in action in ERPNext — <a href="https://htevolution.com/erpnext-implementation-perth-australia.html#contact">schedule your demo today.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   
   <script>  
     document.addEventListener("DOMContentLoaded", function() {
