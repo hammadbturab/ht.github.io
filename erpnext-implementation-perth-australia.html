@@ -81,12 +81,13 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         margin-bottom: 10px;
-        margin-right: 15px; /* THUMB FIX*/
+        margin-right: 45px; /* THUMB FIX*/
         text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
     }
     @media(max-width: 600px) { 
         header h1 {
             font-size: 1.5rem;
+            margin-right: 18px; /* THUMB FIX*/
         }
     }
 
@@ -123,9 +124,15 @@
     header p {
     font-size: 1.rem;
     opacity: 0.85;
-    maring-right: 15px; /*THUMB FIX*/
+    maring-right: 45px; /*THUMB FIX*/
     }
 
+    @media(max-width: 600px) { 
+        header p {
+            font-size: 1.5rem;
+            margin-right: 18px; /* THUMB FIX*/
+        }
+    }
 
     @keyframes fadeDown {
         0% { opacity: 0; transform: translateY(-40px); }
