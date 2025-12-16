@@ -20,6 +20,10 @@
 </script>
 
 <style>
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
     body {
         margin: 0;
         font-family: 'Segoe UI', Arial, sans-serif;
@@ -296,6 +300,7 @@
     @media (max-width: 850px) {
         .benefit-cards {
             grid-template-columns: 1fr;
+            padding: 0 15px;
         }
         .benefit-card {
             display: flex;
@@ -388,6 +393,14 @@
         gap: 20px;
         padding: 0;
         margin: 0 auto;
+    }
+
+    @media (max-width: 850px) {
+        .scroll-page .video-card {
+            flex: 0 0 90%;
+            max-width: 90%;
+            box-sizing: border-box;
+        }
     }
     
     .scroll-page {
