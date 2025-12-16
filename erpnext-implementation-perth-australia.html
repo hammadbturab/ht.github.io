@@ -536,6 +536,29 @@
         }
     }
 
+    .blog-card {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    
+    .blog-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    }
+    
+    .blog-card p {
+        text-align: left;
+        color: #000;
+        opacity: 0.9;
+        font-size: 0.95rem;
+        line-height: 1.5rem;
+    }
+    
+    .blog-card img {
+        display: block;
+        border-radius: 12px;
+    }
 
 </style>
 
@@ -927,7 +950,35 @@
       </div>
     </div>
   </section>
+
+  <section id="blogs" class="bordered-section">
+    <div style="max-width:1200px; margin:0 auto; text-align:center; width:100%;">
+      <h2 class="section-title">Blogs</h2>
+      <h3 class="section-subtitle">Insights on AI in ERP and Enterprise Automation</h3>
   
+      <div class="benefit-cards">
+        <div class="benefit-card blog-card">
+          <img src="images/Hailuo_Image_Image1.jpg" alt="What is AI in ERP?" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin-bottom:12px;">
+          <p><strong>What is AI in ERP?</strong></p>
+          <p>
+            AI appears remarkably intelligent when answering broad, public questions — whether through ChatGPT, Gemini, or DeepSeek.
+            That’s because large language models are trained on thousands of overlapping explanations for the same concepts. 
+            When an LLM has seen 2,000 definitions of Quantum Mechanics, explaining it in 10 different ways becomes relatively easy — and often accurate — by converging on what’s consistent across sources.
+            <br><br>
+            Now compare that to a company database with 10 employees. Each person stores information differently. One splits names into first and last. Another uses a single “full name” field. An expense may exist as a claim, a general ledger entry, or both. Business rules are implicit, inconsistent, or undocumented.
+            <br><br>
+            When someone asks AI a question like “What are our total expenses?”, the model must interpret intent, resolve semantic ambiguity, decide which fields in the database to trust, and infer missing rules — all without ground truth.
+            <br><br>
+            This is why most ERP vendors prioritise safety and predictability: predefined reports, rigid filters, or chatbots that merely explain already-surfaced data.
+            And this is exactly where we see the opportunity. By breaking AI tasks into deterministic sub-steps, enforcing validation at each stage, and layering meaning on top of structured data, we can deliver answers that are both flexible and accurate — not guessed, not hallucinated.
+            <br><br>
+            Enterprise AI isn’t about free-form querying. It’s about 'guided' intelligence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   
   <script>  
     document.addEventListener("DOMContentLoaded", function() {
