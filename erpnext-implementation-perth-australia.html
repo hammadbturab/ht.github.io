@@ -540,6 +540,9 @@
         transition: transform 0.4s ease, box-shadow 0.4s ease;
         cursor: pointer;
         overflow: hidden;
+        width: 100%; /* Make full width */
+        max-width: 100%; /* Ensure no max-width constraints */
+        text-align: left; /* optional for better text alignment */
     }
     
     .blog-card:hover {
@@ -558,6 +561,15 @@
     .blog-card img {
         display: block;
         border-radius: 12px;
+    }
+
+    #blogs .benefit-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
     }
 
 </style>
@@ -639,6 +651,7 @@
       <a href="#benefits" aria-label="Jump to Benefits section">Benefits</a>
       <a href="#preview" aria-label="Jump to Preview section with videos">Preview</a>
       <a href="#implementation" aria-label="Jump to Implementation steps">Implementation</a>
+      <a href="#blogs" aria-label="Jump to Blogs section">Blogs</a>
       <a href="#contact" aria-label="Jump to Contact form">Contact</a>
   </div>
   
