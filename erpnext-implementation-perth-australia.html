@@ -150,6 +150,15 @@
         opacity: 0;
         overflow: hidden;
         text-align: center; 
+
+        display: grid;
+        grid-template-rows:
+            auto
+            minmax(48px, auto)
+            auto
+            minmax(64px, auto);
+        align-items: stretch;
+        text-align: center;
     }
 
     .video-card:nth-child(odd) { animation-delay: 0.2s; }
@@ -204,9 +213,16 @@
     }
 
     @media (max-width: 850px) {
-        .video-caption,
-        .video-custom {
+        .video-caption {
             min-height: 50px;       
+            max-height: 70px;       
+            display: flex;
+            align-items: center;   
+            justify-content: center;
+            text-align: center;
+        }
+        .video-custom {
+            min-height: 64px;       
             max-height: 70px;       
             display: flex;
             align-items: center;   
@@ -470,6 +486,7 @@
             padding: 20px;
             margin: 0 auto;
             box-sizing: border-box;
+            justify-content: center;
         }
     
         .scroll-page {
@@ -477,10 +494,10 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            scroll-snap-align: start;
             align-items: center;
             justify-content: flex-start;
             min-height: 500px;
+            scroll-snap-align: center;
         }
     
         .scroll-page .video-row {
@@ -1157,8 +1174,11 @@ buttons.forEach(btn => {
         const index = parseInt(btn.dataset.page);
         const target = scrollPages[index];
 
+        const containerCenter = scrollWrapper.offsetWidth / 2;
+        const targetCenter = target.offsetLeft + target.offsetWidth / 2;
+        
         scrollWrapper.scrollTo({
-            left: target.offsetLeft,
+            left: targetCenter - containerCenter,
             behavior: "smooth"
         });
     });
