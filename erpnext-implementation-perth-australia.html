@@ -354,31 +354,40 @@
     }
 
     @media (max-width: 850px) {
-            .floating-nav {
-            position: sticky;       
-            top: 15px;                 
-            left: 0;
-            right: 0;
-            transform: none;
+        .floating-nav {
+            position: fixed;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: auto;
+    
+            display: flex;
             flex-direction: row;
-            justify-content: center;
-            gap: 10px;
-            padding: 8px 0;
-            background: #f7f9fc;
-            z-index: 9999;
-            width: 100%;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            justify-content: space-between;
+            gap: 6px;
+    
+            width: calc(100% - 16px);
+            max-width: 500px;
+    
+            padding: 8px;
+            background: rgba(247, 249, 252, 0.95);
+            backdrop-filter: blur(8px);
+    
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+            z-index: 10000;
         }
     
         .floating-nav a {
-            flex: 1 1 0;
+            flex: 1;
             text-align: center;
-            max-width: 100%;
-            padding: 8px 0;
+            padding: 8px 6px;
             font-size: 0.7rem;
-            white-space: normal;
+            border-radius: 8px;
+            white-space: nowrap;
         }
     }
+
     
     .floating-nav a:hover {
         background: #1b3f66;
