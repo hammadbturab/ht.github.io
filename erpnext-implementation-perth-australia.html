@@ -23,6 +23,9 @@
     html, body {
         width: 100%;
         overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
     body {
         margin: 0;
@@ -456,7 +459,8 @@
             scroll-snap-type: x mandatory;
             gap: 20px;
             padding: 20px;
-            align-items: stretch;
+            margin: 0 auto;
+            box-sizing: border-box;
         }
     
         .scroll-page {
@@ -476,6 +480,8 @@
             justify-content: center;
             flex-wrap: wrap;
             align-items: flex-start;
+            width: 100%;
+            box-sizing: border-box;
         }
     
         .scroll-page .scroll-caption {
@@ -539,8 +545,8 @@
             font-size: 0.85rem;
             line-height: 1.2rem;
             margin-top: 15px;
-            margin-left: 5%;
-            margin-right: 5%;
+            margin-left: auto;
+            margin-right: auto;
         }
         .scroll-nav-buttons button {
             padding: 8px 12px;
@@ -553,9 +559,11 @@
         transition: transform 0.4s ease, box-shadow 0.4s ease;
         cursor: pointer;
         overflow: hidden;
-        width: 100%; /* Make full width */
-        max-width: 100%; /* Ensure no max-width constraints */
-        text-align: left; /* optional for better text alignment */
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        text-align: left;
     }
     
     .blog-card:hover {
@@ -572,6 +580,9 @@
     }
     
     .blog-card img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
         display: block;
         border-radius: 12px;
     }
