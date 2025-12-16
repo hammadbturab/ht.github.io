@@ -422,14 +422,6 @@
         padding: 0;
         margin: 0 auto;
     }
-
-    @media (max-width: 850px) {
-        .scroll-page .video-card {
-            flex: 0 0 90%;
-            max-width: 90%;
-            box-sizing: border-box;
-        }
-    }
     
     .scroll-page {
         flex: 0 0 100%;
@@ -449,13 +441,6 @@
         margin-bottom: 15px;
     }
 
-    @media (max-width: 850px) {
-      .scroll-page .video-card {
-          flex: 0 0 auto;
-          max-width: 90%;
-          box-sizing: border-box;
-      }
-    }
 
 
     .scroll-page .video-card video {
@@ -554,18 +539,26 @@
         background: #1b3f66;
     }
 
+    @media (max-width: 850px) {
+    
+      .scroll-page .video-row {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+      }
+    
+      .scroll-page .video-card {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+        margin: 0;
+      }
+    
+    }
 
     @media (max-width: 850px) {
-        .scroll-page {
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
-        .scroll-page .video-card {
-            flex: 0 0 90%;
-            max-width: 90%;
-            margin-bottom: 20px;
-        }
         .scroll-caption {
             width: 90%;
             font-size: 0.85rem;
@@ -800,7 +793,7 @@
   
     <div class="horizontal-scroll">
       <div class="scroll-page">
-        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <div class="video-row">
           <div class="video-card">
               <div id="video1-title" class="video-title">ERP Overview</div>
               <div class="video-caption">A quick tour of the HT ERP Software ecosystem and navigation.</div>
@@ -820,7 +813,7 @@
       </div>
     
       <div class="scroll-page">
-        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <div class="video-row">
           <div class="video-card">
               <div id="video3-title" class="video-title">Customer Management</div>
               <div class="video-caption">Leads, opportunities, and customer management simplified for Australian businesses.</div>
@@ -840,7 +833,7 @@
       </div>
       
       <div class="scroll-page">
-        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <div class="video-row">
           <div class="video-card">
               <div id="video5-title" class="video-title">Employee Onboarding</div>
               <div class="video-caption">Streamline hiring, documentation, and joining workflows.</div>
@@ -860,7 +853,7 @@
       </div>
       
       <div class="scroll-page">
-        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <div class="video-row">
           <div class="video-card">
               <div id="video7-title" class="video-title">Role Permissions</div>
               <div class="video-caption">Control access and security for all users in the ERP system.</div>
@@ -880,7 +873,7 @@
       </div>
       
       <div class="scroll-page">
-        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <div class="video-row">
           <div class="video-card">
               <div id="video9-title" class="video-title">Project Management</div>
               <div class="video-caption">Plan and monitor projects and milestones efficiently.</div>
@@ -900,7 +893,7 @@
       </div>
       
       <div class="scroll-page">
-        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <div class="video-row">
           <div class="video-card">
               <div id="video11-title" class="video-title">Purchasing</div>
               <div class="video-caption">Automated procurement with supplier tracking and POs.</div>
@@ -920,7 +913,7 @@
       </div>
       
       <div class="scroll-page">
-        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <div class="video-row">
           <div class="video-card">
               <div id="video13-title" class="video-title">Stock Management</div>
               <div class="video-caption">Real-time inventory and warehouse control at your fingertips.</div>
@@ -940,7 +933,7 @@
       </div>
         
       <div class="scroll-page">
-        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <div class="video-row">
           <div class="video-card">
               <div id="video15-title" class="video-title">Payroll</div>
               <div class="video-caption">Manage payroll cycles, salaries, and compliance automatically.</div>
