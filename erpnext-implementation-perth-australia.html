@@ -600,11 +600,13 @@
     }
     
     .blog-card p {
-        text-align: left;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
         color: #000;
         opacity: 0.9;
         font-size: 0.95rem;
-        line-height: 1.5rem;
+        line-height: 1.6rem;
     }
     
     .blog-card img {
@@ -619,9 +621,21 @@
         display: flex;
         flex-direction: column;
         gap: 25px;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 40px auto;
         padding: 0 20px;
+    }
+
+    @media (max-width: 600px) {
+        .blog-card p {
+            text-align: left;
+            hyphens: none;
+        }
+    }
+    @media (min-width: 601px) {
+        .blog-card p:not(:first-of-type) {
+            text-align: justify;
+        }
     }
 
 </style>
@@ -1017,7 +1031,7 @@
   </section>
 
   <section id="blogs" class="bordered-section">
-    <div style="max-width:1200px; margin:0 auto; text-align:center; width:100%;">
+    <div style="max-width:1400px; margin:0 auto; text-align:center; width:100%;">
       <h2 class="section-title">Blogs</h2>
       <h3 class="section-subtitle">Insights on AI in ERP and Enterprise Automation</h3>
   
