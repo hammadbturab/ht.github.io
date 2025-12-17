@@ -600,11 +600,13 @@
     }
     
     .blog-card p {
-        text-align: left;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
         color: #000;
         opacity: 0.9;
         font-size: 0.95rem;
-        line-height: 1.5rem;
+        line-height: 1.6rem;
     }
     
     .blog-card img {
@@ -622,6 +624,16 @@
         max-width: 1200px;
         margin: 40px auto;
         padding: 0 20px;
+    }
+
+    @media (max-width: 600px) {
+        .blog-card p {
+            text-align: left;
+            hyphens: none;
+        }
+    }
+    .blog-card p:not(:first-of-type) {
+        text-align: justify;
     }
 
 </style>
