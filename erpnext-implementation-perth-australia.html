@@ -632,8 +632,10 @@
             hyphens: none;
         }
     }
-    .blog-card p:not(:first-of-type) {
-        text-align: justify;
+    @media (min-width: 601px) {
+        .blog-card p:not(:first-of-type) {
+            text-align: justify;
+        }
     }
 
 </style>
