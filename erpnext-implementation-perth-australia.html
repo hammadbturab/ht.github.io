@@ -733,25 +733,49 @@
       font-size: 0.85rem;
       opacity: 0.8;
     }
+
+    .footer-col:last-child h4 {
+      text-align: right;
+    }
     
-    /* Mobile */
     @media (max-width: 900px) {
       .footer-inner {
         grid-template-columns: 1fr;
         gap: 40px;
+        text-align: center;
+      }
+
+      .footer-brand p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
       }
     
       .footer-bottom {
         flex-direction: column;
         gap: 8px;
-        text-align: left;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
       }
+      .footer-logo {
+        justify-content: center;
+      }
+    
+      .footer-col h4 {
+        text-align: center;
+      }
+    
+      .footer-col ul li {
+        text-align: center;
+      }
+    
+      .footer-contact li {
+        justify-content: center;
+        text-align: center;
+      }
+      
     }
-
-    .footer-col:last-child h4 {
-      text-align: right;
-    }
-
 
 
 </style>
