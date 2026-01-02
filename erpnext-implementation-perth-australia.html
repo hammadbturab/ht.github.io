@@ -699,7 +699,7 @@
     
     .footer-logo {
       display: flex;
-      align-items: left;
+      align-items: center;
       gap: 12px;
       margin-bottom: 14px;
     }
@@ -709,12 +709,18 @@
       height: 42px;
       object-fit: contain;
       border-radius: 8px;
+      margin-bottom: 4px;
     }
     
     .footer-contact li {
-      display: flex;
-      gap: 10px;
-      align-items: left;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .footer-contact a {
+        text-align: right; /* ensures links are right-aligned */
     }
     
     .footer-bottom {
