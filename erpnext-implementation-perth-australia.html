@@ -644,6 +644,103 @@
         }
     }
 
+    .site-footer {
+      background: #ffffff;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      padding: 60px 20px 0;
+      font-size: 0.95rem;
+      color: #000;
+    }
+    
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+    }
+    
+    .footer-col h4 {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-col a {
+      text-decoration: none;
+      color: #000;
+      opacity: 0.8;
+    }
+    
+    .footer-col a:hover {
+      opacity: 1;
+    }
+    
+    .footer-brand p {
+      max-width: 360px;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    
+    .logo-badge {
+      background: #000;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 700;
+      padding: 10px 12px;
+      font-size: 0.9rem;
+    }
+    
+    .footer-contact li {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+    
+    /* Mobile */
+    @media (max-width: 900px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+
+
 </style>
 
 <script type="application/ld+json">
@@ -1179,12 +1276,51 @@
   </script>
 </main>
 
-<footer role="contentinfo">
-    <span>Phone: 1300 415 457</span>
-    <span>E-mail: support@htevolution.com</span>
-    <span>HT Evolution | Perth | Australia</span>
+<footer role="contentinfo" class="site-footer">
+  <div class="footer-inner">
+
+    <!-- Column 1 -->
+    <div class="footer-col footer-brand">
+      <div class="footer-logo">
+        <span class="logo-badge">HT</span>
+        <strong>HT Evolution</strong>
+      </div>
+      <p>
+        AI-powered ERPNext software for Australian businesses.<br>
+        Streamline workflows, automate tasks, and gain real-time insights.
+      </p>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#preview">Preview</a></li>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li>📞 1300 415 457</li>
+        <li>✉️ support@htevolution.com</li>
+        <li>📍 Perth WA, Australia</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 HT Evolution. All rights reserved.</span>
     <span>ABN 92 858 471 503</span>
+  </div>
 </footer>
+
 
 <script>
 const scrollWrapper = document.querySelector(".horizontal-scroll");
