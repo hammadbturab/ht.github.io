@@ -4,8 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clear Sky Solar | Perth's Trusted Solar Energy Experts</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Clear Sky Solar - Perth's #1 solar installers. Save 70%+ on electricity bills with premium solar panels & battery storage. Get free quotes for residential & commercial solar solutions in WA.">
+    <meta name="keywords" content="solar panels Perth, solar installation WA, solar battery storage, solar quotes Perth, renewable energy Western Australia, solar rebates WA, solar power Perth, solar company Perth, solar installers WA">
+    <meta name="author" content="Clear Sky Solar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph tags for social media -->
+    <meta property="og:title" content="Clear Sky Solar | Perth's Trusted Solar Energy Experts">
+    <meta property="og:description" content="Save 70%+ on electricity bills with premium solar installations in Perth. Get your free quote today!">
+    <meta property="og:image" content="https://yourwebsite.com/images/hero-solar.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_AU">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Clear Sky Solar | Perth's Trusted Solar Energy Experts">
+    <meta name="twitter:description" content="Premium solar installations in Perth WA. Save thousands on electricity bills.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Clear Sky Solar",
+      "alternateName": "Clear Sky Solar by HT Evolution",
+      "description": "Perth's trusted solar installation experts providing premium solar panels and battery storage solutions.",
+      "image": "https://yourwebsite.com/images/hero-solar.jpg",
+      "@id": "https://yourwebsite.com",
+      "url": "https://yourwebsite.com",
+      "telephone": "+611300415457",
+      "email": "support@htevolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Midland",
+        "addressLocality": "Perth",
+        "addressRegion": "WA",
+        "postalCode": "6056",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -31.888,
+        "longitude": 115.999
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Western Australia"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "priceRange": "$$",
+      "serviceArea": {
+        "@type": "Place",
+        "name": "Western Australia"
+      },
+      "sameAs": [
+        "https://www.facebook.com/yourpage",
+        "https://www.instagram.com/yourprofile"
+      ]
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How much can I save with solar panels in Perth?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Perth households save 70% or more on electricity bills with a properly sized solar system. A typical 6.6kW system can save $2,000-$2,800 per year depending on your energy usage and consumption patterns."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What solar rebates are available in Western Australia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WA residents can access Federal STC rebates (up to $3,000), state-based incentives, and interest-free finance options through various programs. We help you access all available rebates and incentives."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How long does solar installation take in Perth?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most residential solar installations are completed in 1-2 days. We handle all paperwork, council approvals, and grid connection for a hassle-free experience."
+        }
+      }]
+    }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -185,15 +291,17 @@
             font-size: 3.5rem;
             margin-bottom: 25px;
             line-height: 1.1;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.6);
         }
 
         .hero p {
             font-size: 1.25rem;
             max-width: 800px;
             margin: 0 auto 40px;
-            opacity: 0.9;
-            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+            opacity: 0.95;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+            font-weight: 500;
+            line-height: 1.7;
         }
 
         .hero-buttons {
@@ -978,6 +1086,26 @@
             color: white;
         }
 
+        /* Service Areas Styling */
+        .service-areas {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-top: 30px;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .service-areas h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .service-areas p {
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
         /* Responsive Design */
         @media (max-width: 1100px) {
             .hero h1 {
@@ -1103,6 +1231,14 @@
     </style>
 </head>
 <body>
+    <!-- Hidden SEO Content (visible to search engines only) -->
+    <div style="position: absolute; left: -9999px; top: -9999px;">
+        <h1>Solar Panels Perth WA - Residential & Commercial Solar Installation Experts</h1>
+        <p>Clear Sky Solar provides premium solar panel installations across Perth and Western Australia. As licensed solar installers, we offer complete solar solutions including battery storage, solar monitoring, and maintenance services for homes and businesses.</p>
+        <h2>Solar Installation Perth | Solar Panels WA | Solar Battery Storage Perth</h2>
+        <p>Service areas include: Perth Metro, Midland, Fremantle, Joondalup, Rockingham, Mandurah, Armadale, Canning Vale, Perth Hills, and all surrounding WA suburbs.</p>
+    </div>
+    
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -1162,7 +1298,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Complete Solar Solutions for Every Need</h2>
-                <p>From installation to maintenance, we provide end-to-end solar services to power your sustainable future.</p>
+                <p>From installation to maintenance, we provide end-to-end solar services to power your sustainable future. Serving Perth and all Western Australia suburbs with premium solar solutions.</p>
             </div>
             
             <div class="services-grid">
@@ -1172,7 +1308,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Residential Solar</h3>
-                        <p>Custom solar systems designed for Australian homes. Maximize savings with premium panels tailored to your roof.</p>
+                        <p>Custom solar systems designed for Australian homes. Maximize savings with premium panels tailored to your Perth roof.</p>
                     </div>
                 </div>
                 
@@ -1182,7 +1318,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Battery Storage</h3>
-                        <p>Store excess solar energy for use at night. Achieve true energy independence with top-tier battery solutions.</p>
+                        <p>Store excess solar energy for use at night. Achieve true energy independence with top-tier battery solutions in WA.</p>
                     </div>
                 </div>
                 
@@ -1192,7 +1328,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Solar Monitoring</h3>
-                        <p>Track your energy production in real-time. Smart monitoring systems to optimize your solar investment.</p>
+                        <p>Track your energy production in real-time. Smart monitoring systems to optimize your solar investment in Perth.</p>
                     </div>
                 </div>
                 
@@ -1202,7 +1338,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Green Energy Solutions</h3>
-                        <p>Complete eco-friendly home upgrades. Reduce your carbon footprint while increasing property value.</p>
+                        <p>Complete eco-friendly home upgrades. Reduce your carbon footprint while increasing property value in Western Australia.</p>
                     </div>
                 </div>
                 
@@ -1212,7 +1348,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Finance Options</h3>
-                        <p>Flexible payment plans available. Start saving immediately with 0% finance options.</p>
+                        <p>Flexible payment plans available. Start saving immediately with 0% finance options for solar in Perth.</p>
                     </div>
                 </div>
                 
@@ -1222,7 +1358,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Maintenance & Repairs</h3>
-                        <p>Expert servicing for all solar systems. Keep your panels performing at peak efficiency year-round.</p>
+                        <p>Expert servicing for all solar systems. Keep your Perth solar panels performing at peak efficiency year-round.</p>
                     </div>
                 </div>
             </div>
@@ -1233,9 +1369,9 @@
     <section class="why-us" id="why-us">
         <div class="container why-container">
             <div class="why-content">
-                <h2>Why Choose Us</h2>
-                <p><strong>Perth's Most Trusted Solar Installer</strong></p>
-                <p>With years of experience serving Western Australia, Clear Sky Solar delivers quality, reliability, and exceptional value.</p>
+                <h2>Why Choose Clear Sky Solar</h2>
+                <p><strong>Perth's Most Trusted Solar Installer</strong> - Serving all suburbs including Midland, Perth CBD, Fremantle, Joondalup, and surrounding Western Australia areas.</p>
+                <p>With over 10 years of experience serving Western Australian homes and businesses, Clear Sky Solar delivers premium quality solar panel installations, battery storage solutions, and complete solar system maintenance. As CEC-accredited solar installers in Perth, we ensure every installation meets Australian standards and maximizes your return on investment.</p>
                 
                 <div class="benefits-grid">
                     <div class="benefit-item">
@@ -1271,6 +1407,12 @@
                         <div>Local Perth-based support</div>
                     </div>
                 </div>
+                
+                <!-- Service Areas -->
+                <div class="service-areas">
+                    <h4>Service Areas in Western Australia:</h4>
+                    <p>Perth Metro • Midland • Fremantle • Joondalup • Rockingham • Mandurah • Armadale • Canning Vale • Perth Hills • Butler • Ellenbrook • Gosnells • Kwinana • and all surrounding WA suburbs</p>
+                </div>
             </div>
             
             <div class="stats-box">
@@ -1287,14 +1429,14 @@
         <div class="container">
             <div class="section-title">
                 <h2>Trusted Solar Experts in Western Australia</h2>
-                <p>Serving Western Australia with systems designed for local roofs & WA grid requirements</p>
+                <p>Serving Western Australia with systems designed for local Perth roofs & WA grid requirements. Licensed solar installers with CEC accreditation.</p>
             </div>
             
             <div class="trusted-container">
                 <div class="trusted-item">
                     <h3><span>1</span>Licensed & Insured</h3>
                     <ul class="trusted-list">
-                        <li>Optimised for WA Sun</li>
+                        <li>Optimised for WA Sun Conditions</li>
                         <li>Battery-Ready Systems</li>
                         <li>CEC-Accredited Installers</li>
                         <li>Real-Time Monitoring</li>
@@ -1304,8 +1446,8 @@
                 <div class="trusted-item">
                     <h3><span>2</span>Our Commitment</h3>
                     <ul class="trusted-list">
-                        <li>CEC-Accredited Installers</li>
-                        <li>WA Licensed & Insured</li>
+                        <li>CEC-Accredited Solar Installers</li>
+                        <li>WA Licensed & Fully Insured</li>
                         <li>Tier-1 Solar Panels & Inverters</li>
                         <li>Full Compliance Documentation Provided</li>
                         <li>Monitoring & Optimization Support</li>
@@ -1316,19 +1458,19 @@
                     <h3><span>3</span>Estimated Savings</h3>
                     <div class="savings-box">
                         <div class="savings-amount">Up to $2,800/year*</div>
-                        <p>Typical Perth Household</p>
+                        <p>Typical Perth Household with 6.6kW Solar System</p>
                     </div>
                     <ul class="trusted-list">
                         <li>Designed for maximum efficiency under WA sun conditions</li>
                         <li>Battery-ready systems to reduce grid reliance</li>
                         <li>Every installation includes rebates and STC management</li>
                     </ul>
-                    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);">*Estimated savings based on historical energy usage and average solar production</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);">*Estimated savings based on historical energy usage and average solar production in Perth</p>
                 </div>
             </div>
             
             <div class="section-title" style="margin-top: 80px;">
-                <h3>Our Process</h3>
+                <h3>Our Solar Installation Process</h3>
             </div>
             
             <div class="process-steps">
@@ -1360,8 +1502,8 @@
     <section class="blog" id="blog">
         <div class="container">
             <div class="section-title">
-                <h2>Solar Insights</h2>
-                <p>Latest News & Guides - Stay informed with the latest solar industry news, tips, and educational content.</p>
+                <h2>Solar Insights & Perth Solar News</h2>
+                <p>Latest News & Guides - Stay informed with the latest solar industry news, tips, and educational content for Western Australian homeowners.</p>
             </div>
             
             <div class="blog-grid">
@@ -1370,7 +1512,7 @@
                     </div>
                     <div class="blog-content">
                         <div class="blog-date">
-                            <i class="far fa-calendar-alt"></i> December 28, 2024 • 3 min read
+                            <i class="far fa-calendar-alt"></i> January 05, 2026 • 3 min read
                         </div>
                         <h3>How Solar Panels Work: A Complete Guide for Australian Homeowners</h3>
                         <p>Understanding the science behind solar energy and how it can power your Perth home efficiently year-round.</p>
@@ -1383,7 +1525,7 @@
                     </div>
                     <div class="blog-content">
                         <div class="blog-date">
-                            <i class="far fa-calendar-alt"></i> December 20, 2024 • 7 min read
+                            <i class="far fa-calendar-alt"></i> January 05, 2026 • 7 min read
                         </div>
                         <h3>2025 Solar Rebates and Incentives in Western Australia</h3>
                         <p>Everything you need to know about government rebates, STCs, and financial incentives available for WA residents.</p>
@@ -1396,7 +1538,7 @@
                     </div>
                     <div class="blog-content">
                         <div class="blog-date">
-                            <i class="far fa-calendar-alt"></i> December 15, 2024 • 4 min read
+                            <i class="far fa-calendar-alt"></i> January 05, 2026 • 4 min read
                         </div>
                         <h3>Maximizing Your Solar Investment: Tips for Perth Weather</h3>
                         <p>Expert advice on optimizing your solar panel performance throughout Perth's unique seasonal conditions.</p>
@@ -1406,7 +1548,7 @@
             </div>
             
             <div class="view-all">
-                <a href="#" class="cta-button">View All Articles</a>
+                <a href="#" class="cta-button">View All Solar Articles</a>
             </div>
         </div>
     </section>
@@ -1415,8 +1557,8 @@
     <section id="contact">
         <div class="container contact-container">
             <div class="contact-info">
-                <h2>Get in Touch</h2>
-                <p>Ready to Go Solar? Get a free, no-obligation quote for your solar installation. Our experts will design a custom system for your home.</p>
+                <h2>Get in Touch with Perth's Solar Experts</h2>
+                <p>Ready to Go Solar? Get a free, no-obligation quote for your solar installation. Our Perth-based experts will design a custom system for your home or business.</p>
                 
                 <div class="contact-details">
                     <div class="contact-item">
@@ -1452,9 +1594,9 @@
             </div>
             
             <div class="contact-form">
-                <h3>Request a Free Quote</h3>
-                <form action="https://formspree.io/f/xzdzokan" method="POST">
-                    <input type="hidden" name="_subject" value="New Solar Quote Request - Clear Sky Solar">
+                <h3>Request a Free Solar Quote</h3>
+                <form id="quoteForm" action="https://formspree.io/f/xzdzokan" method="POST">
+                    <input type="hidden" name="_subject" value="New Solar Quote Request - Clear Sky Solar Perth">
                     <div class="form-group">
                         <label for="name">Your Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -1491,21 +1633,32 @@
                         <i class="fas fa-sun"></i>
                         ClearSky Solar
                     </div>
-                    <p>Clear Sky Solar by HT Evolution - Perth's trusted solar installation experts. Powering Western Australian homes with clean, sustainable energy.</p>
+                    <p>Clear Sky Solar by HT Evolution - Perth's trusted solar installation experts. Powering Western Australian homes and businesses with clean, sustainable energy solutions since 2016.</p>
+                    <p>Also see: <a href="/erpnext-implementation-perth-australia.html">ERPNext Software Australia</a></p>
+                    <div itemscope itemtype="https://schema.org/LocalBusiness" style="display: none;">
+                        <span itemprop="name">Clear Sky Solar</span>
+                        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                            <span itemprop="streetAddress">Midland</span>,
+                            <span itemprop="addressLocality">Perth</span>,
+                            <span itemprop="addressRegion">WA</span>
+                            <span itemprop="postalCode">6056</span>
+                        </div>
+                        <span itemprop="telephone">1300 415 457</span>
+                    </div>
                 </div>
                 
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#contact">Get Free Quote</a></li>
+                        <li><a href="#services">Solar Services Perth</a></li>
+                        <li><a href="#blog">Solar Blog WA</a></li>
+                        <li><a href="#contact">Contact Solar Experts</a></li>
+                        <li><a href="#contact">Get Free Solar Quote</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-contact">
-                    <h3>Contact</h3>
+                    <h3>Contact Our Perth Office</h3>
                     <div class="footer-contact-item">
                         <i class="fas fa-phone-alt"></i>
                         <span>1300 415 457</span>
@@ -1522,7 +1675,7 @@
             </div>
             
             <div class="footer-bottom">
-                <div>© 2026 Clear Sky Solar by HT Evolution. All rights reserved.</div>
+                <div>© 2026 Clear Sky Solar by HT Evolution. Perth's trusted solar energy experts. All rights reserved.</div>
                 <div class="footer-bottom-links">
                     <a href="https://htevolution.com/privacy-policy.html">Privacy Policy</a>
                     <a href="#">ABN 92 858 471 503</a>
@@ -1571,7 +1724,7 @@
             
             // In a real application, you would send this data to a server
             // For this demo, we'll just show a success message
-            alert(`Thank you ${name}! Your quote request has been submitted. We'll contact you at ${email} or ${phone} within 24 hours.`);
+            alert(`Thank you ${name}! Your solar quote request has been submitted. We'll contact you at ${email} or ${phone} within 24 hours.`);
             
             // Reset the form
             quoteForm.reset();

@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /test/
+Disallow: /*?*
 
 Sitemap: https://htevolution.com/sitemap.xml
