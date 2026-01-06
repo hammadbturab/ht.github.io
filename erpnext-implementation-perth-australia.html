@@ -1,3 +1,4 @@
+ERPNext Modules: A Quick High-Level Glance
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -946,37 +947,56 @@
   
     </div>
   </section>
+<section id="preview" style="padding:30px 0 40px 0; margin-top:45px; margin-bottom:45px;">
+  <h2 class="section-title" style="text-align:center;">Preview</h2>
+  <h3 class="section-subtitle" style="text-align:center;">ERPNext Modules: A Quick High-Level Glance</h3>
+  <div class="mobile-swipe-hint" style="text-align:center; margin-bottom:15px;">Swipe right for more</div>
 
-  <section id="preview" style="padding:30px 0 40px 0;margin-top:45px;margin-bottom:45px;">
-    <h2 class="section-title">Preview</h2>
-    <h3 class="section-subtitle">ERPNext Modules: A Quick High-Level Glance</h3>
-    <div class="mobile-swipe-hint">Swipe right for more</div>
-  
-    <div class="horizontal-scroll">
-      <!-- Scroll pages with video cards -->
-      <div class="scroll-page">
-        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-          <div class="video-card">
-              <div id="video1-title" class="video-title">ERP Overview</div>
-              <div class="video-caption">
-                Explore the <strong>enterprise software platform</strong> that centralizes finance, sales, HR, and operations into one <strong>AI driven ERP software</strong>.
-              </div>
-              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step1overview.mp4" aria-labelledby="video1-title"></video>
-              <div class="video-custom">Customizations include dashboards, themes, and intuitive ERP layouts for <strong>business management software</strong>.</div>
+  <div class="horizontal-scroll" style="overflow-x:auto; padding-bottom:10px;">
+    <div class="video-row" style="display:flex; gap:20px; flex-wrap:nowrap; scroll-behavior:smooth;">
+
+      <!-- Video Card 1 -->
+      <div class="video-card" style="flex:0 0 300px; min-width:280px; background:#f9f9f9; padding:15px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+          <div id="video1-title" class="video-title" style="font-weight:bold; margin-bottom:8px;">ERP Overview</div>
+          <div class="video-caption" style="margin-bottom:8px; font-size:14px;">
+            Explore the <strong>enterprise software platform</strong> that centralizes finance, sales, HR, and operations into one <strong>AI driven ERP software</strong>.
           </div>
-          <div class="video-card">
-              <div id="video2-title" class="video-title">Dashboards</div>
-              <div class="video-caption">
-                Visualize KPIs with <strong>business intelligence ERP</strong> and <strong>real time ERP dashboards</strong>.
-              </div>
-              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step10adashboards.mp4" aria-labelledby="video2-title"></video>
-              <div class="video-custom">Customizations: Drag-and-drop widgets, charts, and <strong>performance management ERP</strong>.</div>
+          <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step1overview.mp4" style="width:100%; border-radius:8px;" aria-labelledby="video1-title"></video>
+          <div class="video-custom" style="margin-top:8px; font-size:13px;">
+            Customizations include dashboards, themes, and intuitive ERP layouts for <strong>business management software</strong>.
           </div>
-        </div>
       </div>
+
+      <!-- Video Card 2 -->
+      <div class="video-card" style="flex:0 0 300px; min-width:280px; background:#f9f9f9; padding:15px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+          <div id="video2-title" class="video-title" style="font-weight:bold; margin-bottom:8px;">Dashboards</div>
+          <div class="video-caption" style="margin-bottom:8px; font-size:14px;">
+            Visualize KPIs with <strong>business intelligence ERP</strong> and <strong>real time ERP dashboards</strong>.
+          </div>
+          <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step10adashboards.mp4" style="width:100%; border-radius:8px;" aria-labelledby="video2-title"></video>
+          <div class="video-custom" style="margin-top:8px; font-size:13px;">
+            Customizations: Drag-and-drop widgets, charts, and <strong>performance management ERP</strong>.
+          </div>
+      </div>
+
     </div>
-  
-  </section>
+  </div>
+</section>
+
+<style>
+/* Mobile responsive adjustments */
+@media screen and (max-width:768px){
+  .horizontal-scroll {
+    padding-left:15px;
+    padding-right:15px;
+  }
+  .video-card {
+    flex:0 0 90%;
+    min-width:auto;
+  }
+}
+</style>
+
 
   <section id="implementation" class="bordered-section">
     <div style="max-width:1200px; margin:0 auto 0 auto; text-align:center; width:100%;">
