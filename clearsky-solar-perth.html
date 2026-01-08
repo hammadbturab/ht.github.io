@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Preconnect to critical domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    
+    <!-- Load Font Awesome asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Load Google Fonts asynchronously -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <title>Clear Sky Solar | Perth's Trusted Solar Energy Experts</title>
     
     <!-- SEO Meta Tags -->
@@ -30,10 +41,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
-    <!-- Font Awesome & Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -45,14 +52,14 @@
       "image": "https://htevolution.com/images/hero-solar-kkZoKVJM.jpg",
       "@id": "https://htevolution.com/clearsky-solar-perth.html",
       "url": "https://htevolution.com/clearsky-solar-perth.html",
-      "telephone": "+611300415457",
+      "telephone": "+61451853457",
       "email": "support@htevolution.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Midland",
+        "streetAddress": "Perth",
         "addressLocality": "Perth",
         "addressRegion": "WA",
-        "postalCode": "6056",
+        "postalCode": "6000",
         "addressCountry": "AU"
       },
       "geo": {
@@ -113,6 +120,23 @@
     </script>
     
     <style>
+        /* Add font-display rules */
+        @font-face {
+            font-family: 'Font Awesome 6 Free';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2) format('woff2');
+        }
+        
+        @font-face {
+            font-family: 'Font Awesome 6 Free';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2) format('woff2');
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -778,7 +802,7 @@
         }
 
         .read-more {
-            color: var(--secondary);
+            color: #c2410c;
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -1228,6 +1252,18 @@
                 font-size: 4rem;
             }
         }
+        /* Screen reader only text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body>
@@ -1237,6 +1273,9 @@
         <p>Clear Sky Solar provides premium solar panel installations across Perth and Western Australia. As licensed solar installers, we offer complete solar solutions including battery storage, solar monitoring, and maintenance services for homes and businesses.</p>
         <h2>Solar Installation Perth | Solar Panels WA | Solar Battery Storage Perth</h2>
         <p>Service areas include: Perth Metro, Midland, Fremantle, Joondalup, Rockingham, Mandurah, Armadale, Canning Vale, Perth Hills, and all surrounding WA suburbs.</p>
+        <a href="#services" title="View our solar services in Perth">Solar Services Perth</a>
+        <a href="#contact" title="Get a free solar quote in Perth">Free Solar Quote Perth</a>
+        <a href="#blog" title="Read our solar energy blog">Solar Energy Blog WA</a>
     </div>
     
     <!-- Header -->
@@ -1246,8 +1285,9 @@
                 <i class="fas fa-sun"></i>
                 Clear<span>Sky</span> Solar
             </a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
                 <i class="fas fa-bars"></i>
+                <span class="sr-only">Menu</span>
             </button>
             <nav>
                 <ul id="navMenu">
@@ -1262,6 +1302,7 @@
         </div>
     </header>
 
+    <main>
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -1410,7 +1451,7 @@
                 
                 <!-- Service Areas -->
                 <div class="service-areas">
-                    <h4>Service Areas in Western Australia:</h4>
+                    <h3>Service Areas in Western Australia:</h3>
                     <p>Perth Metro • Midland • Fremantle • Joondalup • Rockingham • Mandurah • Armadale • Canning Vale • Perth Hills • Butler • Ellenbrook • Gosnells • Kwinana • and all surrounding WA suburbs</p>
                 </div>
             </div>
@@ -1566,8 +1607,8 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h4>Call Us</h4>
-                            <p>1300 415 457</p>
+                            <h3>Call Us</h3>
+                            <p>+61 451 853 457</p>
                         </div>
                     </div>
                     
@@ -1587,7 +1628,7 @@
                         </div>
                         <div>
                             <h4>Location</h4>
-                            <p>Midland, WA 6056, Australia (Perth)</p>
+                            <p>Level 25 Capital Square Tower 3, 1 Spring St Perth WA 6000</p>
                         </div>
                     </div>
                 </div>
@@ -1623,7 +1664,7 @@
             </div>
         </div>
     </section>
-
+    </main>
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1638,12 +1679,12 @@
                     <div itemscope itemtype="https://schema.org/LocalBusiness" style="display: none;">
                         <span itemprop="name">Clear Sky Solar</span>
                         <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                            <span itemprop="streetAddress">Midland</span>,
+                            <span itemprop="streetAddress">Perth</span>,
                             <span itemprop="addressLocality">Perth</span>,
                             <span itemprop="addressRegion">WA</span>
-                            <span itemprop="postalCode">6056</span>
+                            <span itemprop="postalCode">6000</span>
                         </div>
-                        <span itemprop="telephone">1300 415 457</span>
+                        <span itemprop="telephone">+61 451 853 457</span>
                     </div>
                 </div>
                 
@@ -1669,7 +1710,7 @@
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>TBD</span>
+                        <span>Level 25 Capital Square Tower 3, 1 Spring St Perth WA 6000</span>
                     </div>
                 </div>
             </div>
