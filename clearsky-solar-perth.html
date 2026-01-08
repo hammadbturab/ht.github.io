@@ -378,6 +378,7 @@
             flex-wrap: wrap;
             position: relative;
             z-index: 1;
+            min-height: 200px;
         }
 
         .hero-feature {
@@ -387,8 +388,12 @@
             padding: 30px 25px;
             border-radius: var(--border-radius);
             min-width: 220px;
+            min-height: 180px; /* Prevent layout shift */
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero-feature:hover {
@@ -1557,7 +1562,10 @@
                         </div>
                         <h3>How Solar Panels Work: A Complete Guide for Australian Homeowners</h3>
                         <p>Understanding the science behind solar energy and how it can power your Perth home efficiently year-round.</p>
-                        <a href="solar_article1.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="solar_article1.html" class="read-more" aria-label="Read the full guide: How Solar Panels Work">
+                            Read More About Solar Panels <i class="fas fa-arrow-right"></i>
+                            <span class="sr-only">: How Solar Panels Work Guide</span>
+                        </a>
                     </div>
                 </div>
                 
@@ -1570,7 +1578,10 @@
                         </div>
                         <h3>2025 Solar Rebates and Incentives in Western Australia</h3>
                         <p>Everything you need to know about government rebates, STCs, and financial incentives available for WA residents.</p>
-                        <a href="solar_article2.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="solar_article2.html" class="read-more" aria-label="Read the full guide: 2025 Solar Rebates in WA">
+                            Read More About Solar Rebates <i class="fas fa-arrow-right"></i>
+                            <span class="sr-only">: 2025 Solar Rebates in WA</span>
+                        </a>
                     </div>
                 </div>
                 
@@ -1583,7 +1594,10 @@
                         </div>
                         <h3>Maximizing Your Solar Investment: Tips for Perth Weather</h3>
                         <p>Expert advice on optimizing your solar panel performance throughout Perth's unique seasonal conditions.</p>
-                        <a href="solar_article3.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="solar_article3.html" class="read-more" aria-label="Read the full guide: Maximizing Your Solar Investment">
+                            Read More About Solar Investment <i class="fas fa-arrow-right"></i>
+                            <span class="sr-only">: Maximizing Your Solar Investment</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1733,8 +1747,8 @@
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
+                ? '<i class="fas fa-times"></i><span class="sr-only">Close menu</span>' 
+                : '<i class="fas fa-bars"></i><span class="sr-only">Open menu</span>';
         });
         
         // Close mobile menu when clicking a link
