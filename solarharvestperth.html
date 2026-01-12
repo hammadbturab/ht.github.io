@@ -201,8 +201,9 @@
         .header-container {
             display: flex;
             justify-content: space-between;
+            padding: 0;
+            height: 70px; /* optional fixed height */
             align-items: center;
-            padding: 20px 0;
         }
 
         .logo {
@@ -216,12 +217,6 @@
 
         .logo span {
             color: var(--secondary);
-        }
-
-        .logo i {
-            margin-right: 10px;
-            color: var(--accent);
-            font-size: 32px;
         }
 
         nav ul {
@@ -1269,6 +1264,14 @@
             white-space: nowrap;
             border: 0;
         }
+        .logo-img {
+            height: 64px;
+            width: auto;
+            margin-right: 10px;
+            margin-left: 10px;
+            display: inline-block;
+        }
+
     </style>
 
     <!-- Facebook Pixel Code -->
@@ -1309,8 +1312,8 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fas fa-sun"></i>
-                <span>Solar</span> Harvest
+                <img src="images/solarlogo.jpg" alt="Solar Harvest Logo" class="logo-img">
+                Solar <span>Harvest</span>
             </a>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
                 <i class="fas fa-bars"></i>
@@ -1755,7 +1758,7 @@
                 <div>© 2026 Solar Harvest by HT Evolution. Perth's trusted solar energy experts. All rights reserved.</div>
                 <div class="footer-bottom-links">
                     <a href="https://htevolution.com/privacy-policy.html">Privacy Policy</a>
-                    <a href="#">ABN 92 858 471 503</a>
+                    <a href="#">ABN 76 691 704 926</a>
                 </div>
             </div>
         </div>
