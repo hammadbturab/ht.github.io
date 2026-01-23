@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AINext Australia | AI-Powered ERPNext Software for Smarter Business Management</title>
+
+<link rel="canonical" href="https://htevolution.com/erpnext-implementation-perth-australia.html">
+
+<meta name="description" content="AI-powered ERPNext for Australian businesses: streamline operations, automate tasks, and gain real-time insights.">
+<meta name="author" content="HT Evolution">
+
+<meta property="og:title" content="ERPNext Software in Australia | AI-Powered ERP">
+<meta property="og:description" content="AI-powered ERPNext software for Australian businesses. Streamline workflows, automate tasks, and gain real-time insights across finance, sales, and HR with a secure ERP platform">
+<meta property="og:image" content="https://htevolution.com/images/erplogo.png">
+<meta property="og:url" content="https://htevolution.com/erpnext-implementation-perth-australia.html">
+<meta property="og:type" content="website">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17769585277"></script>
+
+
+<style>
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #f7f9fc;
+        color: #000;
+    }
+
+    header {
+        width: 100%;
+        max-width: 1200px;    
+        margin: 0 auto;       
+        text-align: center;
+        padding: 25px 20px;       
+        background: #f7f9fc;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    
+        animation: fadeDown 1.2s ease;
+    }
+    @media (max-width: 600px) {
+        header {
+            padding: 15px 3px; 
+        }
+    }
+
+    @media (max-width: 600px) {
+        header img {
+            width: 100px !important;
+            height: auto !important;
+        }
+    }
+
+    header video {
+        width: 150px;        
+        height: 150px;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;  
+    }
+    
+    
+    @media (max-width: 600px) {
+        header video {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        margin-right: 45px; /*TEST*/
+    }
+    @media(max-width: 600px) { 
+        header h1 {
+            font-size: 1.5rem;
+            margin-right: 0px; /*TEST*/
+        }
+    }
+
+    .mobile-swipe-hint {
+        text-align: center;
+        font-size: 0.9rem;
+        opacity: 0.7;
+        margin-bottom: 20px;
+        display: none; 
+    }
+    
+    @media (max-width: 850px) {
+        .mobile-swipe-hint {
+            display: block; 
+        }
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0;
+    }
+  
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.0rem;
+        font-weight: 400;
+        color: #555;
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+
+    header p {
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-right: 45px; /*TEST*/
+    }
+
+    @media(max-width: 600px) { 
+        header p {
+            font-size: 1rem;
+            margin-right: 0px; /*TEST*/
+        }
+    }
+
+    @keyframes fadeDown {
+        0% { opacity: 0; transform: translateY(-40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 1300px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    .video-card {
+        background: rgba(255,255,255,0.08);
+        border-radius: 18px;
+        padding: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(6px);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        animation: fadeUp 1.2s ease forwards;
+        opacity: 0;
+        overflow: hidden;
+        text-align: center; 
+    }
+
+    .video-card:nth-child(odd) { animation-delay: 0.2s; }
+    .video-card:nth-child(even) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+        0% { opacity: 0; transform: translateY(40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .video-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    }
+
+    video {
+        width: 100%;
+        display: block;
+        outline: none;
+        border-radius: 0;
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+        background: rgba(255,255,255,0.05);
+        margin-bottom: 10px;
+    }
+
+    .-page .video-card video {
+        width: 100%;        
+        height: auto;
+        object-fit: contain;
+    }
+
+
+    .video-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .video-caption {
+        font-size: 0.95rem;
+        opacity: 0.8;
+        margin-bottom: 6px;
+    }
+
+    .video-custom {
+        font-size: 0.9rem;
+        opacity: 0.75;
+        margin-bottom: 10px;
+        text-align: center; 
+        font-style: normal;
+    }
+
+    @media (max-width: 850px) {
+        .video-caption {
+            min-height: 60px;       
+            max-height: 70px;       
+            display: flex;
+            align-items: center;   
+            justify-content: center;
+            text-align: center;
+        }
+        .video-custom {
+            min-height: 70px;       
+            max-height: 70px;       
+            display: flex;
+            align-items: center;   
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+
+    .divider {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 0.8rem;
+        opacity: 0.85;
+        padding: 10px 20px 40px 20px;
+        margin: 20px 0 0 0;
+        color: #000;
+    }
+
+    @media (max-width: 850px) {
+        .video-grid { grid-template-columns: 1fr; }
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        background: #f7f9fc;
+        backdrop-filter: blur(8px);
+        border-top: 1px solid rgba(0,0,0,0.1);
+        font-size: 1rem;
+        color: #000;
+        letter-spacing: 0.5px;
+    }
+
+    footer span {
+        display: block;
+        margin: 3px 0;
+        font-weight: 500;
+    }
+
+    footer span.acn {
+        font-style: italic;
+        opacity: 0.8;
+    }
+
+    .benefit-cards {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 25px;
+        max-width: 1400px;
+        margin: 40px auto 40px auto;
+        padding: 0 20px;
+    }
+
+    #implementation .benefit-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        justify-content: center;
+        padding: 40px;
+    }
+
+    
+    .benefit-card {
+        background: rgba(255,255,255,0.08);
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        backdrop-filter: blur(6px);
+        text-align: center;
+        font-size: 0.95rem;
+        line-height: 1.4rem;
+        animation: fadeUp 1.2s ease forwards;
+        opacity: 0;
+    }
+    
+    .benefit-card:hover {
+        transform: scale(1.04);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    }
+    
+    .benefit-card p {
+        margin: 0;
+        color: #000;
+        opacity: 0.9;
+    }
+    
+    @media (max-width: 1200px) {
+        .benefit-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 850px) {
+        .benefit-cards {
+            grid-template-columns: 1fr;
+            padding: 0 15px;
+        }
+        .benefit-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 320px;
+        }
+    }
+
+    .bordered-section {
+        padding: 40px 20px;           
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(0,0,0,0.1);     
+        border-bottom: 1px solid rgba(0,0,0,0.1);  
+        display: flex;
+        align-items: center;
+    }
+    
+    .bordered-section h2 {
+        font-size: 2.6rem;
+        font-weight: 700;
+        margin-bottom: 10px; /*from 40px*/
+    }
+
+    .floating-nav {
+        position: fixed;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 9999;
+    }
+
+    .floating-nav a {
+        background: #0A2540; 
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 14px;
+        font-size: 14px;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        transition: background 0.25s ease, transform 0.2s ease;
+        white-space: nowrap;
+        align-items: center
+    }
+
+    @media (max-width: 850px) {
+        .floating-nav {
+            position: fixed;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: auto;
+    
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 6px;
+    
+            width: calc(100% - 16px);
+            max-width: 500px;
+    
+            padding: 8px;
+            background: rgba(247, 249, 252, 0.95);
+            backdrop-filter: blur(8px);
+    
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+            z-index: 10000;
+        }
+    
+        .floating-nav a {
+            flex: 1;
+            text-align: center;
+            padding: 8px 6px;
+            font-size: 0.7rem;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+    }
+
+    
+    .floating-nav a:hover {
+        background: #1b3f66;
+        transform: scale(1.05);
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .horizontal-scroll {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 850px) {
+        .scroll-page .video-card {
+            flex: 0 0 90%;
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+    }
+    
+    .scroll-page {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 500px;
+        box-sizing: border-box;
+    }
+    
+    .scroll-page .video-card {
+        flex: 0 0 42%;
+        max-width: 42%;
+        margin-bottom: 15px;
+    }
+
+    @media (max-width: 850px) {
+      .scroll-page .video-card {
+          flex: 0 0 auto;
+          max-width: 90%;
+          box-sizing: border-box;
+      }
+    }
+
+
+    .scroll-page .video-card video {
+        max-height: none;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    .scroll-caption {
+        width: 70%;
+        text-align: center;
+        font-size: 0.9rem;
+        opacity: 0.85;
+        margin-top: 20px;
+        line-height: 1rem;
+        margin-left: 10px; 
+        margin-right: 10px; 
+    }
+
+    
+    @media (max-width: 850px) {
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 0px; /* From 20px. Testing */
+            padding: 0px; /* From 20px. Testing */
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+    
+        .scroll-page {
+            flex: 0 0 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px; /* From 15px. Testing */
+            scroll-snap-align: start;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 500px;
+        }
+    
+        .scroll-page .video-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            width: 100%;
+            box-sizing: border-box;
+            justify-content: flex-start; /* all new */
+            padding-left: 20px; /* all new */
+            padding-right: 20px; /* all new */
+        }
+    
+        .scroll-page .scroll-caption {
+            width: 90%;
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.85;
+            margin-top: 15px;
+            line-height: 1.2rem;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    }
+
+    .horizontal-scroll::-webkit-scrollbar {
+        display: none;
+    }
+    .horizontal-scroll {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scroll-nav-buttons button {
+        background: #0A2540;
+        color: #fff;
+        border: none;
+        margin: 5px 6px;
+        padding: 10px 16px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.25s ease;
+    }
+    @media (max-width: 850px) {
+        .scroll-nav-buttons button {
+            padding: 6px 10px;
+            font-size: 14px;
+            margin: 3px 3px;
+            display: none;
+        }
+    }
+    
+    .scroll-nav-buttons button:hover {
+        background: #1b3f66;
+    }
+
+
+    @media (max-width: 850px) {
+        .scroll-page {
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        .scroll-page .video-card {
+            flex: 0 0 90%;
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+        .scroll-caption {
+            width: 90%;
+            font-size: 0.85rem;
+            line-height: 1.2rem;
+            margin-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .scroll-nav-buttons button {
+            padding: 8px 12px;
+            font-size: 14px;
+            margin: 4px 4px;
+        }
+    }
+
+    .blog-card {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        cursor: pointer;
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        text-align: left;
+    }
+    
+    .blog-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    }
+    
+    .blog-card p {
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+        color: #000;
+        opacity: 0.9;
+        font-size: 0.95rem;
+        line-height: 1.6rem;
+    }
+    
+    .blog-card img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+    }
+
+    #blogs .benefit-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        max-width: 1400px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    @media (max-width: 600px) {
+        .blog-card p {
+            text-align: left;
+            hyphens: none;
+        }
+    }
+    @media (min-width: 601px) {
+        .blog-card p:not(:first-of-type) {
+            text-align: justify;
+        }
+    }
+
+    .site-footer {
+      background: #f7f9fc;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      padding: 60px 20px 0;
+      font-size: 0.95rem;
+      color: #000;
+    }
+    
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      text-align: left;
+    }
+    
+    .footer-col h4 {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      text-align: left;
+    }
+    
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    
+    .footer-col a {
+      text-decoration: none;
+      color: #000;
+      opacity: 0.8;
+    }
+    
+    .footer-col a:hover {
+      opacity: 1;
+    }
+    
+    .footer-brand p {
+      max-width: 360px;
+      opacity: 0.8;
+      line-height: 1.5;
+      text-align: left;
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    
+    .footer-logo-img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+    
+    .footer-contact li {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .footer-contact a {
+        text-align: right;
+    }
+    
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .footer-col:last-child h4 {
+      text-align: right;
+    }
+    
+    @media (max-width: 900px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .footer-brand p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+      .footer-logo {
+        justify-content: center;
+      }
+    
+      .footer-col h4 {
+        text-align: center;
+      }
+    
+      .footer-col ul li {
+        text-align: center;
+      }
+    
+      .footer-contact li {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .footer-col:last-child h4 {
+        text-align: center;
+      }
+    }
+
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ERPNext Implementation",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "AUD",
+    "price": 0,
+    "priceValidUntil": "2027-12-31",
+    "availability": "https://schema.org/PreOrder"
+  },
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "HT Evolution",
+    "image": "https://htevolution.com/images/erplogo.png",
+    "url": "https://htevolution.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Midland",
+      "addressRegion": "WA",
+      "postalCode": "6056",
+      "addressCountry": "AU"
+    },
+    "telephone": "+61 451 853 457"
+  },
+  "mainEntityOfPage": "https://htevolution.com/erpnext-implementation-perth-australia.html"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://htevolution.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ERPNext Implementation",
+      "item": "https://htevolution.com/erpnext-implementation-perth-australia.html"
+    }
+  ]
+}
+</script>
+  
+<link rel="icon" href="/images/erplogo.ico" type="image/x-icon">
+  
+</head>
+
+<body>
+<img
+  src="https://node-tracker-production-de95.up.railway.app/secret-tracker?id=erpsolution"
+  style="display:none"
+  alt="ERP Software website tracking-pixel"
+/>
+
+<header role="banner">
+    <video poster="images/erplogo.png" autoplay loop muted playsinline width="150" height="150">
+      <source src="images/erplogo.mp4" type="video/mp4">
+    </video>
+<h1>AIERP Software with AI & Automation for Australian Businesses</h1>
+<p>
+  Simplify and centralize your business operations with <strong>ERPNext</strong>, a powerful
+  and affordable <strong>open-source ERP software</strong> built for Australian companies.
+  Our <strong>AI-enabled ERPNext solution</strong> streamlines finance, HR, inventory, sales,
+  and operations on a single platform, offering <strong>intelligent automation</strong> to
+  accelerate decision-making,<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a>
+ boost efficiency, and support scalable business growth.
+</p>
+
+
+
+</header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Buttons</title>
+  <style>
+    /* Button container */
+    .button-container {
+      display: flex;
+      justify-content: center;  /* Center horizontally */
+      align-items: center;      /* Center vertically */
+      gap: 15px;                /* Space between buttons */
+      flex-wrap: wrap;          /* Wrap on small screens */
+      padding: 20px;
+    }
+
+    /* Buttons style */
+    .btn {
+      padding: 12px 25px;
+      background-color: #01152b;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.2s;
+      text-align: center;
+    }
+
+    /* Hover effect */
+    .btn:hover {
+      background-color: #021932;
+      transform: scale(1.05);
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 600px) {
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <a href="Manufacturing ERP.html" class="btn" target="_blank">Manufacturing erp</a>
+    <a href="AccountingERP.html" class="btn" target="_blank">Accounting erp</a>
+    <a href="AIERP.html" class="btn" target="_blank">AI erp</a>
+    <a href="ERPnext.html" class="btn" target="_blank">ERPNext</a>
+  </div>
+<main>
+  <div class="floating-nav" role="navigation" aria-label="Quick links">
+      <a href="#benefits" aria-label="Jump to Benefits section">Benefits</a>
+      <a href="#preview" aria-label="Jump to Preview section with videos">Preview</a>
+      <a href="#implementation" aria-label="Jump to Implementation steps">Implementation</a>
+      <a href="#blogs" aria-label="Jump to Blogs section">Blogs</a>
+      <a href="#contact" aria-label="Jump to Contact form">Contact</a>
+  </div>
+  
+  <section id="benefits" class="bordered-section">
+    <div style="max-width:1200px; margin:0 auto; text-align:center; width:100%;">
+      <h2 class="section-title">Benefits</h2>
+      <h3 class="section-subtitle">Key Advantages of our <strong>ERPNext implementation</strong> for Businesses</h3>
+  
+      <div class="benefit-cards">
+
+        <div class="benefit-card">
+<p>
+  <strong>Unified ERPNext system for all business operations</strong><br>
+  Replace multiple disconnected tools with <strong>ERPNext all-in-one ERP software</strong>,
+  trusted by businesses across <strong>Australia</strong>. ERPNext integrates
+  <strong>financial accounting</strong>, <strong>inventory and stock management</strong>,
+  <strong>HR and payroll</strong>, <strong>project management</strong>, and
+  <strong>CRM</strong> into a single platform—boosting efficiency, enhancing visibility,
+  and providing complete control over your operations.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a>
+</p>
+
+
+        </div>
+        
+        <div class="benefit-card">
+<p>
+  <strong>Smart and reliable decision-making with ERPNext</strong><br>
+  ERPNext provides real-time reports, interactive dashboards, and full data visibility
+  to help Australian businesses make accurate, informed decisions. With ERPNext, management
+  can track performance, identify trends, and optimize operations using a stable,
+  fully integrated <strong>ERPNext platform</strong> designed for efficiency and growth.
+</p>
+
+
+        </div>
+        
+        <div class="benefit-card">
+<p>
+  <strong>Privacy and security with ERPNext</strong><br>
+  Keep your business data safe with <strong>ERPNext secure ERP software</strong>, built
+  for Australian companies. ERPNext offers <strong>cloud-based deployment</strong>,
+  advanced authentication, firewalls, and <strong>role-based access control</strong>,
+  ensuring your critical information remains private, protected, and fully compliant
+  with modern security standards.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a> Its intelligent ERP features also help monitor
+  access and detect risks in real time.
+</p>
+
+</p>
+
+        </div>
+        
+        <div class="benefit-card">
+<p>
+  <strong>Automation and efficiency with ERPNext</strong><br>
+  Streamline daily operations with <strong>ERPNext automation features</strong>, designed
+  to reduce manual tasks and boost productivity for Australian businesses. ERPNext
+  offers <strong>business process automation</strong>, <strong>custom workflow management</strong>,
+  and <strong>rule-based approvals</strong>, enabling smooth, end-to-end
+  <strong>ERP workflow control</strong> and intelligent process optimization across all departments.
+</p>
+
+        </div>
+        
+        <div class="benefit-card">
+<p>
+  <strong>Seamless collaboration across departments with ERPNext</strong><br>
+  Unite all teams with the <strong>ERPNext integrated ERP platform</strong>, trusted by
+  Australian businesses. ERPNext connects sales, finance, projects, HR, and operations
+  in one system, while its <strong>real-time dashboards</strong> and
+  <strong>time tracking tools</strong> provide full visibility, enhance collaboration,
+  and enable smarter, data-driven decisions across the organization.
+</p>
+
+
+        </div>
+        
+        <div class="benefit-card">
+<p>
+  <strong>Enhanced compliance and risk management with ERPNext</strong><br>
+  Stay audit-ready with <strong>ERPNext compliance management</strong>, designed
+  specifically for Australian businesses. ERPNext provides
+  <strong>tax management</strong>, structured audit trails, and localized configurations
+  to ensure accurate GST, BAS, and financial reporting.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a> Its intelligent
+  ERP features also help monitor compliance, detect risks, and maintain
+  regulatory standards with minimal manual effort.
+</p>
+
+
+        </div>
+        
+        <div class="benefit-card">
+       <p>
+<p>
+  <strong>Data-driven insights with ERPNext</strong><br>
+  Make smarter, faster business decisions with <strong>ERPNext reporting and analytics</strong>.
+  Monitor KPIs, track performance, and optimize operations using
+  <strong>real-time dashboards</strong> designed for Australian businesses.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a> ERPNext
+  provides actionable insights across finance, sales, inventory, and projects,
+  empowering management to drive growth, efficiency, and operational excellence.
+</p>
+
+
+        </div>
+        
+        <div class="benefit-card">
+<p>
+  <strong>Fast adoption with minimal training using ERPNext</strong><br>
+  ERPNext is built for rapid implementation, helping Australian businesses
+  get teams productive quickly. With easy <strong>ERPNext customization</strong>
+  and intuitive guided workflows, your staff can adopt the system effortlessly,
+  reducing the learning curve while maximizing efficiency across all departments.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a>
+</p>
+
+
+        </div>
+        
+        <div class="benefit-card">
+<p>
+  <strong>Trusted local ERPNext partnership</strong><br>
+  HT Evolution provides expert <strong>ERPNext consulting</strong>, 
+  <strong>integration services</strong>, and <strong>cloud deployment</strong> solutions
+  specifically for Australian businesses. Our team delivers scalable, modular,
+  and intelligent <strong>ERPNext implementations</strong> that streamline operations,
+  boost efficiency, and support long-term business growth.
+</p>
+
+
+        </div>
+
+        <div class="benefit-card">
+<p>
+  <strong>End-to-end ERPNext solution</strong><br>
+  ERPNext provides a full suite of <strong>modules</strong> for Australian businesses,
+  including accounting, HR, CRM, inventory, manufacturing, purchasing, and payroll.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a>
+  Combined with <strong>custom ERPNext development</strong>, our platform delivers a
+  comprehensive <strong>ERPNext enterprise solution</strong> that scales with your business,
+  adapts to changing needs, and leverages intelligent workflows to improve efficiency,
+  decision-making, and growth.
+</p>
+
+
+        </div>
+
+      </div>
+  
+    </div>
+</section>
+  <section id="preview" style="padding:30px 0 40px 0;margin-top:45px;margin-bottom:45px;">
+    <h2 class="section-title">
+      Preview
+    </h2>
+    <h3 class="section-subtitle">ERPNext Modules: A Quick High-Level Glance</h3>
+    <div class="mobile-swipe-hint">Swipe right for more</div>
+  
+    <div class="horizontal-scroll">
+      <div class="scroll-page">
+        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+          <div class="video-card">
+              <div id="video1-title" class="video-title">ERP Overview</div>
+              <div class="video-caption">A quick tour of the HT ERP Software ecosystem and navigation.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a></div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step1overview.mp4" aria-labelledby="video1-title"></video>
+              <div class="video-custom">Available Customizations: Dashboards, themes, and ERP Software user interface layouts.</div>
+          </div>
+      
+          <div class="video-card">
+              <div id="video2-title" class="video-title">Dashboards</div>
+              <div class="video-caption">Visualize KPIs and metrics with customizable dashboards.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step10adashboards.mp4" aria-labelledby="video2-title"></video>
+              <div class="video-custom">Available Customizations: Drag-and-drop widgets, charts, and real-time data updates.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a></div>
+          </div>
+        </div>
+    
+        <div class="scroll-caption">ERPNext Software unifies all business operations into one smart, centralized platform that boosts efficiency, clarity, and decision-making. With live dashboards, automated reports, and AI-driven recommendations, get a customizable hub that delivers real-time insights, key metrics, and alerts at a glance. You can track performance instantly across finance, sales, operations, and customer service — enabling faster, more confident decisions at every level of your organization.</div>
+      </div>
+    
+      <div class="scroll-page">
+        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+          <div class="video-card">
+              <div id="video3-title" class="video-title">Customer Management</div>
+              <div class="video-caption">Leads, opportunities, and customer management simplified for Australian businesses.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step3crm.mp4" aria-labelledby="video3-title"></video>
+              <div class="video-custom">Available Customizations: Automated follow-ups, email templates, and custom pipelines for businesses in Australia.</div>
+          </div>
+      
+          <div class="video-card">
+              <div id="video4-title" class="video-title">Accounting</div>
+              <div class="video-caption">Manage your accounts, financial reports, and journals easily.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a></div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step2accounting.mp4" aria-labelledby="video4-title"></video>
+              <div class="video-custom">Available Customizations: Multi-currency support, automated reconciliation, and tax reporting for businesses in Australia.</div>
+          </div>
+        </div>
+    
+        <div class="scroll-caption">Nurture leads, personalize service, and respond faster with complete customer visibility. From tracking inquiries to forecasting opportunities, transform customer engagement into a smooth, data-driven experience that boosts satisfaction and loyalty. Bring clarity and confidence to your finances with automated workflows, real-time reporting, and error-free record-keeping through Accounting. Unify billing, invoices, expenses, and financial statements into a single, easy-to-navigate system, giving you instant insights into cash flow and profitability.</div>
+      </div>
+      
+      <div class="scroll-page">
+        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+          <div class="video-card">
+              <div id="video5-title" class="video-title">Employee Onboarding</div>
+              <div class="video-caption">Streamline hiring, documentation, and joining workflows.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step7aemployeeonboarding.mp4" aria-labelledby="video5-title"></video>
+              <div class="video-custom">Available Customizations: Custom onboarding checklists, welcome emails, and training assignments for businesses in Australia.</div>
+          </div>
+      
+          <div class="video-card">
+              <div id="video6-title" class="video-title">Attendance & Leaves</div>
+              <div class="video-caption">Monitor attendance, rosters, and leave requests effortlessly.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step7battendanceandleaves.mp4" aria-labelledby="video6-title"></video>
+              <div class="video-custom">Available Customizations: Biometrics, auto-leave allocation, shift scheduling and approval workflows for businesses in Australia.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a></div>
+          </div>
+        </div>
+    
+        <div class="scroll-caption">ERPNext’s clean interface and intuitive design mean your team can adopt the system quickly, without the long onboarding times typical of legacy ERP Software. Plus, with custom automation, guided workflows, and smart suggestions built in, even non-technical staff can operate advanced functions with ease. </div>
+      </div>
+      
+      <div class="scroll-page">
+        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+          <div class="video-card">
+              <div id="video7-title" class="video-title">Role Permissions</div>
+              <div class="video-caption">Control access and security for all users in the ERP system.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step11arolepermissions.mp4" aria-labelledby="video7-title"></video>
+              <div class="video-custom">Available Customizations: Custom roles, field-level permissions, and approval chains for businesses in Australia.</div>
+          </div>
+      
+          <div class="video-card">
+              <div id="video8-title" class="video-title">Permissions Manager</div>
+              <div class="video-caption">Advanced role-based access and permission management.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a></div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step11brolepermissionsmanager.mp4" aria-labelledby="video8-title"></video>
+              <div class="video-custom">Available Customizations: Batch role assignment, permission templates, and audit logs.</div>
+          </div>
+        </div>
+    
+        <div class="scroll-caption">Role Permissions let you control who can see and do what, keeping the ERP system secure and organized. With Permission Manager assigning, editing, and tracking access becomes effortless, ensuring the right people have the right access at the right time.</div>
+      </div>
+      
+      <div class="scroll-page">
+        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+          <div class="video-card">
+              <div id="video9-title" class="video-title">Project Management</div>
+              <div class="video-caption">Plan and monitor projects and milestones efficiently.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step8aproject.mp4" aria-labelledby="video9-title"></video>
+              <div class="video-custom">Available Customizations: Track hours spent on projects, milestones, and custom project statuses for businesses in Australia.</div>
+          </div>
+      
+          <div class="video-card">
+              <div id="video10-title" class="video-title">Task Details</div>
+              <div class="video-caption">Track individual tasks, monitor progress, and collaborate seamlessly.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step8btaskdetails.mp4" aria-labelledby="video10-title"></video>
+              <div class="video-custom">Available Customizations: Sub-tasks, reminders, and task priority settings.</div>
+          </div>
+        </div>
+    
+        <div class="scroll-caption">Organize projects for your Australian business from start to finish, giving teams clear timelines, priorities, and progress tracking using our ERP Software. Task Details break down work into actionable items, assign responsibilities, set deadlines, and monitor completion, making collaboration seamless and ensuring every project stays on track.</div>
+      </div>
+      
+      <div class="scroll-page">
+        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+          <div class="video-card">
+              <div id="video11-title" class="video-title">Purchasing</div>
+              <div class="video-caption">Automated procurement with supplier tracking and POs.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step4purchasing.mp4" aria-labelledby="video11-title"></video>
+              <div class="video-custom">Available Customizations: Approval workflows, supplier rating, and bulk purchase rules.</div>
+          </div>
+      
+          <div class="video-card">
+              <div id="video12-title" class="video-title">Manufacturing</div>
+              <div class="video-caption">BOMs, work orders, operations, and production planning made easy.<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a></div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step6manufacturing.mp4" aria-labelledby="video12-title"></video>
+              <div class="video-custom">Available Customizations: Custom workflows, material cost calculations, and scheduling.</div>
+          </div>
+        </div>
+    
+        <div class="scroll-caption">Streamline the procurement process for your business in Australia by managing suppliers, tracking orders, and controlling costs with our ERP Software, ensuring your business always has the right materials at the right time. Manufacturing organizes production workflows, monitors resources, and tracks output, turning raw materials into finished products efficiently and accurately.</div>
+      </div>
+      
+      <div class="scroll-page">
+        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+          <div class="video-card">
+              <div id="video13-title" class="video-title">Stock Management</div>
+              <div class="video-caption">Real-time inventory and warehouse control at your fingertips.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step5stock.mp4" aria-labelledby="video13-title"></video>
+              <div class="video-custom">Available Customizations: Batch tracking, barcode scanning, and reorder alerts.</div>
+          </div>
+      
+          <div class="video-card">
+              <div id="video14-title" class="video-title">Reports</div>
+              <div class="video-caption">Generate insightful reports for every part of your business.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step10breports.mp4" aria-labelledby="video14-title"></video>
+              <div class="video-custom">Available Customizations: Custom filters, export options, scheduled reports, and BAS/ABA payments.</div>
+          </div>
+        </div>
+          
+        <div class="scroll-caption">Whether you’re dealing with audits, tax rules, industry regulations, or internal governance, Australian localization of ERPNext Software keeps the processes<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a> for your business in Australia compliant by design. Automated logs, permission control, and accurate record-keeping minimize human error and make compliance simpler, safer, and stress-free.</div>
+      </div>
+        
+      <div class="scroll-page">
+        <div class="video-row" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+          <div class="video-card">
+              <div id="video15-title" class="video-title">Payroll</div>
+              <div class="video-caption">Manage payroll cycles, salaries, and compliance automatically.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step7cpayroll.mp4" aria-labelledby="video15-title"></video>
+              <div class="video-custom">Available Customizations: Payroll based on timesheets, Australian business taxation rules, pay slips and deductions.</div>
+          </div>
+      
+          <div class="video-card">
+              <div id="video16-title" class="video-title">Customization</div>
+              <div class="video-caption">Edit forms, workflows, and automate processes as needed.</div>
+              <video poster="images/PlaceHoldVideo.jpg" controls autoplay muted loop playsinline preload="none" data-src="videos/Step9customisation.mp4" aria-labelledby="video16-title"></video>
+              <div class="video-custom">Available Customizations: Custom fields, automated scripts, and role-based permissions for your business in Australia.</div>
+          </div>
+        </div>
+    
+        <div class="scroll-caption">Payroll automates salary calculations, deductions, and disbursements, ensuring employees are paid accurately and on time for your business in Australia. It also simplifies compliance and record-keeping for the organization. With modern design, AI-powered insights, automation and customizable modules, our implementation of ERPNext adapts to your business, scales with your growth, and gives you full visibility across every department — without the high price tag of traditional ERP systems.</div>
+      </div>
+    </div>
+  
+    <div class="scroll-nav-buttons" style="text-align:center; margin-top:10px;">
+        <button data-page="0">1</button>
+        <button data-page="1">2</button>
+        <button data-page="2">3</button>
+        <button data-page="3">4</button>
+        <button data-page="4">5</button>
+        <button data-page="5">6</button>
+        <button data-page="6">7</button>
+        <button data-page="7">8</button>
+    </div>
+  
+  </section>
+
+
+<style>
+/* Mobile responsive adjustments */
+@media screen and (max-width:768px){
+  .horizontal-scroll {
+    padding-left:15px;
+    padding-right:15px;
+  }
+  .video-card {
+    flex:0 0 90%;
+    min-width:auto;
+  }
+}
+</style>
+<section id="cta-ai-erp" style="padding:40px 20px; text-align:center; background:#f5f5f5;">
+  <div style="max-width:900px; margin:0 auto;">
+
+    <h2 style="font-size:2em; margin-bottom:20px;">Transform Your Business with AI ERP</h2>
+    <p style="font-size:1.1em; margin-bottom:30px;">
+      Automate workflows, gain predictive insights, and make smarter decisions with our <strong>AI-powered ERP solution</strong> designed for Australian businesses.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px;">
+
+      <a href="#demo" style="padding:15px 30px; background:#007bff; color:#fff; font-weight:bold; border-radius:8px; text-decoration:none; box-shadow:0 4px 6px rgba(0,0,0,0.2); transition:0.3s;">
+        Contact us
+      </a>
+
+    
+      <a href="#contact" style="padding:15px 30px; background:#ffc107; color:#000; font-weight:bold; border-radius:8px; text-decoration:none; box-shadow:0 4px 6px rgba(0,0,0,0.2); transition:0.3s;">
+        Speak to an Expert
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  #cta-ai-erp a:hover {
+    transform: translateY(-3px);
+    box-shadow:0 6px 10px rgba(0,0,0,0.25);
+  }
+
+  @media (max-width:768px){
+    #cta-ai-erp h2 {
+      font-size:1.6em;
+    }
+    #cta-ai-erp p {
+      font-size:1em;
+    }
+    #cta-ai-erp a {
+      width:100%;
+      text-align:center;
+      padding:12px 0;
+    }
+  }
+</style>
+
+
+  <section id="implementation" class="bordered-section">
+    <div style="max-width:1200px; margin:0 auto 0 auto; text-align:center; width:100%;">
+      <h2 class="section-title">Implementation</h2>
+      <h3 class="section-subtitle">Steps to Successfully Implement <strong>AI powered ERP software</strong> in Your Business</h3>
+      <div class="benefit-cards">
+      
+          <div class="benefit-card">
+              <p>
+                  <strong>Understand Your Needs</strong><br>
+                  We assess automation requirements, processes, and workflows to design a tailored <a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a><strong>ERP system</strong> that aligns perfectly with your organization.
+              </p>
+          </div>
+      
+          <div class="benefit-card">
+              <p>
+                  <strong>Build Your Solution</strong><br>
+                  Prototype and test <strong>ERPNext modules</strong>, refine workflows, and ensure seamless integration for <strong>integrated ERP platform</strong>.
+              </p>
+          </div>
+      
+          <div class="benefit-card">
+              <p>
+                  <strong>Validate</strong><br>
+                  Comprehensive testing across payroll, inventory, finance, and reporting ensures accurate <a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a><strong>ERP accounting software</strong> and <strong>automated business software</strong> operation.
+              </p>
+          </div>
+      
+          <div class="benefit-card">
+              <p>
+                  <strong>Go Live</strong><br>
+                  Launch with confidence. <strong>ERPNext automation</strong> takes care of workflows,<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a> compliance, and end-to-end <strong>ERP workflow management</strong>.
+              </p>
+          </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <section id="blogs" class="bordered-section">
+    <div style="max-width:1400px; margin:0 auto; text-align:center; width:100%;">
+      <h2 class="section-title">Blogs</h2>
+      <h3 class="section-subtitle">Insights on AI in <strong>ERP software</strong> and Enterprise Automation</h3>
+  
+      <div class="benefit-cards">
+        <div class="benefit-card blog-card">
+          <img src="images/Hailuo_Image_Image1.jpg" alt="AI in ERP Systems - How Artificial Intelligence transforms business software" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin-bottom:12px;">
+          <p><strong>What is AI in ERP?</strong></p>
+          <p>
+            AI in <strong>ERP software</strong><a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a> is transforming businesses by combining structured data with <strong>Enterprise AI software</strong> for actionable insights. Unlike standard <strong>ERP system</strong> that relies on rigid reports, our <strong>AI ERP system</strong> delivers intelligent, validated, and accurate outputs.
+          </p>
+          <p>
+            <strong>ERPNext AI integration</strong> makes decision-making smarter through predictive insights, <strong>ERP reporting and analytics</strong>, and <strong>AI business management software</strong>.
+          </p>
+          <p>
+            See AI in action with<a href="Best ERP Software Australiablog.html">ERP SOFTWARE</a> <strong>ERPNext automation</strong> — <a href="https://htevolution.com/erpnext-implementation-perth-australia.html#contact">schedule a demo today.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <script>  
+    document.addEventListener("DOMContentLoaded", function() {
+      const videos = document.querySelectorAll("video[data-src]");
+  
+      const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.25
+      };
+  
+      const loadVideo = (video) => {
+        if (video.dataset.src) {
+          video.src = video.dataset.src;
+          video.removeAttribute('data-src');
+        }
+      };
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadVideo(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+  
+      videos.forEach(video => observer.observe(video));
+    });
+  </script>
+  
+  <section id="contact" style="padding:80px 20px 80px 20px; background:#f7f9fc;">
+    <div style="max-width:700px; margin:0 auto; text-align:center;">
+      <h2 class="section-title">
+        Contact Us
+      </h2>
+      <h3 class="section-subtitle">For ERPNext Consultation and/or AI-Capability Demonstration</h3>
+      
+      <form id="contactForm" action="https://formspree.io/f/mvgerrrk" method="POST" 
+            style="display:flex; flex-wrap:wrap; gap:15px; font-family:'Segoe UI', Arial, sans-serif;">
+            
+        <input type="text" name="name" placeholder="Full Name" required
+               style="flex:1 1 calc(50% - 10px); padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; font-family:'Segoe UI', Arial, sans-serif;">
+               
+        <input type="email" name="email" placeholder="Email Address" required
+               style="flex:1 1 calc(50% - 10px); padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; font-family:'Segoe UI', Arial, sans-serif;">
+               
+        <input type="text" name="company" placeholder="Company Name"
+               style="flex:1 1 calc(50% - 10px); padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; font-family:'Segoe UI', Arial, sans-serif;">
+               
+        <input type="text" name="phone" placeholder="Phone Number"
+               style="flex:1 1 calc(50% - 10px); padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; font-family:'Segoe UI', Arial, sans-serif;">
+               
+        <textarea name="message" placeholder="Your Message" rows="4"
+                  style="flex:1 1 100%; padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; font-family:'Segoe UI', Arial, sans-serif;"></textarea>
+                  
+        <button type="submit"
+                style="flex:1 1 100%; padding:14px; border:none; border-radius:8px; background:#0A2540; color:#fff; font-size:1rem; cursor:pointer; transition:0.3s; font-family:'Segoe UI', Arial, sans-serif;">
+          Submit
+        </button>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "url": "https://htevolution.com/erpnext-implementation-perth-australia",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "HT Evolution",
+            "url": "https://htevolution.com",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "support@htevolution.com",
+              "telephone": "+61 451 853 457"
+            }
+          }
+        }
+        </script>
+      </form>
+  
+      <div id="thankYouMessage" style="display:none; margin-top:20px; padding:15px; border-radius:8px; background:#d4edda; color:#155724; font-weight:500; text-align:center;">
+        Thank you! We will endeavour to call you within the same business day.
+      </div>
+    </div>
+  </section>
+  
+  <script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      var form = e.target;
+      var data = new FormData(form);
+  
+      fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+          if (response.ok) {
+              document.getElementById("thankYouMessage").style.display = "block";
+              form.reset();
+  
+              gtag('event', 'conversion', {'send_to': 'AW-17769585277/S3uJCOa2rcobEP20mZlC'});
+          } else {
+              alert("Oops! There was a problem submitting your form.");
+          }
+      }).catch(function(error) {
+          alert("Oops! There was a problem submitting your form.");
+      });
+  });
+  </script>
+</main>
+<section id="faqs" style="padding:40px 20px; background:#f8f8f8;">
+  <div style="max-width:900px; margin:0 auto;">
+    <h2 style="text-align:center; font-size:2em; margin-bottom:25px;">FAQs – AI-Powered ERP (AIERP) for Australian Businesses</h2>
+    
+    <!-- FAQ Accordion -->
+    <div class="accordion">
+
+      <!-- FAQ 1 -->
+      <div class="faq-item" style="margin-bottom:10px;">
+        <button class="faq-question" style="width:100%; text-align:left; padding:15px; font-weight:bold; border:none; border-radius:12px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); cursor:pointer;">
+          Q1: What is AI-Powered ERP (AIERP) and how does it help Australian businesses?
+        </button>
+        <div class="faq-answer" style="max-height:0; overflow:hidden; background:#fff; padding:0 15px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:max-height 0.3s ease, padding 0.3s ease;">
+          <p style="margin:15px 0; line-height:1.6;">
+            AIERP integrates artificial intelligence and automation into ERP systems, centralizing finance, HR, inventory, manufacturing, and operations. Australian businesses benefit from intelligent workflows, predictive analytics, and automated decision-making, reducing errors and improving efficiency.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item" style="margin-bottom:10px;">
+        <button class="faq-question" style="width:100%; text-align:left; padding:15px; font-weight:bold; border:none; border-radius:12px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); cursor:pointer;">
+          Q2: How does AIERP improve accounting and finance operations?
+        </button>
+        <div class="faq-answer" style="max-height:0; overflow:hidden; background:#fff; padding:0 15px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:max-height 0.3s ease, padding 0.3s ease;">
+          <p style="margin:15px 0; line-height:1.6;">
+            AIERP automates bookkeeping, invoicing, payroll, and tax compliance. It provides predictive insights, real-time dashboards, and intelligent reporting, enabling Australian companies to make faster, data-driven financial decisions while minimizing manual work.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item" style="margin-bottom:10px;">
+        <button class="faq-question" style="width:100%; text-align:left; padding:15px; font-weight:bold; border:none; border-radius:12px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); cursor:pointer;">
+          Q3: Can AIERP handle manufacturing and inventory management?
+        </button>
+        <div class="faq-answer" style="max-height:0; overflow:hidden; background:#fff; padding:0 15px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:max-height 0.3s ease, padding 0.3s ease;">
+          <p style="margin:15px 0; line-height:1.6;">
+            Yes. AIERP can optimize production planning, track inventory in real-time, and manage supply chains efficiently. Australian manufacturers benefit from AI-driven demand forecasting, automated stock control, and improved operational efficiency.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item" style="margin-bottom:10px;">
+        <button class="faq-question" style="width:100%; text-align:left; padding:15px; font-weight:bold; border:none; border-radius:12px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); cursor:pointer;">
+          Q4: How secure is AIERP for Australian companies?
+        </button>
+        <div class="faq-answer" style="max-height:0; overflow:hidden; background:#fff; padding:0 15px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:max-height 0.3s ease, padding 0.3s ease;">
+          <p style="margin:15px 0; line-height:1.6;">
+            AIERP platforms use cloud-based deployment with role-based access, multi-factor authentication, and encrypted data storage. Australian companies can confidently manage financial, HR, and operational data securely and comply with privacy and regulatory standards.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item" style="margin-bottom:10px;">
+        <button class="faq-question" style="width:100%; text-align:left; padding:15px; font-weight:bold; border:none; border-radius:12px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); cursor:pointer;">
+          Q5: How long does it take to implement AIERP in an Australian business?
+        </button>
+        <div class="faq-answer" style="max-height:0; overflow:hidden; background:#fff; padding:0 15px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:max-height 0.3s ease, padding 0.3s ease;">
+          <p style="margin:15px 0; line-height:1.6;">
+            Implementation depends on company size and processes. Typically, Australian businesses can adopt AIERP within a few weeks, completing needs assessment, module configuration, data migration, and workflow automation to go live efficiently.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  // Accordion functionality
+  const faqButtons = document.querySelectorAll('.faq-question');
+  faqButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      if(answer.style.maxHeight){
+        answer.style.maxHeight = null;
+        answer.style.paddingTop = "0px";
+        answer.style.paddingBottom = "0px";
+      } else {
+        // Close other open answers
+        document.querySelectorAll('.faq-answer').forEach(a => {
+          a.style.maxHeight = null;
+          a.style.paddingTop = "0px";
+          a.style.paddingBottom = "0px";
+        });
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.style.paddingTop = "15px";
+        answer.style.paddingBottom = "15px";
+      }
+    });
+  });
+</script>
+
+<style>
+  @media (max-width:768px){
+    #faqs h2 {
+      font-size:1.6em;
+    }
+    .faq-question {
+      font-size:1em !important;
+      padding:12px !important;
+    }
+    .faq-answer p {
+      font-size:0.95em !important;
+    }
+  }
+</style>
+
+<footer role="contentinfo" class="site-footer">
+  <div class="footer-inner">
+
+    <!-- Column 1 -->
+    <div class="footer-col footer-brand">
+      <div class="footer-logo">
+        <img src="images/indexlogo.png" alt="HT Evolution - ERPNext Implementation Australia" class="footer-logo-img">
+        <strong>HT EVOLUTION</strong>
+      </div>
+      <p>
+        AI-powered ERPNext software for Australian businesses.<br>
+        Streamline workflows, automate tasks, and gain real-time insights.
+      </p>
+      <p>Also see: <a href="/erpnext-implementation-perth-australia.html">ERPNext Software Australia</a></p>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#preview">Preview</a></li>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li>
+          <a href="tel:+611300415457">☎ 1300 415 457</a>
+        </li>
+        <li>
+          <a href="mailto:support@htevolution.com">✉ support@htevolution.com</a>
+        </li>
+        <li>
+          <a href="https://www.google.com/maps/place/Midland+WA+6056,+Australia" target="_blank">📍 Midland, WA 6056, Australia (Perth)</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+      <span>© 2026 HT Evolution. All rights reserved.</span>
+      <span style="float:right;">
+          <a href="/privacy-policy.html" style="margin-right:10px; text-decoration:none; color:inherit; cursor:pointer; margin-right:15px;">Privacy Policy</a>
+          ABN 92 858 471 503
+      </span>
+  </div>
+</footer>
+
+
+<script>
+const scrollWrapper = document.querySelector(".horizontal-scroll");
+const scrollPages = document.querySelectorAll(".scroll-page");
+const buttons = document.querySelectorAll(".scroll-nav-buttons button");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const index = parseInt(btn.dataset.page);
+        const target = scrollPages[index];
+
+        scrollWrapper.scrollTo({
+            left: target.offsetLeft,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is ERPNext?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ERPNext is an open-source ERP software that centralizes all business processes, including finance, HR, sales, inventory, and more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can ERPNext be implemented in Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, ERPNext can be customized for Australian businesses, including GST compliance, BAS reports, and local payroll regulations."
+      }
+    }
+  ]
+}
+</script>
+
+
+</body>
+</html>
