@@ -323,7 +323,6 @@
     formData.honeypot = '';
     document.getElementById('shThankName').textContent = formData.firstName;
 
-    // Send to Make.com webhook
     var webhookUrl = 'WEBHOOK_URL'; // Replace with webhook URL
     fetch(webhookUrl, {
       method: 'POST',
