@@ -1,0 +1,338 @@
+<style>
+  .sh-survey *, .sh-survey *::before, .sh-survey *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .sh-survey {
+    --s-bg: #f8fafc;
+    --s-card: rgba(255,255,255,0.85);
+    --s-border: rgba(0,0,0,0.06);
+    --s-text: #1e293b;
+    --s-muted: #64748b;
+    --s-primary: #1e3a8a;
+    --s-accent: #f97316;
+    --s-accent-light: #fb923c;
+    --s-accent-glow: rgba(249,115,22,0.15);
+    --s-green: #22c55e;
+    --s-green-glow: rgba(34,197,94,0.12);
+    --s-red: #ef4444;
+    --s-radius: 12px;
+    --s-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    color: var(--s-text);
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .sh-survey .survey-intro { text-align: center; margin-bottom: 24px; animation: shFadeUp .8s ease; }
+  .sh-survey .survey-intro h2 { font-family: 'Montserrat', 'Segoe UI', sans-serif; font-size: 2rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; color: var(--s-primary); }
+  .sh-survey .survey-intro p { font-size: 1.05rem; color: var(--s-muted); line-height: 1.55; max-width: 440px; margin: 0 auto; }
+
+  .sh-survey .progress-bar { width: 100%; height: 5px; background: rgba(0,0,0,0.06); border-radius: 10px; margin-bottom: 24px; overflow: hidden; }
+  .sh-survey .progress-fill { height: 100%; background: linear-gradient(90deg, var(--s-accent), var(--s-accent-light)); border-radius: 10px; transition: width .5s cubic-bezier(.4,0,.2,1); }
+  .sh-survey .step-label { font-size: .82rem; color: var(--s-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; text-align: center; font-weight: 600; }
+
+  .sh-survey .step { display: none; animation: shStepIn .4s cubic-bezier(.4,0,.2,1); }
+  .sh-survey .step.active { display: block; }
+
+  @keyframes shStepIn { 0% { opacity: 0; transform: translateY(20px) scale(.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+  @keyframes shFadeUp { 0% { opacity: 0; transform: translateY(24px); } 100% { opacity: 1; transform: translateY(0); } }
+  @keyframes shPop { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.15); } 100% { transform: scale(1); opacity: 1; } }
+
+  .sh-survey .step-card { background: var(--s-card); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--s-border); border-radius: var(--s-radius); box-shadow: var(--s-shadow); padding: 35px 30px; }
+
+  .sh-survey .step-question { font-family: 'Montserrat', 'Segoe UI', sans-serif; font-size: 1.25rem; font-weight: 600; text-align: center; margin-bottom: 22px; line-height: 1.4; }
+  .sh-survey .icon-wrap { display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; margin: 0 auto 12px; background: var(--s-accent-glow); border-radius: 12px; }
+  .sh-survey .icon-wrap svg { width: 22px; height: 22px; stroke: var(--s-accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  .sh-survey .options { display: flex; flex-direction: column; gap: 10px; }
+  .sh-survey .option-btn { display: flex; align-items: center; gap: 14px; width: 100%; padding: 16px 20px; background: #fff; border: 1.5px solid rgba(0,0,0,0.08); border-radius: 10px; cursor: pointer; font-family: inherit; font-size: 1rem; font-weight: 500; color: var(--s-text); transition: all .22s ease; text-align: left; }
+  .sh-survey .option-btn:hover { border-color: var(--s-accent); box-shadow: 0 4px 16px var(--s-accent-glow); transform: translateY(-1px); }
+  .sh-survey .option-btn:active { transform: scale(.98); }
+  .sh-survey .opt-icon { flex-shrink: 0; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; background: var(--s-bg); border-radius: 10px; }
+  .sh-survey .opt-icon svg { width: 18px; height: 18px; stroke: var(--s-accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .sh-survey .opt-label { flex: 1; }
+  .sh-survey .opt-label small { display: block; font-size: .88rem; color: var(--s-muted); font-weight: 400; margin-top: 2px; }
+  .sh-survey .arrow-right { width: 16px; height: 16px; stroke: #ccc; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: stroke .2s, transform .2s; }
+  .sh-survey .option-btn:hover .arrow-right { stroke: var(--s-accent); transform: translateX(3px); }
+
+  .sh-survey .form-group { margin-bottom: 16px; }
+  .sh-survey .form-group label { display: block; font-size: .95rem; font-weight: 600; margin-bottom: 5px; color: var(--s-text); }
+  .sh-survey .form-group input, .sh-survey .form-group select { width: 100%; padding: 16px 18px; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 8px; font-family: inherit; font-size: 1rem; color: var(--s-text); background: #fff; transition: border-color .2s, box-shadow .2s; outline: none; }
+  .sh-survey .form-group input:focus, .sh-survey .form-group select:focus { border-color: var(--s-accent); box-shadow: 0 0 0 3px var(--s-accent-glow); }
+  .sh-survey .input-hint { font-size: .88rem; color: var(--s-muted); margin-top: 5px; }
+  .sh-survey .input-error { font-size: .9rem; color: var(--s-red); margin-top: 5px; display: none; }
+  .sh-survey .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px) { .sh-survey .form-row { grid-template-columns: 1fr; } }
+
+  .sh-survey .btn-primary { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 18px; background: linear-gradient(135deg, var(--s-accent), var(--s-accent-light)); color: #fff; border: none; border-radius: 50px; font-family: inherit; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all .25s ease; box-shadow: 0 4px 18px rgba(249,115,22,0.3); margin-top: 6px; }
+  .sh-survey .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(249,115,22,0.4); }
+  .sh-survey .btn-primary:active { transform: scale(.98); }
+  .sh-survey .btn-primary:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+  .sh-survey .btn-primary svg { width: 17px; height: 17px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .sh-survey .back-link { display: inline-flex; align-items: center; gap: 5px; font-size: .95rem; color: var(--s-muted); cursor: pointer; margin-top: 14px; border: none; background: none; font-family: inherit; transition: color .2s; padding: 0; }
+  .sh-survey .back-link:hover { color: var(--s-accent); }
+  .sh-survey .back-link svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .sh-survey .thankyou { text-align: center; padding: 8px 0; }
+  .sh-survey .check-circle { width: 60px; height: 60px; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; background: var(--s-green-glow); border-radius: 50%; animation: shPop .5s cubic-bezier(.4,0,.2,1); }
+  .sh-survey .check-circle svg { width: 30px; height: 30px; stroke: var(--s-green); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .sh-survey .thankyou h3 { font-family: 'Montserrat', 'Segoe UI', sans-serif; font-size: 1.6rem; margin-bottom: 12px; color: var(--s-primary); }
+  .sh-survey .thankyou p { font-size: 1.02rem; color: var(--s-muted); line-height: 1.6; margin-bottom: 8px; }
+  .sh-survey .expect-list { text-align: left; max-width: 420px; margin: 18px auto 0; }
+  .sh-survey .expect-item { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  .sh-survey .expect-item:last-child { border-bottom: none; }
+  .sh-survey .e-icon { flex-shrink: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: var(--s-accent-glow); border-radius: 8px; margin-top: 1px; }
+  .sh-survey .e-icon svg { width: 15px; height: 15px; stroke: var(--s-accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .sh-survey .e-text { font-size: .98rem; line-height: 1.45; }
+  .sh-survey .e-text strong { font-weight: 600; }
+
+  .sh-survey .consent-row { display: flex; align-items: flex-start; gap: 10px; margin: 14px 0 6px; }
+  .sh-survey .consent-row input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--s-accent); flex-shrink: 0; }
+  .sh-survey .consent-row label { font-size: .92rem; color: var(--s-muted); line-height: 1.4; font-weight: 400; cursor: pointer; }
+
+  .sh-survey .sh-hp { position: absolute; left: -9999px; top: -9999px; opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: none; }
+</style>
+
+<div class="sh-survey" id="shSurvey">
+
+  <div class="survey-intro">
+    <h2>Get Your Free Solar Quote</h2>
+    <p>Answer a few quick questions and one of our Perth-based solar experts will call you to provide a tailored quotation.</p>
+  </div>
+
+  <div class="progress-bar"><div class="progress-fill" id="shProgress" style="width:14%"></div></div>
+  <div class="step-label" id="shStepLabel">Step 1 of 5</div>
+
+  <div class="step active" id="shStep1">
+    <div class="step-card">
+      <div class="step-question">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+        Is this for a residential or commercial property?
+      </div>
+      <div class="options">
+        <button class="option-btn" onclick="shAnswer(1,'Residential')">
+          <div class="opt-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="opt-label">Residential<small>Solar for my home</small></div>
+          <svg class="arrow-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="option-btn" onclick="shAnswer(1,'Commercial')">
+          <div class="opt-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg></div>
+          <div class="opt-label">Commercial<small>Solar for my business</small></div>
+          <svg class="arrow-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" id="shStep2">
+    <div class="step-card">
+      <div class="step-question">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+        What type of solar installation interests you?
+      </div>
+      <div class="options">
+        <button class="option-btn" onclick="shAnswer(2,'Solar Panels')">
+          <div class="opt-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="8" y1="6" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="18"/></svg></div>
+          <div class="opt-label">Solar Panels<small>Rooftop panels to generate clean energy</small></div>
+          <svg class="arrow-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="option-btn" onclick="shAnswer(2,'Battery Storage')">
+          <div class="opt-icon"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="18" rx="2"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/><line x1="10" y1="12" x2="14" y2="12"/><line x1="12" y1="10" x2="12" y2="14"/></svg></div>
+          <div class="opt-label">Battery Storage<small>Store your excess energy</small></div>
+          <svg class="arrow-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="option-btn" onclick="shAnswer(2,'Panels + Battery')">
+          <div class="opt-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="opt-label">Both — Panels + Battery<small>Full system for maximum savings</small></div>
+          <svg class="arrow-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <button class="back-link" onclick="shGoBack(2)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Back</button>
+    </div>
+  </div>
+
+  <div class="step" id="shStep4">
+    <div class="step-card">
+      <div class="step-question">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        How quickly do you want installation?
+      </div>
+      <div class="options">
+        <button class="option-btn" onclick="shAnswer(4,'ASAP')">
+          <div class="opt-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="opt-label">As soon as possible<small>We'll prioritise your assessment</small></div>
+          <svg class="arrow-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="option-btn" onclick="shAnswer(4,'This month')">
+          <div class="opt-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div class="opt-label">Within this month</div>
+          <svg class="arrow-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="option-btn" onclick="shAnswer(4,'1-3 months')">
+          <div class="opt-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="opt-label">1 to 3 months<small>Just researching options for now</small></div>
+          <svg class="arrow-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <button class="back-link" onclick="shGoBack(4)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Back</button>
+    </div>
+  </div>
+
+  <div class="step" id="shStep5">
+    <div class="step-card">
+      <div class="step-question">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        What is your postcode?
+      </div>
+      <div class="form-group">
+        <label for="shPostcode">Postcode</label>
+        <input type="text" id="shPostcode" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="e.g. 6056" oninput="shValidatePostcode()">
+        <div class="input-hint">Enter your 4-digit Australian postcode.</div>
+        <div class="input-error" id="shPostcodeErr">Please enter a valid 4-digit postcode.</div>
+      </div>
+      <button class="btn-primary" id="shPostcodeBtn" onclick="shSubmitPostcode()" disabled>
+        Continue <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <button class="back-link" onclick="shGoBack(5)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Back</button>
+    </div>
+  </div>
+
+  <div class="step" id="shStep6">
+    <div class="step-card">
+      <div class="step-question">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.56 2.81.68A2 2 0 0 1 22 16.92z"/></svg></div>
+        Almost done — how can we reach you?
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label for="shFirst">First Name</label><input type="text" id="shFirst" placeholder="John" oninput="shValidateContact()"></div>
+        <div class="form-group"><label for="shLast">Last Name</label><input type="text" id="shLast" placeholder="Smith" oninput="shValidateContact()"></div>
+      </div>
+      <div class="form-group"><label for="shEmail">Email Address</label><input type="email" id="shEmail" placeholder="john@example.com" oninput="shValidateContact()"></div>
+      <div class="form-group"><label for="shPhone">Phone Number</label><input type="tel" id="shPhone" placeholder="04XX XXX XXX" oninput="shValidateContact()"></div>
+      <div class="sh-hp" aria-hidden="true"><label for="shWebsite">Website</label><input type="text" id="shWebsite" name="website" autocomplete="off" tabindex="-1"></div>
+      <div class="consent-row">
+        <input type="checkbox" id="shConsent" onchange="shValidateContact()">
+        <label for="shConsent">I agree to be contacted by HT Evolution regarding my solar enquiry.</label>
+      </div>
+      <button class="btn-primary" id="shSubmitBtn" onclick="shSubmitForm()" disabled>
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.56 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+        Book My Free Solar Assessment
+      </button>
+      <button class="back-link" onclick="shGoBack(6)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Back</button>
+    </div>
+  </div>
+
+  <div class="step" id="shStep7">
+    <div class="step-card">
+      <div class="thankyou">
+        <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Thank You, <span id="shThankName">there</span>!</h3>
+        <p>Your solar enquiry has been submitted. One of our Perth-based experts will call you for a proper phone assessment — not a ballpark figure, but an accurate, tailored quotation for your property.</p>
+        <div class="expect-list">
+          <div class="expect-item">
+            <div class="e-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.56 2.81.68A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="e-text"><strong>Phone assessment call</strong> from a qualified solar consultant within 1–2 business days.</div>
+          </div>
+          <div class="expect-item">
+            <div class="e-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div class="e-text"><strong>Custom quotation</strong> based on your property, energy usage, and goals — not a generic estimate.</div>
+          </div>
+          <div class="expect-item">
+            <div class="e-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+            <div class="e-text"><strong>No pressure, no obligation.</strong> Just expert advice from a local Perth team.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var formData = {};
+  var flow = ['1','2','4','5','6','7'];
+  var currentIdx = 0;
+
+  function showStep(id) {
+    document.querySelectorAll('.sh-survey .step').forEach(function(s) { s.classList.remove('active'); });
+    var el = document.getElementById('shStep' + id);
+    if (el) { el.classList.add('active'); el.style.animation = 'none'; el.offsetHeight; el.style.animation = ''; }
+    var pos = flow.indexOf(id);
+    var total = flow.length - 1;
+    if (id === '7') {
+      document.getElementById('shProgress').style.width = '100%';
+      document.getElementById('shStepLabel').textContent = 'Complete';
+    } else {
+      document.getElementById('shProgress').style.width = Math.round(((pos + 1) / total) * 100) + '%';
+      document.getElementById('shStepLabel').textContent = 'Step ' + (pos + 1) + ' of ' + total;
+    }
+  }
+
+  function goNext(fromId) {
+    var idx = flow.indexOf(String(fromId));
+    if (idx < flow.length - 1) { currentIdx = idx + 1; showStep(flow[currentIdx]); }
+  }
+
+  window.shAnswer = function(step, value) {
+    formData['step' + step] = value;
+    if (step === 1) { formData.propertyType = value; }
+    goNext(String(step));
+  };
+
+  window.shGoBack = function(fromId) {
+    var idx = flow.indexOf(String(fromId));
+    if (idx > 0) { currentIdx = idx - 1; showStep(flow[currentIdx]); }
+  };
+
+  window.shValidatePostcode = function() {
+    var v = document.getElementById('shPostcode').value.trim();
+    var ok = /^\d{4}$/.test(v);
+    document.getElementById('shPostcodeBtn').disabled = !ok;
+    document.getElementById('shPostcodeErr').style.display = (v.length === 4 && !ok) ? 'block' : 'none';
+  };
+
+  window.shSubmitPostcode = function() {
+    var v = document.getElementById('shPostcode').value.trim();
+    if (/^\d{4}$/.test(v)) { formData.postcode = v; goNext('5'); }
+  };
+
+  window.shValidateContact = function() {
+    var fn = document.getElementById('shFirst').value.trim(),
+        ln = document.getElementById('shLast').value.trim(),
+        em = document.getElementById('shEmail').value.trim(),
+        ph = document.getElementById('shPhone').value.trim(),
+        co = document.getElementById('shConsent').checked;
+    document.getElementById('shSubmitBtn').disabled = !(fn && ln && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em) && /^[\d\s\+\-\(\)]{8,15}$/.test(ph) && co);
+  };
+
+  window.shSubmitForm = function() {
+    // Honeypot check
+    var hp = document.getElementById('shWebsite').value;
+    if (hp) {
+      document.getElementById('shThankName').textContent = document.getElementById('shFirst').value.trim() || 'there';
+      goNext('6');
+      return;
+    }
+
+    formData.firstName = document.getElementById('shFirst').value.trim();
+    formData.lastName = document.getElementById('shLast').value.trim();
+    formData.email = document.getElementById('shEmail').value.trim();
+    formData.phone = document.getElementById('shPhone').value.trim();
+    formData.honeypot = '';
+    document.getElementById('shThankName').textContent = formData.firstName;
+
+    // Send to Make.com webhook
+    var webhookUrl = 'WEBHOOK_URL'; // Replace with webhook URL
+    fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    }).catch(function(err) { console.error('Webhook error:', err); });
+
+    console.log('Solar Survey Submission:', JSON.stringify(formData, null, 2));
+    goNext('6');
+  };
+})();
+</script>
