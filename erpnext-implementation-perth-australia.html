@@ -1205,35 +1205,40 @@
     </div>
   </section>
 
-  
   <script>  
-    document.addEventListener("DOMContentLoaded", function() {
-      const videos = document.querySelectorAll("video[data-src]");
+  document.addEventListener("DOMContentLoaded", function() {
+    const videos = document.querySelectorAll("video[data-src]");
   
-      const options = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.25
-      };
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.25
+    };
   
-      const loadVideo = (video) => {
-        if (video.dataset.src) {
-          video.src = video.dataset.src;
-          video.removeAttribute('data-src');
-        }
-      };
-  
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            loadVideo(entry.target);
-            observer.unobserve(entry.target);
-          }
+    const loadVideo = (video) => {
+      if (video.dataset.src) {
+        video.src = video.dataset.src;
+    
+        video.addEventListener("loadedmetadata", () => {
+          video.playbackRate = 1.5;
+          video.defaultPlaybackRate = 1.5;
         });
-      }, options);
+    
+        video.removeAttribute('data-src');
+      }
+    };
   
-      videos.forEach(video => observer.observe(video));
-    });
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadVideo(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+  
+    videos.forEach(video => observer.observe(video));
+  });
   </script>
   
   <section id="contact" style="padding:80px 20px 80px 20px; background:#f7f9fc;">
