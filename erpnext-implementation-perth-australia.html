@@ -292,16 +292,60 @@
 
     
     .benefit-card {
+        background: transparent;
+        border-radius: 18px;
+        height: 260px;
+        perspective: 1000px;
+        animation: fadeUp 1.2s ease forwards;
+        opacity: 0;
+    }
+    
+    .benefit-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    
+    .benefit-card:hover .benefit-card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .benefit-card-front,
+    .benefit-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    
         background: rgba(255,255,255,0.08);
         border-radius: 18px;
         padding: 20px;
         box-shadow: 0 6px 18px rgba(0,0,0,0.2);
         backdrop-filter: blur(6px);
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+        box-sizing: border-box;
+    }
+    
+    .benefit-card-front {
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+    
+    .benefit-card-back {
+        transform: rotateY(180deg);
         font-size: 0.95rem;
-        line-height: 1.4rem;
-        animation: fadeUp 1.2s ease forwards;
-        opacity: 0;
+        line-height: 1.5rem;
+    }
+    
+    .benefit-card:hover {
+        transform: none;
+        box-shadow: none;
     }
     
     .benefit-card:hover {
@@ -872,13 +916,21 @@
           Benefits
       </h2>
       <h3 class="section-subtitle">Key Advantages of our ERPNext Implementation for Australian Businesses</h3>
-  
-      <div class="benefit-cards">
+          
         <div class="benefit-card">
-            <p>
-                <strong>Unified system for all business operations</strong><br>
-                Instead of juggling multiple tools for accounting, sales, inventory, HR, projects, and support, ERPNext unifies everything under a single intelligent platform.
-            </p>
+            <div class="benefit-card-inner">
+        
+                <div class="benefit-card-front">
+                    Unified system for all business operations
+                </div>
+        
+                <div class="benefit-card-back">
+                    Instead of juggling multiple tools for accounting, sales,
+                    inventory, HR, projects, and support, ERPNext unifies
+                    everything under a single intelligent platform.
+                </div>
+        
+            </div>
         </div>
         
         <div class="benefit-card">
