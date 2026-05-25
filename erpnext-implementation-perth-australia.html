@@ -334,6 +334,47 @@
         }
     }
 
+    /* HOVER CARD STYLES - The key changes are here */
+    .hover-card {
+        position: relative;
+        cursor: pointer;
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-front, .card-back {
+        transition: opacity 0.3s ease-in-out;
+        width: 100%;
+    }
+
+    .card-front {
+        opacity: 1;
+    }
+
+    .card-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .benefit-card:hover .card-front {
+        opacity: 0;
+    }
+
+    .benefit-card:hover .card-back {
+        opacity: 1;
+    }
+
     .bordered-section {
         padding: 40px 20px;           
         background: rgba(255,255,255,0.05);
@@ -874,11 +915,14 @@
       <h3 class="section-subtitle">Key Advantages of our ERPNext Implementation for Australian Businesses</h3>
   
       <div class="benefit-cards">
-        <div class="benefit-card">
-            <p>
-                <strong>Unified system for all business operations</strong><br>
-                Instead of juggling multiple tools for accounting, sales, inventory, HR, projects, and support, ERPNext unifies everything under a single intelligent platform.
-            </p>
+        <!-- THIS IS THE MODIFIED CARD - Now shows short text, hover shows long description -->
+        <div class="benefit-card hover-card">
+            <div class="card-front">
+                <p><strong>Unified system for all business operations</strong></p>
+            </div>
+            <div class="card-back">
+                <p>Instead of juggling multiple tools for accounting, sales, inventory, HR, projects, and support, ERPNext unifies everything under a single intelligent platform.</p>
+            </div>
         </div>
         
         <div class="benefit-card">
