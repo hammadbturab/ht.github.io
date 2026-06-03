@@ -57,41 +57,37 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 18px;
         }
 
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #1a3a5c, #f0a04b);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
-            animation: pulse 3s infinite;
+        .logo-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            object-fit: contain;
+            border: 2px solid #f0a04b;
+            background: white;
+            padding: 5px;
+            transition: var(--transition);
+            flex-shrink: 0;
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(240, 160, 75, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 0 15px rgba(240, 160, 75, 0);
-            }
+        .logo-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(240, 160, 75, 0.3);
         }
 
         .logo-text h1 {
             color: #1a3a5c;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: 1px;
+            line-height: 1.2;
         }
 
         .logo-text span {
             color: #f0a04b;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -146,6 +142,10 @@
         .btn-nav:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
+        }
+
+        .btn-nav::after {
+            display: none !important;
         }
 
         .menu-toggle {
@@ -267,12 +267,8 @@
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         /* ========== QUICK CONTACT BAR ========== */
@@ -319,66 +315,7 @@
             font-size: 0.85rem;
             font-weight: 500;
         }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
 
-        /* NEW: Logo image styling */
-        .logo-img {
-            width: 55px;
-            height: 55px;
-            border-radius: 12px;
-            object-fit: contain;
-            border: 2px solid #f0a04b;
-            background: white;
-            padding: 3px;
-            transition: var(--transition);
-        }
-
-        .logo-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(240, 160, 75, 0.3);
-        }
-
-        /* Fallback icon if image not available */
-        .logo-icon {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, #1a3a5c, #f0a04b);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            color: white;
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(240, 160, 75, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 0 15px rgba(240, 160, 75, 0);
-            }
-        }
-
-        .logo-text h1 {
-            color: #1a3a5c;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .logo-text span {
-            color: #f0a04b;
-            font-size: 0.75rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
         /* ========== SERVICES SECTION ========== */
         .section {
             padding: 80px 40px;
@@ -779,12 +716,26 @@
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
             header {
-                padding: 15px 20px;
+                padding: 12px 20px;
             }
+            
+            .logo-img {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+            
+            .logo-text span {
+                font-size: 0.7rem;
+            }
+            
             nav ul {
                 display: none;
                 position: absolute;
-                top: 80px;
+                top: 100px;
                 left: 0;
                 width: 100%;
                 background: white;
@@ -836,16 +787,22 @@
     <!-- ========== HEADER ========== -->
     <header>
         <div class="logo-container">
+            <!-- 
+            ============================================
+            REPLACE THE src BELOW WITH YOUR LOGO PATH:
+            Example: src="images/my-logo.png"
+            ============================================
+            -->
             <img src="images/LogoComfortSystems.jpeg" 
                  alt="Company Logo" 
-                 class="logo-img"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="logo-icon">❄️</div>
+                 class="logo-img">
+            
             <div class="logo-text">
-                <h1>Comfort</h1>
-                <span>ySystems</span>
+                <h1>Comfort Systems</h1>
+                <span>HVAC Solutions</span>
             </div>
         </div>
+        
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <nav>
             <ul id="navMenu">
@@ -888,7 +845,7 @@
             <div class="contact-icon">✉️</div>
             <div class="contact-text">
                 <h4>Email Us</h4>
-                <p>info@cooltechhvac.com</p>
+                <p>support@htevolution.com</p>
             </div>
         </div>
         <div class="contact-item">
@@ -1112,7 +1069,7 @@
     <footer id="contact">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>CoolTech HVAC</h4>
+                <h4>Comfort Systems</h4>
                 <p>Your trusted partner for all heating, cooling, and air quality needs. Licensed, insured, and certified.</p>
                 <p>📍 123 Cool Street, HVAC City, ST 12345</p>
             </div>
@@ -1141,10 +1098,157 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 <span>CoolTech HVAC Solutions</span>. All Rights Reserved. | Designed with ❤️</p>
+            <p>&copy; 2026 <span>HT Evolution</span>. All Rights Reserved. | Designed with ❤️</p>
         </div>
     </footer>
 
+    <!-- ========== SUCCESS MODAL ========== -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal">
+            <div class="success-icon">✅</div>
+            <h3>Booking Confirmed!</h3>
+            <p>Thank you for choosing CoolTech HVAC. We'll contact you shortly to confirm your appointment.</p>
+            <button class="close-modal" onclick="closeModal()">Got It</button>
+        </div>
+    </div>
+
+    <!-- ========== SCROLL TO TOP BUTTON ========== -->
+    <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                // Close mobile menu after clicking
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        // FAQ toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+            
+            // Close other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Booking form submission
+        function handleBooking(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                service: document.getElementById('service').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                address: document.getElementById('address').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Log form data (replace with actual API call)
+            console.log('Booking Details:', formData);
+            
+            // Show success modal
+            document.getElementById('successModal').classList.add('active');
+            
+            // Reset form
+            document.getElementById('bookingForm').reset();
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('active');
+        }
+
+        // Close modal on overlay click
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 500) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for counters
+        const statsSection = document.querySelector('.stats');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Set minimum date for booking
+        const dateInput = document.getElementById('date');
+        if (dateInput) {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+        }
+
+        console.log('CoolTech HVAC Website Loaded Successfully!');
+    </script>
+</body>
 </html>
 
 
