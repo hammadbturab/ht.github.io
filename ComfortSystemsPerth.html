@@ -11,876 +11,1078 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Poppins',sans-serif;
-  overflow-x:hidden;
-  color:#222;
-}
-
-.container{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-}
-
-img{
-  width:100%;
-  display:block;
-}
-
-a{
-  text-decoration:none;
-}
-
-section{
-  padding:100px 0;
-}
-
-/* ================= HEADER ================= */
-
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:#fff;
-  z-index:1000;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-}
-
-.navbar{
-  height:90px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  font-size:38px;
-  font-weight:800;
-  color:#18457b;
-}
-
-.logo span{
-  color:#ffb566;
-}
-
-nav{
-  display:flex;
-  gap:35px;
-}
-
-nav a{
-  color:#18457b;
-  font-weight:500;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:##ffb566;
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 30px;
-  background:#18457b;
-  color:#fff;
-  border-radius:6px;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.btn:hover{
-  background:#0f3158;
-  transform:translateY(-2px);
-}
-
-.menu-toggle{
-  display:none;
-  font-size:32px;
-  cursor:pointer;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  height:100vh;
-  min-height:800px;
-  background:
-  linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-  url('images/tim-mossholder-HdIgbf03tko-unsplash.jpg')
-  center/cover no-repeat;
-
-  display:flex;
-  align-items:center;
-  color:#fff;
-}
-
-.hero-content{
-  max-width:750px;
-}
-
-.hero h1{
-  font-size:72px;
-  line-height:1.1;
-  margin-bottom:25px;
-}
-
-.hero p{
-  font-size:20px;
-  line-height:1.8;
-  margin-bottom:35px;
-}
-
-.hero-buttons{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.btn-outline{
-  border:2px solid #fff;
-  padding:12px 28px;
-  border-radius:6px;
-  color:#fff;
-  transition:0.3s;
-}
-
-.btn-outline:hover{
-  background:#fff;
-  color:#18457b;
-}
-
-/* ================= SECTIONS ================= */
-
-.section-title{
-  text-align:center;
-  font-size:42px;
-  margin-bottom:20px;
-  color:#18457b;
-}
-
-.section-subtitle{
-  text-align:center;
-  color:#666;
-  max-width:700px;
-  margin:auto;
-  margin-bottom:60px;
-  line-height:1.8;
-}
-
-/* ================= ABOUT ================= */
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-
-.about-content p{
-  line-height:1.9;
-  color:#555;
-  margin-bottom:25px;
-}
-
-.about-image img{
-  border-radius:12px;
-}
-
-/* ================= SERVICES ================= */
-
-.services{
-  background:#f5f8fc;
-}
-
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-}
-
-.service-card{
-  background:#fff;
-  padding:40px 30px;
-  border-radius:12px;
-  transition:0.3s;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-
-.service-card:hover{
-  transform:translateY(-10px);
-}
-
-.service-icon{
-  font-size:55px;
-  margin-bottom:20px;
-}
-
-.service-card h3{
-  margin-bottom:15px;
-  color:#18457b;
-}
-
-.service-card p{
-  color:#666;
-  line-height:1.8;
-}
-
-/* ================= STATS ================= */
-
-.stats{
-  background:#18457b;
-  color:#fff;
-}
-
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:30px;
-  text-align:center;
-}
-
-.stat h2{
-  font-size:54px;
-  margin-bottom:10px;
-}
-
-/* ================= PROJECTS ================= */
-
-.projects-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
-}
-
-.project{
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
-}
-
-.project img{
-  height:350px;
-  object-fit:cover;
-  transition:0.4s;
-}
-
-.project:hover img{
-  transform:scale(1.1);
-}
-
-.project-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(transparent, rgba(0,0,0,0.8));
-  display:flex;
-  align-items:flex-end;
-  padding:25px;
-  color:#fff;
-}
-
-/* ================= TESTIMONIALS ================= */
-
-.testimonials{
-  background:#f5f8fc;
-}
-
-.testimonial-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-}
-
-.testimonial{
-  background:#fff;
-  padding:35px;
-  border-radius:12px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-
-.testimonial p{
-  line-height:1.8;
-  color:#555;
-  margin-bottom:20px;
-}
-
-.testimonial h4{
-  color:#18457b;
-}
-
-/* ================= FAQ ================= */
-
-.faq-item{
-  margin-bottom:20px;
-  border:1px solid #ddd;
-  border-radius:8px;
-  overflow:hidden;
-}
-
-.faq-question{
-  padding:20px;
-  background:#18457b;
-  color:#fff;
-  cursor:pointer;
-  font-weight:600;
-}
-
-.faq-answer{
-  padding:20px;
-  display:none;
-  background:#fff;
-  line-height:1.8;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-  background:#f5f8fc;
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-}
-
-.contact-info p{
-  margin-bottom:20px;
-  color:#555;
-}
-
-form{
-  background:#fff;
-  padding:40px;
-  border-radius:12px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-
-input,
-textarea{
-  width:100%;
-  padding:15px;
-  margin-bottom:20px;
-  border:1px solid #ddd;
-  border-radius:6px;
-  font-family:inherit;
-}
-
-textarea{
-  min-height:140px;
-  resize:vertical;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#0f223d;
-  color:#fff;
-  padding:60px 0 20px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:40px;
-  margin-bottom:40px;
-}
-
-.footer-links a{
-  display:block;
-  color:#ccc;
-  margin-bottom:12px;
-}
-
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,0.1);
-  padding-top:20px;
-  text-align:center;
-  color:#aaa;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:992px){
-
-  .about-grid,
-  .services-grid,
-  .projects-grid,
-  .testimonial-grid,
-  .contact-grid,
-  .stats-grid,
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .hero h1{
-    font-size:54px;
-  }
-
-}
-
-@media(max-width:768px){
-
-  nav{
-    position:absolute;
-    top:90px;
-    left:0;
-    width:100%;
-    background:#fff;
-    flex-direction:column;
-    padding:30px;
-    display:none;
-  }
-
-  nav.active{
-    display:flex;
-  }
-
-  .menu-toggle{
-    display:block;
-  }
-
-  .hero{
-    text-align:center;
-  }
-
-  .hero-buttons{
-    justify-content:center;
-  }
-
-  .hero h1{
-    font-size:42px;
-  }
-
-  .about-grid,
-  .services-grid,
-  .projects-grid,
-  .testimonial-grid,
-  .contact-grid,
-  .stats-grid,
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media(max-width:500px){
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  .section-title{
-    font-size:32px;
-  }
-
-}
-
-</style>
+    <style>
+        :root {
+            --bg-light-blue: #e8f4f8;
+            --bg-white: #ffffff;
+            --bg-peach: #fef0e6;
+            --text-dark-blue: #1a3a5c;
+            --text-light-orange: #f0a04b;
+            --accent-orange: #e8923a;
+            --border-light: #d9e8ef;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8f4f8 0%, #fef0e6 50%, #ffffff 100%);
+            color: #1a3a5c;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: var(--bg-white);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #f0a04b;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1a3a5c, #f0a04b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(240, 160, 75, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(240, 160, 75, 0);
+            }
+        }
+
+        .logo-text h1 {
+            color: #1a3a5c;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: #f0a04b;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: #1a3a5c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f0a04b;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: #f0a04b;
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, #f0a04b, #e8923a);
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #1a3a5c;
+            background: none;
+            border: none;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #e8f4f8 40%, #fef0e6 100%);
+            padding: 80px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            min-height: 85vh;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content .badge {
+            display: inline-block;
+            background: #fef0e6;
+            color: #f0a04b;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            border: 1px solid #f0a04b33;
+        }
+
+        .hero-content h2 {
+            color: #1a3a5c;
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 span {
+            color: #f0a04b;
+        }
+
+        .hero-content p {
+            color: #1a3a5c;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.85;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1a3a5c, #234b75);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1a3a5c;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #f0a04b;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: #fef0e6;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image .img-placeholder {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #e8f4f8, #fef0e6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            box-shadow: 0 20px 60px rgba(26, 58, 92, 0.15);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* ========== QUICK CONTACT BAR ========== */
+        .quick-contact {
+            background: white;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: var(--shadow);
+            margin: -40px 40px 0;
+            border-radius: var(--radius);
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #fef0e6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #f0a04b;
+        }
+
+        .contact-text h4 {
+            color: #1a3a5c;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .contact-text p {
+            color: #f0a04b;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .section {
+            padding: 80px 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h3 {
+            color: #1a3a5c;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-title .subtitle {
+            color: #f0a04b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: #f0a04b33;
+        }
+
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h4 {
+            color: #1a3a5c;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #1a3a5c;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card .learn-more {
+            color: #f0a04b;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* ========== BOOKING FORM ========== */
+        .booking-section {
+            background: linear-gradient(135deg, #fef0e6, #e8f4f8);
+            padding: 80px 40px;
+        }
+
+        .booking-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .booking-form-container h3 {
+            color: #1a3a5c;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .booking-form-container .subtitle {
+            text-align: center;
+            color: #f0a04b;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #1a3a5c;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e8f4f8;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: #fafdfe;
+            color: #1a3a5c;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f0a04b;
+            box-shadow: 0 0 0 3px rgba(240, 160, 75, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #fef0e6;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .stars {
+            color: #f0a04b;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card p {
+            color: #1a3a5c;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card .author {
+            color: #f0a04b;
+            font-weight: 700;
+        }
+
+        /* ========== STATS ========== */
+        .stats {
+            background: #1a3a5c;
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            color: #f0a04b;
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            color: white;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* ========== FAQ ========== */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1a3a5c;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: #fef0e6;
+        }
+
+        .faq-question .arrow {
+            color: #f0a04b;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .faq-item.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: #1a3a5c;
+            opacity: 0.8;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 20px;
+            max-height: 200px;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #1a3a5c;
+            color: white;
+            padding: 60px 40px 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 {
+            color: #f0a04b;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: #d0dde8;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: #f0a04b;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #d0dde8;
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom span {
+            color: #f0a04b;
+        }
+
+        /* ========== MODAL ========== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal .success-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .modal h3 {
+            color: #1a3a5c;
+            margin-bottom: 10px;
+        }
+
+        .modal p {
+            color: #1a3a5c;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .modal .close-modal {
+            background: #1a3a5c;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .modal .close-modal:hover {
+            background: #f0a04b;
+        }
+
+        /* ========== SCROLL TO TOP ========== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #f0a04b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 22px;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: #1a3a5c;
+            transform: translateY(-3px);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: var(--shadow);
+                gap: 20px;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero {
+                flex-direction: column;
+                padding: 40px 20px;
+                text-align: center;
+            }
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            .hero-image .img-placeholder {
+                width: 250px;
+                height: 250px;
+                font-size: 80px;
+            }
+            .quick-contact {
+                margin: -30px 15px 0;
+                padding: 20px;
+            }
+            .section {
+                padding: 50px 20px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .stats {
+                padding: 40px 20px;
+            }
+            footer {
+                padding: 40px 20px 20px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">❄️</div>
+            <div class="logo-text">
+                <h1>CoolTech</h1>
+                <span>HVAC Solutions</span>
+            </div>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="btn-nav">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge">🔥 24/7 Emergency Service Available</span>
+            <h2>Your Comfort Is <span>Our Priority</span></h2>
+            <p>Expert heating, ventilation, and air conditioning services for residential and commercial properties. Keeping you cool in summer, warm in winter, and breathing easy all year round.</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn-primary">Schedule Service</a>
+                <a href="#contact" class="btn-secondary">Free Estimate</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="img-placeholder">🏠</div>
+        </div>
+    </section>
+
+    <!-- ========== QUICK CONTACT ========== -->
+    <div class="quick-contact">
+        <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">
+                <h4>Call Us 24/7</h4>
+                <p>(555) 123-4567</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-text">
+                <h4>Email Us</h4>
+                <p>info@cooltechhvac.com</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+                <h4>Our Location</h4>
+                <p>123 Cool Street, HVAC City</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="contact-icon">⏰</div>
+            <div class="contact-text">
+                <h4>Working Hours</h4>
+                <p>Mon-Sat: 7AM - 9PM</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="section" id="services">
+        <div class="section-title">
+            <p class="subtitle">What We Offer</p>
+            <h3>Our Premium HVAC Services</h3>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">❄️</span>
+                <h4>AC Installation</h4>
+                <p>Professional air conditioning installation with energy-efficient units tailored to your space.</p>
+                <a href="#booking" class="learn-more">Book Now →</a>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🔧</span>
+                <h4>AC Repair</h4>
+                <p>Fast and reliable AC repair services to restore your comfort quickly.</p>
+                <a href="#booking" class="learn-more">Book Now →</a>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🔥</span>
+                <h4>Heating Services</h4>
+                <p>Furnace installation, repair, and maintenance for cozy winters.</p>
+                <a href="#booking" class="learn-more">Book Now →</a>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🌬️</span>
+                <h4>Duct Cleaning</h4>
+                <p>Improve air quality with our thorough duct and vent cleaning services.</p>
+                <a href="#booking" class="learn-more">Book Now →</a>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🛠️</span>
+                <h4>Maintenance Plans</h4>
+                <p>Annual maintenance contracts to keep your HVAC system running efficiently.</p>
+                <a href="#booking" class="learn-more">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">💨</span>
+                <h4>Indoor Air Quality</h4>
+                <p>Air purifiers, humidifiers, and ventilation solutions for healthier air.</p>
+                <a href="#booking" class="learn-more">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BOOKING FORM ========== -->
+    <section class="booking-section" id="booking">
+        <div class="booking-form-container">
+            <h3>Schedule Your Service</h3>
+            <p class="subtitle">Fill the form below and we'll get back to you within 30 minutes</p>
+            <form id="bookingForm" onsubmit="handleBooking(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" placeholder="(555) 000-0000" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed *</label>
+                        <select id="service" required>
+                            <option value="">Select Service</option>
+                            <option value="ac-install">AC Installation</option>
+                            <option value="ac-repair">AC Repair</option>
+                            <option value="heating">Heating Services</option>
+                            <option value="duct-cleaning">Duct Cleaning</option>
+                            <option value="maintenance">Maintenance Plan</option>
+                            <option value="air-quality">Indoor Air Quality</option>
+                            <option value="emergency">Emergency Service</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <select id="time">
+                            <option value="">Select Time</option>
+                            <option value="morning">Morning (7AM - 12PM)</option>
+                            <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                            <option value="evening">Evening (5PM - 9PM)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Service Address *</label>
+                    <input type="text" id="address" placeholder="123 Main St, City, State, ZIP" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Details</label>
+                    <textarea id="message" rows="3" placeholder="Describe your issue or any specific requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%;">📅 Book Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <div class="stats">
+        <div class="stat-item">
+            <h3 class="counter" data-target="15">0</h3>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="5000">0</h3>
+            <p>Happy Customers</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="12000">0</h3>
+            <p>Projects Completed</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="50">0</h3>
+            <p>Expert Technicians</p>
+        </div>
+    </div>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="section testimonials" id="testimonials">
+        <div class="section-title">
+            <p class="subtitle">Testimonials</p>
+            <h3>What Our Customers Say</h3>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"CoolTech saved us during a heatwave! They arrived within an hour and had our AC fixed in no time. Highly recommended!"</p>
+                <span class="author">- Sarah Johnson</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Professional, punctual, and fairly priced. The maintenance plan is worth every penny. Our energy bills have dropped significantly."</p>
+                <span class="author">- Michael Chen</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"The duct cleaning service made a huge difference in our home's air quality. My allergies have improved so much!"</p>
+                <span class="author">- Emily Rodriguez</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section" id="faq">
+        <div class="section-title">
+            <p class="subtitle">FAQ</p>
+            <h3>Frequently Asked Questions</h3>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How often should I service my HVAC system?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We recommend servicing your HVAC system at least twice a year — once before summer and once before winter. Regular maintenance ensures efficiency and prevents costly breakdowns.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Do you offer emergency services?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We offer 24/7 emergency HVAC services. Our technicians are always on standby to handle urgent repairs whenever you need them.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What brands do you work with?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We work with all major HVAC brands including Carrier, Trane, Lennox, Rheem, Goodman, and more. Our technicians are certified to service and install all major systems.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How long does an AC installation take?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>A standard AC installation typically takes 4-8 hours depending on the complexity of the job. We'll provide a precise timeline during our initial assessment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>CoolTech HVAC</h4>
+                <p>Your trusted partner for all heating, cooling, and air quality needs. Licensed, insured, and certified.</p>
+                <p>📍 123 Cool Street, HVAC City, ST 12345</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#booking">Book Now</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="#booking">AC Installation</a>
+                <a href="#booking">AC Repair</a>
+                <a href="#booking">Heating Services</a>
+                <a href="#booking">Duct Cleaning</a>
+                <a href="#booking">Maintenance Plans</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@cooltechhvac.com</p>
+                <p>⏰ Mon-Sat: 7AM - 9PM</p>
+                <p>🆘 24/7 Emergency Available</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>CoolTech HVAC Solutions</span>. All Rights Reserved. | Designed with ❤️</p>
+        </div>
+    </footer>
 
-<header>
-
-<div class="container navbar">
-
-<div class="logo">
-Comfort <span>Systems</span>
-</div>
-
-<nav id="navMenu">
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<div class="menu-toggle" id="menuToggle">
-☰
-</div>
-
-</div>
-
-</header>
-
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-<div class="container">
-
-<div class="hero-content">
-
-<h1>
-WA HVAC Specialists 
-</h1>
-
-<p>
-Providing best HVAC systems solutions in WA for home owners.
-</p>
-
-<div class="hero-buttons">
-<a href="#services" class="btn">Explore Services</a>
-<a href="#contact" class="btn-outline">Get Quote</a>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about">
-
-<div class="container">
-
-<h2 class="section-title">About Us</h2>
-
-<p class="section-subtitle">
-We provide large-scale solutions.
-</p>
-
-<div class="about-grid">
-
-<div class="about-content">
-
-<p>
-We specialise in Heating, ventilation,
-and air conditioning systems all across WA.
-</p>
-
-<p>
-Our team delivers safe, reliable and energy-efficient
-solutions backed by years of engineering expertise.
-</p>
-
-<a href="#" class="btn">Read More</a>
-
-</div>
-
-<div class="about-image">
-<img src="images/healthy-duct-cleaning-xnqyNSf0nck-unsplash.jpg">
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= SERVICES ================= -->
-
-<section class="services" id="services">
-
-<div class="container">
-
-<h2 class="section-title">Our Services</h2>
-
-<p class="section-subtitle">
-Comprehensive HVAC solutions for industrial and commercial projects.
-</p>
-
-<div class="services-grid">
-
-<div class="service-card">
-<div class="service-icon">❄️</div>
-<h3>HVAC Installation</h3>
-<p>
-Complete design and installation solutions.
-</p>
-</div>
-
-<div class="service-card">
-<div class="service-icon">🛠️</div>
-<h3>Maintenance</h3>
-<p>
-Preventive maintenance and emergency repairs.
-</p>
-</div>
-
-<div class="service-card">
-<div class="service-icon">🤝</div>
-<h3>Reliable</h3>
-<p>
-We provide only the most reliable solutions for all your HVAC Perth needs.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= STATS ================= -->
-
-<section class="stats">
-
-<div class="container">
-
-<div class="stats-grid">
-
-<div class="stat">
-<h2>daikin svg</h2>
-<p>Daikin</p>
-</div>
-
-<div class="stat">
-<h2>mhi svg image</h2>
-<p>Mitsubishi Heavy Industries</p>
-</div>
-
-<div class="stat">
-<h2>midea svg image</h2>
-<p>Midea</p>
-</div>
-
-<div class="stat">
-<h2>100%</h2>
-<p>Client Satisfaction</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= PROJECTS ================= -->
-
-<section id="projects">
-
-<div class="container">
-
-<h2 class="section-title">Recent Projects</h2>
-
-<div class="projects-grid">
-
-<div class="project">
-<img src="images/alirad-zare-7DrlKDr4Srw-unsplash.jpg">
-<div class="project-overlay">
-<h3>Heating systems</h3>
-</div>
-</div>
-
-<div class="project">
-<img src="images/hamza-shaikh-uXtvnZl_FWM-unsplash.jpg">
-<div class="project-overlay">
-<h3>Cooling Systems</h3>
-</div>
-</div>
-
-<div class="project">
-<img src="images/jannik-loi9_OXfIuo-unsplash.jpg">
-<div class="project-overlay">
-<h3>Ventilation Systems</h3>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= TESTIMONIALS ================= -->
-
-<section class="testimonials">
-
-<div class="container">
-
-<h2 class="section-title">Client Testimonials</h2>
-
-<div class="testimonial-grid">
-
-<div class="testimonial">
-<p>
-“Outstanding workmanship and professional delivery.”
-</p>
-<h4>Michael Brown</h4>
-</div>
-
-<div class="testimonial">
-<p>
-“Excellent communication and reliable project management.”
-</p>
-<h4>Sarah Wilson</h4>
-</div>
-
-<div class="testimonial">
-<p>
-“Highly recommended for industrial HVAC projects.”
-</p>
-<h4>David Lee</h4>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FAQ ================= -->
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">Frequently Asked Questions</h2>
-
-<div class="faq-item">
-<div class="faq-question">Do you handle mining projects?</div>
-<div class="faq-answer">
-Yes, we specialise in mining and industrial HVAC systems.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">Do you provide maintenance services?</div>
-<div class="faq-answer">
-Yes, we offer ongoing maintenance and repair contracts.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">Are your systems energy efficient?</div>
-<div class="faq-answer">
-All systems are designed for high energy efficiency.
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-
-<section class="contact" id="contact">
-
-<div class="container">
-
-<h2 class="section-title">Contact Us</h2>
-
-<div class="contact-grid">
-
-<div class="contact-info">
-
-<p>📞 1234567</p>
-<p>✉️ support@htevolution.com</p>
-<p>📍 Weldone a dingdong</p>
-
-</div>
-
-<form>
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Email Address">
-
-<input type="text" placeholder="Phone Number">
-
-<textarea placeholder="Your Message"></textarea>
-
-<button class="btn">Send Message</button>
-
-</form>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-<h3>ding dong</h3>
-<p style="margin-top:20px;color:#ccc;line-height:1.8;">
-Professional solutions for residential and
-commercial sectors.
-</p>
-</div>
-
-<div class="footer-links">
-<h3>Quick Links</h3>
-<div style="margin-top:20px;">
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Projects</a>
-</div>
-</div>
-
-<div class="footer-links">
-<h3>Services</h3>
-<div style="margin-top:20px;">
-<a href="#">Installation</a>
-<a href="#">Maintenance</a>
-<a href="#">Mining HVAC</a>
-</div>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-© 2026 HTevolution. All Rights Reserved.
-</div>
-
-</div>
-
-</footer>
-
-<!-- ================= JS ================= -->
-
-<script>
-
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
-
-menuToggle.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-});
-
-const faqQuestions = document.querySelectorAll('.faq-question');
-
-faqQuestions.forEach(question => {
-
-  question.addEventListener('click', () => {
-
-    const answer = question.nextElementSibling;
-
-    if(answer.style.display === 'block'){
-      answer.style.display = 'none';
-    } else {
-      answer.style.display = 'block';
-    }
-
-  });
-
-});
-
-</script>
-
-</body>
 </html>
+
+
+
