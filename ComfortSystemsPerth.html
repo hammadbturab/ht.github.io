@@ -319,7 +319,66 @@
             font-size: 0.85rem;
             font-weight: 500;
         }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
+        /* NEW: Logo image styling */
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            object-fit: contain;
+            border: 2px solid #f0a04b;
+            background: white;
+            padding: 3px;
+            transition: var(--transition);
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(240, 160, 75, 0.3);
+        }
+
+        /* Fallback icon if image not available */
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #1a3a5c, #f0a04b);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(240, 160, 75, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(240, 160, 75, 0);
+            }
+        }
+
+        .logo-text h1 {
+            color: #1a3a5c;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: #f0a04b;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
         /* ========== SERVICES SECTION ========== */
         .section {
             padding: 80px 40px;
@@ -777,10 +836,14 @@
     <!-- ========== HEADER ========== -->
     <header>
         <div class="logo-container">
+            <img src="images/LogoComfortSystems.jpeg" 
+                 alt="Company Logo" 
+                 class="logo-img"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="logo-icon">❄️</div>
             <div class="logo-text">
-                <h1>CoolTech</h1>
-                <span>HVAC Solutions</span>
+                <h1>Comfort</h1>
+                <span>ySystems</span>
             </div>
         </div>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
