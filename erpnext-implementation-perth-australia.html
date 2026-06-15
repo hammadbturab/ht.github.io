@@ -1,351 +1,1103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>AI-Powered ERPNext | HT Evolution</title>
-  <!-- Tailwind CSS CDN + Font Awesome + Google Fonts (Inter) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <!-- Custom override for smooth scroll & subtle extras -->
-  <style>
-    * {
-      scroll-behavior: smooth;
-      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    /* Hamburger menu toggle (JS handles transform) */
-    .hamburger-active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .hamburger-active span:nth-child(2) { opacity: 0; }
-    .hamburger-active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
-    /* fade-in on scroll utility */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.7s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    /* gradient text helper */
-    .gradient-text {
-      background: linear-gradient(135deg, #4F46E5 0%, #A855F7 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    /* custom focus ring */
-    button:focus-visible, a:focus-visible, input:focus-visible {
-      outline: 2px solid #8B5CF6;
-      outline-offset: 2px;
-      border-radius: 0.25rem;
-    }
-    /* particle canvas background (subtle animated gradient) */
-    #particle-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .hero-bg {
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-ERPNext - Intelligent Business Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #ec4899;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #e2e8f0;
+            --gray: #94a3b8;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 50%, #1e1b4b 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            border: 2px solid var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(139, 92, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--primary));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s linear infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 4rem auto 0;
+        }
+
+        .stat-card {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            background: rgba(139, 92, 246, 0.2);
+            transform: scale(1.02);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .service-card ul li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-card ul li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* AI Dashboard Section */
+        .ai-dashboard {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dashboard-preview {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 2rem;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .metric-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        .metric-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .progress-bar {
+            background: rgba(139, 92, 246, 0.2);
+            height: 8px;
+            border-radius: 4px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        /* Chat Section */
+        .chat-section {
+            padding: 6rem 2rem;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: rgba(139, 92, 246, 0.2);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 1rem;
+            border-radius: 1rem;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.bot {
+            background: rgba(139, 92, 246, 0.2);
+            align-self: flex-start;
+        }
+
+        .message.user {
+            background: rgba(236, 72, 153, 0.2);
+            align-self: flex-end;
+        }
+
+        .chat-input {
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .chat-input input {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .chat-input input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--gray);
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            color: var(--gray);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.95);
+                padding: 2rem;
+                backdrop-filter: blur(20px);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
 </head>
-<body class="transition-colors duration-300 bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
-
-  <!-- Navigation Bar (responsive) -->
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border-b border-gray-200 dark:border-gray-800 shadow-sm">
-    <div class="max-w-7xl mx-auto px-5 md:px-8 py-4 flex justify-between items-center">
-      <!-- Logo / Brand -->
-      <div class="flex items-center gap-2">
-        <div class="w-8 h-8 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center shadow-md">
-          <i class="fas fa-brain text-white text-sm"></i>
-        </div>
-        <span class="font-bold text-xl tracking-tight dark:text-white">AI<span class="gradient-text">ERPNext</span></span>
-      </div>
-
-      <!-- Desktop Menu -->
-      <nav class="hidden md:flex space-x-8 text-gray-700 dark:text-gray-300 font-medium">
-        <a href="#home" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Home</a>
-        <a href="#products-modules" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Products</a>
-        <a href="#about-benefits" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">About</a>
-        <a href="#contact-footer" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Contact</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        <!-- Dark/Light Mode Toggle -->
-        <button id="theme-toggle" aria-label="Dark mode toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-yellow-300 hover:scale-105 transition-transform">
-          <i id="theme-icon" class="fas fa-moon"></i>
-        </button>
-        <!-- Mobile menu button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 focus:outline-none" aria-label="Menu">
-          <div class="w-6 h-5 relative flex flex-col justify-between">
-            <span class="w-full h-0.5 bg-gray-800 dark:bg-white rounded transition-all duration-300"></span>
-            <span class="w-full h-0.5 bg-gray-800 dark:bg-white rounded transition-all duration-300"></span>
-            <span class="w-full h-0.5 bg-gray-800 dark:bg-white rounded transition-all duration-300"></span>
-          </div>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="md:hidden hidden flex-col bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 px-6 pb-5 pt-3 space-y-4 text-base font-medium">
-      <a href="#home" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
-      <a href="#products-modules" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Products</a>
-      <a href="#about-benefits" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">About</a>
-      <a href="#contact-footer" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero Section with abstract animated gradient background (canvas) -->
-    <section id="home" class="hero-bg relative pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
-      <canvas id="particle-canvas" class="absolute inset-0 w-full h-full"></canvas>
-      <div class="hero-content max-w-7xl mx-auto px-5 md:px-8 text-center md:text-left">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-              ERP Software with <span class="gradient-text">Integrated AI & Automation</span> for Australian Businesses
-            </h1>
-            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mt-6 max-w-xl mx-auto md:mx-0">
-              Centralize your operations, streamline your workflows, and reduce costs by bringing every core function of your business into one powerful, affordable platform.
-            </p>
-            <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-              <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 active:scale-95 transition-transform duration-150 flex items-center gap-2">
-                Shop Now <i class="fas fa-arrow-right"></i>
-              </button>
-              <button class="border border-indigo-600 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 px-8 py-3 rounded-full font-semibold transition-all hover:scale-105 active:scale-95">
-                Request Demo
-              </button>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🤖</span>
+                AI-ERPNext
             </div>
-          </div>
-          <div class="hidden md:flex justify-center">
-            <div class="w-80 h-80 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-full blur-3xl absolute right-10 -z-0"></div>
-            <div class="relative w-full max-w-sm">
-              <i class="fas fa-chart-line text-9xl text-indigo-300 dark:text-indigo-800/40"></i>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#services">Services</a>
+                <a href="#dashboard">AI Dashboard</a>
+                <a href="#chat">AI Chat</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="btn-primary">Get Started</a>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </nav>
 
-    <!-- Benefits Section (Key Advantages) -->
-    <section id="about-benefits" class="py-20 px-5 max-w-7xl mx-auto">
-      <div class="text-center mb-14">
-        <span class="text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide">BENEFITS</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-2">Key Advantages of our ERPNext Implementation for Australian Businesses</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-up">
-        <div class="p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition">
-          <i class="fas fa-cubes text-3xl text-indigo-500 mb-4"></i>
-          <h3 class="text-xl font-bold">Unified system</h3>
-          <p class="text-gray-600 dark:text-gray-400 mt-2">Instead of juggling multiple tools for accounting, sales, inventory, HR, projects, and support, ERPNext unifies everything.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Transform Your Business with AI-Powered ERPNext</h1>
+            <p>Revolutionize your operations with intelligent ERP solutions. Our AI-driven implementation ensures faster deployment, smarter automation, and data-powered decision making.</p>
+            <div class="hero-buttons">
+                <a href="#dashboard" class="btn-primary">Try AI Dashboard</a>
+                <a href="#services" class="btn-secondary">View Services</a>
+            </div>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value">500+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">200+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">99.9%</div>
+                    <div class="stat-label">AI Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">60%</div>
+                    <div class="stat-label">Time Saved</div>
+                </div>
+            </div>
         </div>
-        <div class="p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-sm"><i class="fas fa-microchip text-3xl text-indigo-500 mb-4"></i><h3 class="text-xl font-bold">AI-sharpened decision</h3><p class="text-gray-600 dark:text-gray-400">Fully aware AI integrated across database to analyze, predict as required.</p></div>
-        <div class="p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-sm"><i class="fas fa-lock text-3xl text-indigo-500 mb-4"></i><h3 class="text-xl font-bold">Privacy & Security</h3><p class="text-gray-600 dark:text-gray-400">AWS-grade auth, firewalls, local AI instance, isolated from public internet.</p></div>
-        <div class="p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-sm"><i class="fas fa-robot text-3xl text-indigo-500 mb-4"></i><h3 class="text-xl font-bold">Automation as required</h3><p class="text-gray-600 dark:text-gray-400">Reduce errors, enforce checks & balances, workflows executed correctly.</p></div>
-        <div class="p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-sm"><i class="fas fa-users text-3xl text-indigo-500 mb-4"></i><h3 class="text-xl font-bold">Seamless collaboration</h3><p class="text-gray-600 dark:text-gray-400">From leads to invoices, projects to payroll — connected & accountable.</p></div>
-        <div class="p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl shadow-sm"><i class="fas fa-chart-pie text-3xl text-indigo-500 mb-4"></i><h3 class="text-xl font-bold">Data-driven insights</h3><p class="text-gray-600 dark:text-gray-400">Real-time dashboards & analytics for informed decisions.</p></div>
-      </div>
     </section>
 
-    <!-- Preview Section (Modules Glance) -->
-    <section id="products-modules" class="py-20 bg-gray-50 dark:bg-gray-900/40">
-      <div class="max-w-7xl mx-auto px-5">
-        <div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold">ERPNext Modules: A Quick High-Level Glance</h2><p class="text-gray-600 dark:text-gray-400 mt-2">Explore modules that unify finance, CRM, inventory, HR, projects & more</p></div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow"><i class="fas fa-chalkboard-user text-indigo-500 text-2xl"></i><h3 class="font-bold mt-3">ERP Overview</h3><p class="text-sm">Custom dashboards, themes, and UI layouts.</p></div>
-          <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow"><i class="fas fa-users text-indigo-500 text-2xl"></i><h3 class="font-bold mt-3">Customer Management</h3><p class="text-sm">Leads, automated follow-ups, custom pipelines.</p></div>
-          <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow"><i class="fas fa-coins text-indigo-500 text-2xl"></i><h3 class="font-bold mt-3">Accounting</h3><p class="text-sm">Multi-currency, BAS, ABA, automated reconciliation.</p></div>
-          <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow"><i class="fas fa-user-plus text-indigo-500 text-2xl"></i><h3 class="font-bold mt-3">Employee Onboarding</h3><p class="text-sm">Checklists, training assignments, documentation.</p></div>
-          <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow"><i class="fas fa-fingerprint text-indigo-500 text-2xl"></i><h3 class="font-bold mt-3">Role Permissions</h3><p class="text-sm">Field-level security, approval chains, audit logs.</p></div>
-          <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow"><i class="fas fa-project-diagram text-indigo-500 text-2xl"></i><h3 class="font-bold mt-3">Project Management</h3><p class="text-sm">Milestones, time tracking, task details.</p></div>
-          <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow"><i class="fas fa-boxes text-indigo-500 text-2xl"></i><h3 class="font-bold mt-3">Stock Management</h3><p class="text-sm">Real-time inventory, barcode, reorder alerts.</p></div>
-          <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow"><i class="fas fa-calculator text-indigo-500 text-2xl"></i><h3 class="font-bold mt-3">Payroll & Compliance</h3><p class="text-sm">Timesheets, Australian tax, pay slips, BAS ready.</p></div>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-title">
+            <h2>Why Choose AI-ERPNext?</h2>
+            <p>Cutting-edge AI integration with proven ERPNext expertise</p>
         </div>
-        <div class="mt-12 text-center text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"><i class="fas fa-quote-left text-indigo-400 mr-2"></i> ERPNext’s clean interface and intuitive design mean your team can adopt the system quickly, without lengthy onboarding times typical of legacy ERP.</div>
-      </div>
-    </section>
-
-    <!-- Implementation Steps (simplified) -->
-    <section class="py-20 max-w-7xl mx-auto px-5">
-      <div class="text-center mb-12"><h2 class="text-3xl font-bold">Steps to Successfully Implement AI-Powered ERPNext</h2></div>
-      <div class="grid md:grid-cols-4 gap-6 text-center">
-        <div class="p-5"><div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/40 rounded-full flex items-center justify-center mx-auto text-indigo-700 text-xl font-bold">1</div><h3 class="font-bold mt-3">Understand Your Needs</h3><p class="text-sm">Custom-design workflows and align with operations.</p></div>
-        <div class="p-5"><div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/40 rounded-full flex items-center justify-center mx-auto text-indigo-700 text-xl font-bold">2</div><h3 class="font-bold mt-3">Build Your Solution</h3><p class="text-sm">Explore prototype, refine seamless integration.</p></div>
-        <div class="p-5"><div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/40 rounded-full flex items-center justify-center mx-auto text-indigo-700 text-xl font-bold">3</div><h3 class="font-bold mt-3">Validate</h3><p class="text-sm">End-to-end testing, payroll, inventory, reporting.</p></div>
-        <div class="p-5"><div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/40 rounded-full flex items-center justify-center mx-auto text-indigo-700 text-xl font-bold">4</div><h3 class="font-bold mt-3">Go Live</h3><p class="text-sm">Full training, confident deployment, ongoing evolution.</p></div>
-      </div>
-    </section>
-
-    <!-- Blog Highlights (short) -->
-    <section class="bg-gray-50 dark:bg-gray-900/30 py-20">
-      <div class="max-w-6xl mx-auto px-5">
-        <h2 class="text-3xl font-bold text-center mb-10">Insights on AI in ERP & Enterprise Automation</h2>
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-md border-l-8 border-indigo-500">
-          <h3 class="text-2xl font-bold">AI in ERP Systems — How Artificial Intelligence transforms business software</h3>
-          <p class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">What is AI in ERP? “AI in ERP systems is changing how enterprises interpret data… HT Evolution’s AI-powered ERPNext combines structured data with Enterprise AI to deliver actionable insights. Unlike traditional ERP solutions that rely on rigid reports, our platform ensures accurate, validated answers — not guesses.”</p>
-          <button class="mt-5 text-indigo-600 font-semibold flex items-center gap-1 hover:gap-2 transition-all">Read full article <i class="fas fa-arrow-right"></i></button>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>AI-Powered Implementation</h3>
+                <p>Our AI algorithms optimize your ERPNext implementation for maximum efficiency and minimal disruption.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Predictive Analytics</h3>
+                <p>Leverage machine learning to forecast business trends and make data-driven decisions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Smart Automation</h3>
+                <p>Automate routine tasks with intelligent workflows that learn and adapt to your business processes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Risk Management</h3>
+                <p>AI-driven risk assessment identifies potential issues before they impact your implementation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Rapid Deployment</h3>
+                <p>Reduce implementation time by up to 60% with our AI-optimized deployment strategies.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Intelligent Support</h3>
+                <p>24/7 AI chatbot support ensures your team gets instant answers to implementation questions.</p>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Newsletter Signup Section -->
-    <section class="py-20 max-w-3xl mx-auto px-5 text-center">
-      <div class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 shadow-sm">
-        <i class="fas fa-envelope-open-text text-4xl text-indigo-600"></i>
-        <h2 class="text-2xl font-bold mt-3">Join our newsletter</h2>
-        <p class="text-gray-600 dark:text-gray-300 mt-1">Get AI & ERP insights, updates, and exclusive demos.</p>
-        <div class="flex flex-col sm:flex-row gap-3 mt-6 max-w-xl mx-auto">
-          <input type="email" placeholder="Your email address" class="flex-1 px-5 py-3 rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-indigo-400" aria-label="Email for newsletter">
-          <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-semibold transition-transform hover:scale-105 active:scale-95">Subscribe</button>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive ERPNext implementation solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🚀 Implementation</h3>
+                    <p>Full-cycle ERPNext implementation with AI optimization</p>
+                    <ul>
+                        <li>Requirements Analysis</li>
+                        <li>System Configuration</li>
+                        <li>Data Migration</li>
+                        <li>Testing & Deployment</li>
+                        <li>Go-Live Support</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🔧 Customization</h3>
+                    <p>Tailored solutions for your unique business needs</p>
+                    <ul>
+                        <li>Custom Module Development</li>
+                        <li>Workflow Automation</li>
+                        <li>API Integration</li>
+                        <li>Report Customization</li>
+                        <li>UI/UX Enhancement</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🎓 Training & Support</h3>
+                    <p>Comprehensive training and ongoing support</p>
+                    <ul>
+                        <li>User Training Programs</li>
+                        <li>Admin Training</li>
+                        <li>Documentation</li>
+                        <li>24/7 AI Support</li>
+                        <li>Maintenance Services</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Contact Footer Area -->
-    <footer id="contact-footer" class="bg-gray-900 text-gray-300 pt-16 pb-8 dark:bg-black">
-      <div class="max-w-7xl mx-auto px-5 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div><div class="flex items-center gap-2"><div class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center"><i class="fas fa-brain text-white text-sm"></i></div><span class="font-bold text-white text-xl">HT EVOLUTION</span></div><p class="mt-4 text-sm">AI-powered ERPNext software for Australian businesses. Streamline workflows, automate tasks, and gain real-time insights.</p><div class="flex space-x-4 mt-4"><a href="#" class="text-gray-400 hover:text-indigo-400 text-xl" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
-        <div><h4 class="font-bold text-white">Quick Links</h4><ul class="mt-3 space-y-2"><li><a href="#home" class="hover:text-indigo-400">Benefits</a></li><li><a href="#products-modules" class="hover:text-indigo-400">Preview</a></li><li><a href="#about-benefits" class="hover:text-indigo-400">Implementation</a></li><li><a href="#" class="hover:text-indigo-400">Blogs</a></li><li><a href="#contact-footer" class="hover:text-indigo-400">Contact</a></li></ul></div>
-        <div><h4 class="font-bold text-white">Contact</h4><ul class="mt-3 space-y-2 text-sm"><li><i class="fas fa-phone-alt mr-2"></i> 1300 415 457</li><li><i class="fas fa-envelope mr-2"></i> support@htevolution.com</li><li><i class="fas fa-map-marker-alt mr-2"></i> Midland, WA 6056, Australia (Perth)</li></ul></div>
-        <div><h4 class="font-bold text-white">Legal</h4><p class="text-sm mt-2">© 2026 HT Evolution. All rights reserved.<br>Privacy Policy | ABN 76 691 704 926</p></div>
-      </div>
-      <div class="text-center text-xs text-gray-500 border-t border-gray-800 mt-12 pt-6">AI-Powered ERPNext — The future of Australian enterprise automation</div>
+    <!-- AI Dashboard Section -->
+    <section class="ai-dashboard" id="dashboard">
+        <div class="section-title">
+            <h2>AI Implementation Dashboard</h2>
+            <p>Real-time insights powered by artificial intelligence</p>
+        </div>
+        <div class="dashboard-preview">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Implementation Progress</div>
+                    <div class="metric-value">78%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 78%"></div>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">AI Optimization Score</div>
+                    <div class="metric-value">92/100</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Risk Level</div>
+                    <div class="metric-value" style="color: #10b981">Low</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 15%; background: #10b981"></div>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Efficiency Gain</div>
+                    <div class="metric-value">+45%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%; background: #f59e0b"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <div class="metric-card">
+                    <div class="metric-label">Active Modules</div>
+                    <div class="metric-value">12</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">AI Predictions</div>
+                    <div class="metric-value">1,247</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Issues Resolved</div>
+                    <div class="metric-value">98%</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">User Satisfaction</div>
+                    <div class="metric-value">4.8/5</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Section -->
+    <section class="chat-section" id="chat">
+        <div class="section-title">
+            <h2>AI Assistant</h2>
+            <p>Get instant answers about ERPNext implementation</p>
+        </div>
+        <div class="chat-container">
+            <div class="chat-header">
+                <span style="font-size: 2rem;">🤖</span>
+                <div>
+                    <h3>AI ERPNext Assistant</h3>
+                    <small style="color: var(--gray);">Always here to help</small>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    👋 Hi! I'm your AI ERPNext assistant. How can I help you with your implementation today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Ask me anything about ERPNext..." onkeypress="handleChatKey(event)">
+                <button class="btn-primary" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Ready to transform your business? Let's talk!</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-form">
+                <form onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" required placeholder="john@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" id="company" placeholder="Your Company Ltd.">
+                    </div>
+                    <div class="form-group">
+                        <label>Service Interest</label>
+                        <select id="service">
+                            <option>ERPNext Implementation</option>
+                            <option>Custom Development</option>
+                            <option>Training & Support</option>
+                            <option>AI Consulting</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea id="message" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>📧 Email</h3>
+                    <p style="color: var(--gray);">info@ai-erpnext.com</p>
+                </div>
+                <div class="info-card">
+                    <h3>📞 Phone</h3>
+                    <p style="color: var(--gray);">+1 (555) 123-4567</p>
+                </div>
+                <div class="info-card">
+                    <h3>📍 Location</h3>
+                    <p style="color: var(--gray);">San Francisco, CA</p>
+                </div>
+                <div class="info-card">
+                    <h3>🕒 Business Hours</h3>
+                    <p style="color: var(--gray);">Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    <p style="color: var(--gray);">AI Support: 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AI-ERPNext</h3>
+                <p style="color: var(--gray);">Transforming businesses with AI-powered ERPNext solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#services">Services</a>
+                <a href="#dashboard">AI Dashboard</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#services">Implementation</a>
+                <a href="#services">Customization</a>
+                <a href="#services">Training</a>
+                <a href="#services">Support</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="mailto:info@ai-erpnext.com">info@ai-erpnext.com</a>
+                <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                <a href="#contact">Contact Form</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AI-ERPNext. All rights reserved. | Powered by AI Technology</p>
+        </div>
     </footer>
-  </main>
 
-  <script>
-    // Theme toggle with localStorage persistence
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const htmlElement = document.documentElement;
-    const isDark = localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-      themeIcon.classList.remove('fa-moon');
-      themeIcon.classList.add('fa-sun');
-    } else {
-      document.documentElement.classList.remove('dark');
-      themeIcon.classList.remove('fa-sun');
-      themeIcon.classList.add('fa-moon');
-    }
-    themeToggle.addEventListener('click', () => {
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-      } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-      }
-    });
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
 
-    // Mobile hamburger menu toggle
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerSpans = mobileBtn?.querySelectorAll('span');
-    mobileBtn?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      mobileBtn.classList.toggle('hamburger-active');
-      if (hamburgerSpans) {
-        if (mobileMenu.classList.contains('hidden')) {
-          hamburgerSpans[0].style.transform = ''; hamburgerSpans[1].style.opacity = ''; hamburgerSpans[2].style.transform = '';
-        } else {
-          hamburgerSpans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-          hamburgerSpans[1].style.opacity = '0';
-          hamburgerSpans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-        }
-      }
-    });
-    document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); mobileBtn.classList.remove('hamburger-active'); if(hamburgerSpans){ hamburgerSpans[0].style.transform=''; hamburgerSpans[1].style.opacity=''; hamburgerSpans[2].style.transform=''; } }));
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                navLinks.classList.remove('active');
+            });
+        });
 
-    // Abstract animated gradient background (particle effect)
-    const canvas = document.getElementById('particle-canvas');
-    if (canvas) {
-      let ctx = canvas.getContext('2d');
-      let width, height;
-      let particles = [];
-      function resizeCanvas() {
-        width = canvas.parentElement.clientWidth;
-        height = canvas.parentElement.clientHeight;
-        canvas.width = width;
-        canvas.height = height;
-      }
-      function createParticles() {
-        particles = [];
-        for (let i = 0; i < 60; i++) {
-          particles.push({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            radius: Math.random() * 3 + 1.5,
-            speedX: (Math.random() - 0.5) * 0.4,
-            speedY: (Math.random() - 0.5) * 0.2,
-            color: `hsla(${Math.random() * 60 + 240}, 70%, 65%, ${Math.random() * 0.3 + 0.1})`
-          });
-        }
-      }
-      function animateParticles() {
-        if (!ctx) return;
-        ctx.clearRect(0, 0, width, height);
-        for (let p of particles) {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = p.color;
-          ctx.fill();
-          p.x += p.speedX;
-          p.y += p.speedY;
-          if (p.x < 0) p.x = width;
-          if (p.x > width) p.x = 0;
-          if (p.y < 0) p.y = height;
-          if (p.y > height) p.y = 0;
-        }
-        requestAnimationFrame(animateParticles);
-      }
-      window.addEventListener('resize', () => { resizeCanvas(); createParticles(); });
-      resizeCanvas();
-      createParticles();
-      animateParticles();
-    }
+        // Chat functionality
+        const chatResponses = {
+            'implementation': 'Our AI-powered ERPNext implementation typically takes 4-12 weeks depending on the complexity. We use AI to optimize the process and reduce implementation time by up to 60%.',
+            'cost': 'The cost varies based on your requirements. Basic implementation starts at $10,000, while enterprise solutions can range from $50,000 to $200,000+. Contact us for a custom quote!',
+            'modules': 'ERPNext includes modules for Accounting, HR, CRM, Manufacturing, Inventory, Projects, and more. Our AI helps determine which modules you need based on your business type.',
+            'training': 'We provide comprehensive training programs including user training, admin training, and ongoing support. Our AI assistant is also available 24/7 for instant help.',
+            'support': 'We offer 24/7 AI-powered support, plus human support during business hours. Response time is typically under 5 minutes for AI and under 1 hour for human support.',
+            'migration': 'Our AI tools make data migration seamless. We can migrate from any major ERP system to ERPNext with 99.9% data accuracy.',
+            'customization': 'Yes! We offer extensive customization options. Our AI can analyze your business processes and recommend optimal customizations.',
+            'security': 'ERPNext is highly secure with role-based access control, encryption, and regular security updates. Our AI monitors for potential security threats 24/7.',
+            'default': 'That\'s a great question! Our AI-powered ERPNext solution can help with that. Would you like to schedule a demo to see how it works in detail?'
+        };
 
-    // Fade-up on scroll (Intersection Observer)
-    const fadeElements = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            // Add user message
+            addMessage(message, 'user');
+            input.value = '';
+
+            // Show typing indicator
+            const messagesDiv = document.getElementById('chatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot';
+            typingDiv.innerHTML = '<div class="loading"></div>';
+            messagesDiv.appendChild(typingDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Generate AI response
+            setTimeout(() => {
+                messagesDiv.removeChild(typingDiv);
+                
+                let response = chatResponses['default'];
+                const lowerMessage = message.toLowerCase();
+                
+                for (const [key, value] of Object.entries(chatResponses)) {
+                    if (lowerMessage.includes(key)) {
+                        response = value;
+                        break;
+                    }
+                }
+
+                addMessage(response, 'bot');
+            }, 1500);
         }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-    fadeElements.forEach(el => observer.observe(el));
-    // Also directly observe benefit cards individually (they have fade-up class already)
-    document.querySelectorAll('.grid > div, .bg-white.dark\\:bg-gray-800, .p-6').forEach(el => { if(el.classList) observer.observe(el); });
-    document.querySelectorAll('.grid.md\\:grid-cols-4 .p-5').forEach(el => observer.observe(el));
-    // small micro-scale on click for CTA buttons
-    document.querySelectorAll('button').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        if(!btn.classList.contains('active-scale')) return;
-        btn.style.transform = 'scale(0.97)';
-        setTimeout(() => { btn.style.transform = ''; }, 120);
-      });
-    });
-  </script>
+
+        function addMessage(text, type) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.textContent = text;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function handleChatKey(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Contact form handler
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+
+            // Simulate form submission
+            alert(`Thank you ${formData.name}! We've received your message and will get back to you within 24 hours.`);
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.feature-card, .service-card, .stat-card, .metric-card, .info-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Initialize - make visible elements that are already in view
+        setTimeout(() => {
+            document.querySelectorAll('.feature-card, .service-card, .stat-card, .metric-card, .info-card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        }, 100);
+
+        console.log('🚀 AI-ERPNext Website Loaded Successfully!');
+        console.log('💡 Try the AI chatbot by scrolling to the chat section!');
+    </script>
 </body>
 </html>
